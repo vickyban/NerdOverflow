@@ -94,7 +94,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\" />
+    <Folder Include="Images\" />
+    <Folder Include="Post\" />
+    <Folder Include="Styles\" />
     <Folder Include="UserControl\" />
   </ItemGroup>
   <PropertyGroup>
