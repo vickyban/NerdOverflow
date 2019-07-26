@@ -799,6 +799,10 @@
     <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Styles\fontawesome.min.css" />
+    <Content Include="Images\commentIcon.png" />
+    <Content Include="Images\deleteIcon.png" />
+    <Content Include="Images\editIcon.png" />
+    <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
     <Content Include="UserControl\BookmarkControl.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />

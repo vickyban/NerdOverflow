@@ -2,6 +2,7 @@
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
 
+<%@ Register Src="~/UserPage/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 
 
 <!DOCTYPE html>
