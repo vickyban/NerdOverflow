@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Styles\fontawesome.min.css" />
+    <Content Include="Styles\userPage.css" />
+    <Content Include="UserControl\PostPreview.ascx" />
+    <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -75,7 +79,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ban.cs" />
+    <Compile Include="Models\Bookmark.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\PostPreview.ascx.cs">
+      <DependentUpon>PostPreview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\PostPreview.ascx.designer.cs">
+      <DependentUpon>PostPreview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\BookmarkPage.aspx.cs">
+      <DependentUpon>BookmarkPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\BookmarkPage.aspx.designer.cs">
+      <DependentUpon>BookmarkPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserPageMaster.Master.cs">
+      <DependentUpon>UserPageMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UserPageMaster.Master.designer.cs">
+      <DependentUpon>UserPageMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="UserPage\UserPageMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -96,8 +127,6 @@
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="Post\" />
-    <Folder Include="Styles\" />
-    <Folder Include="UserControl\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
