@@ -1,8 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PostPreviewWithActions.ascx.cs" Inherits="Forum.UserControl.PostPreviewWithActions" %>
 <div class="post">
-
+    <asp:HiddenField ID="postId" runat="server" />
     <div class="post_title">
-            <asp:Label ID="lblTitle"  runat="server" Text=""></asp:Label>
+        <asp:HyperLink ID="postUrl" runat="server" BorderStyle="None" NavigateUrl="https://www.google.ca/">
+                <asp:Label ID="lblTitle"  runat="server" Text=""></asp:Label>
+        </asp:HyperLink>
     </div>
     <div class="post_metadata">
         <div class="post_category">
