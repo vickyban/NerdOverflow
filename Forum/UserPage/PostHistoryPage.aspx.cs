@@ -1,4 +1,5 @@
 ﻿using Forum.Models;
+using Forum.Repositories;
 using Forum.UserControl;
 using System;
 using System.Collections.Generic;
@@ -14,19 +15,21 @@ namespace Forum.UserPage
         private List<Post> posts;
         protected void Page_Load(object sender, EventArgs e)
         {
-            posts = new List<Post>
-            {
-                 new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math", User = new User { Username = "Shiba Inu" }},
-                 new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math", User = new User { Username = "Shiba Inu" }},
-                 new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math", User = new User { Username = "Shiba Inu" }},
-                 new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math", User = new User { Username = "Shiba Inu" }}
-            };
+            int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
+            posts = getPosts(userId);
             foreach(var post in posts)
             {
                 PostPreviewWithActions control = (PostPreviewWithActions)Page.LoadControl("..\\UserControl\\PostPreviewWithActions.ascx");
                 control.Post = post;
                 PlaceHolder1.Controls.Add(control);
             }
+        }
+
+
+        public List<Post> getPosts(int userId)
+        {
+            PostRepo repo = new PostRepo();
+            return repo.getPosts(userId);
         }
     }
 }

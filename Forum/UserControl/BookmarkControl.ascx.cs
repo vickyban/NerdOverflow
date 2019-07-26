@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace Forum.UserControl
 {
@@ -23,8 +24,10 @@ namespace Forum.UserControl
             postUrl.NavigateUrl = "/posts/" + Bookmark.PostId;
             lblTitle.Text = Bookmark.Post.Title;
             lblCategory.Text = Bookmark.Post.Category;
-            lblAuthor.Text = Bookmark.User.Username;
+            lblAuthor.Text = Bookmark.Post.User.Username;
             lblPostDate.Text = (Bookmark.Post.CreatedAt.ToString());
+            int count = Bookmark.Post.TotalComments;
+            lblComment.Text = count == 1 ? count + " Comment": count + " Comments" ;
         }
     }
 }

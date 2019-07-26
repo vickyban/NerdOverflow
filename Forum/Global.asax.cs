@@ -15,11 +15,16 @@ namespace Forum
             //string id = Page.RouteData.Values["Id"].ToString();
             routeCollection.MapPageRoute("RouteForUser", "users/{Id}", "~/Customer.aspx");
             routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
+
+            routeCollection.MapPageRoute("RouteForBookmarks", "users/{Id}/bookmarks/", "~/UserPage/BookmarkPage.aspx");
+            routeCollection.MapPageRoute("RouteForPostHistory", "users/{Id}/posts/", "~/UserPage/PostHistoryPage.aspx");
+            //routeCollection.MapPageRoute("RouteForPost", "users/{Id}", "~/UserPage/Customer.aspx");
+
         }
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            RegisterRoutes(RouteTable.Routes);
         }
 
         protected void Session_Start(object sender, EventArgs e)
