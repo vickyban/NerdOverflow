@@ -71,10 +71,12 @@
     <Content Include="Images\commentIcon.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
+    <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
     <Content Include="UserControl\BookmarkControl.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
+    <Content Include="UserPage\Header.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -108,6 +110,13 @@
     </Compile>
     <Compile Include="UserPage\BookmarkPage.aspx.designer.cs">
       <DependentUpon>BookmarkPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserPageMaster.Master.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>
