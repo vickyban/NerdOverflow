@@ -122,7 +122,8 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Styles\fontawesome.min.css" />
     <Content Include="Styles\userPage.css" />
-    <Content Include="UserControl\PostPreview.ascx" />
+    <Content Include="UserControl\BookmarkControl.ascx" />
+    <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -151,12 +152,19 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl\PostPreview.ascx.cs">
-      <DependentUpon>PostPreview.ascx</DependentUpon>
+    <Compile Include="UserControl\BookmarkControl.ascx.cs">
+      <DependentUpon>BookmarkControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControl\PostPreview.ascx.designer.cs">
-      <DependentUpon>PostPreview.ascx</DependentUpon>
+    <Compile Include="UserControl\BookmarkControl.ascx.designer.cs">
+      <DependentUpon>BookmarkControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
+      <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\PostPreviewWithActions.ascx.designer.cs">
+      <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\BookmarkPage.aspx.cs">
       <DependentUpon>BookmarkPage.aspx</DependentUpon>
@@ -204,6 +212,7 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Admin\admin.Master" />
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="UserPage\UserPageMaster.Master" />
     <None Include="Web.Debug.config">
