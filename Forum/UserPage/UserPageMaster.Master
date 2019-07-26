@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserPageMaster.master.cs" Inherits="Forum.UserPage.UserPageMaster" %>
 
-<%@ Register Src="~/UserPage/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+
+
 
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <uc1:Header runat="server" id="Header" />
+    <uc1:Header runat="server" ID="Header" />
     <form id="form1" runat="server">
         <div class="user_page">
 

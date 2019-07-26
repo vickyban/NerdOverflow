@@ -76,7 +76,8 @@
     <Content Include="UserControl\BookmarkControl.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
-    <Content Include="UserPage\Header.ascx" />
+    <Content Include="UserControl\Header.ascx" />
+    <Content Include="UserPage\PostHistoryPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -111,12 +112,19 @@
     <Compile Include="UserPage\BookmarkPage.aspx.designer.cs">
       <DependentUpon>BookmarkPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserPage\Header.ascx.cs">
+    <Compile Include="UserControl\Header.ascx.cs">
       <DependentUpon>Header.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserPage\Header.ascx.designer.cs">
+    <Compile Include="UserControl\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\PostHistoryPage.aspx.cs">
+      <DependentUpon>PostHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\PostHistoryPage.aspx.designer.cs">
+      <DependentUpon>PostHistoryPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserPageMaster.Master.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>

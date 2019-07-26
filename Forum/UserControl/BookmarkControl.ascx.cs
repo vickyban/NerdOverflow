@@ -14,15 +14,17 @@ namespace Forum.UserControl
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Bookmark != null && Bookmark.Post.Title != null)
-            {
-                bookmarkId.Value = Bookmark.BookmarkId.ToString();
-                postUrl.NavigateUrl = "";
-                lblTitle.Text = Bookmark.Post.Title;
-                lblCategory.Text = Bookmark.Post.Category;
-                lblAuthor.Text = Bookmark.User.Username;
-                lblPostDate.Text = (Bookmark.Post.CreatedAt.ToString());
-            }
+            Render();
+        }
+        private void Render()
+        {
+            if (Bookmark == null) return;
+            bookmarkId.Value = Bookmark.BookmarkId.ToString();
+            postUrl.NavigateUrl = "/posts/" + Bookmark.PostId;
+            lblTitle.Text = Bookmark.Post.Title;
+            lblCategory.Text = Bookmark.Post.Category;
+            lblAuthor.Text = Bookmark.User.Username;
+            lblPostDate.Text = (Bookmark.Post.CreatedAt.ToString());
         }
     }
 }

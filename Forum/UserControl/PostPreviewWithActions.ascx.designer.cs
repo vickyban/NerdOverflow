@@ -13,6 +13,24 @@ namespace Forum.UserControl {
     public partial class PostPreviewWithActions {
         
         /// <summary>
+        /// postId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField postId;
+        
+        /// <summary>
+        /// postUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink postUrl;
+        
+        /// <summary>
         /// lblTitle control.
         /// </summary>
         /// <remarks>

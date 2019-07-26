@@ -11,7 +11,7 @@ namespace Forum.UserPage
 {
     public partial class BookmarkPage : System.Web.UI.Page
     {
-        public List<Bookmark> bookmarks = new List<Bookmark>();
+        private List<Bookmark> bookmarks = new List<Bookmark>();
         protected void Page_Load(object sender, EventArgs e)
         {
             bookmarks = new List<Bookmark>
