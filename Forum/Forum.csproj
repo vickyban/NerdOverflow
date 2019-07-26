@@ -91,6 +91,9 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepo.cs" />
+    <Compile Include="Repositories\BookmarkRepo.cs" />
+    <Compile Include="Repositories\PostRepo.cs" />
     <Compile Include="UserControl\BookmarkControl.ascx.cs">
       <DependentUpon>BookmarkControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

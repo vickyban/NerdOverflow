@@ -25,6 +25,8 @@ namespace Forum.UserControl
             lblTitle.Text = Post.Title;
             postId.Value = Post.PostId.ToString();
             postUrl.NavigateUrl = "/posts/"+postId;
+            int count = Post.TotalComments;
+            lblComment.Text = count == 1 ? count + " Comment" : count + " Comments";
         }
     }
 }

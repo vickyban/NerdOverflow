@@ -1,4 +1,5 @@
 ﻿using Forum.Models;
+using Forum.Repositories;
 using Forum.UserControl;
 using System;
 using System.Collections.Generic;
@@ -14,57 +15,8 @@ namespace Forum.UserPage
         private List<Bookmark> bookmarks = new List<Bookmark>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            bookmarks = new List<Bookmark>
-            {
-                new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                 new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                 new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                 new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-                new Bookmark
-                {
-                    BookmarkId = 1,
-                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
-                    User = new User { Username = "Shiba Inu" }
-                },
-            };
+            int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
+            bookmarks= getBookmarks(userId);
 
             foreach(var book in bookmarks)
             {
@@ -72,6 +24,11 @@ namespace Forum.UserPage
                 control.Bookmark = book;
                 PlaceHolder1.Controls.Add(control);             
             }
+        }
+        public List<Bookmark> getBookmarks(int userId)
+        {
+            BookmarkRepo repo = new BookmarkRepo();
+            return repo.GetBookmarks(userId);
         }
     }
 }

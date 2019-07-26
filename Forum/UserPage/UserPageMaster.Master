@@ -31,9 +31,9 @@
 
             <div class="user_right">
                 <div class="user_right_navbar">
-                    <asp:Button ID="btnProfileLink" runat="server" Text="Profile"  class="user_right_navlink"/>
-                    <asp:Button ID="btnBookmarkLink" runat="server" Text="Bookmarks"  class="user_right_navlink"/>
-                    <asp:Button ID="btnPostsLink" runat="server" Text="Posts"  class="user_right_navlink"/>
+                    <asp:Button ID="btnProfileLink" runat="server" Text="Profile"  class="user_right_navlink" OnClick="btnProfileLink_Click"/>
+                    <asp:Button ID="btnBookmarkLink" runat="server" Text="Bookmarks"  class="user_right_navlink" OnClick="btnBookmarkLink_Click"/>
+                    <asp:Button ID="btnPostsLink" runat="server" Text="Posts"  class="user_right_navlink" OnClick="btnPostsLink_Click"/>
                 </div>
 
                 <div class="user_right_content" aria-checked="undefined">

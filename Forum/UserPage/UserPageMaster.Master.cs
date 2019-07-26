@@ -13,5 +13,26 @@ namespace Forum.UserPage
         {
 
         }
+
+        protected void btnProfileLink_Click(object sender, EventArgs e)
+        {
+            string id = Page.RouteData.Values["Id"].ToString();
+            string url = $"/users/{id}/";
+            Response.Redirect(url);
+        }
+
+        protected void btnBookmarkLink_Click(object sender, EventArgs e)
+        {
+            string id = Page.RouteData.Values["Id"].ToString();
+            string url = $"/users/{id}/bookmarks/";
+            Response.Redirect(url);
+        }
+
+        protected void btnPostsLink_Click(object sender, EventArgs e)
+        {
+            string id = Page.RouteData.Values["Id"].ToString();
+            string url = $"/users/{id}/posts/";
+            Response.Redirect(url);
+        }
     }
 }
