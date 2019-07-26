@@ -1,15 +1,20 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserPageMaster.master.cs" Inherits="Forum.UserPage.UserPageMaster" %>
 
+<%@ Register Src="~/UserPage/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+
+
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
+    <link href="../Styles/style.css" rel="stylesheet" />
     <link href="../Styles/userPage.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <uc1:Header runat="server" id="Header" />
     <form id="form1" runat="server">
         <div class="user_page">
 

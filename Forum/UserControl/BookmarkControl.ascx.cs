@@ -17,6 +17,7 @@ namespace Forum.UserControl
             if (Bookmark != null && Bookmark.Post.Title != null)
             {
                 bookmarkId.Value = Bookmark.BookmarkId.ToString();
+                postUrl.NavigateUrl = "";
                 lblTitle.Text = Bookmark.Post.Title;
                 lblCategory.Text = Bookmark.Post.Category;
                 lblAuthor.Text = Bookmark.User.Username;

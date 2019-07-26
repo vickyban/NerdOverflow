@@ -3,9 +3,8 @@
     <asp:HiddenField ID="bookmarkId" runat="server" />
     <div class="post_title">
         <asp:HyperLink ID="postUrl" runat="server" BorderStyle="None" NavigateUrl="https://www.google.ca/">
-            Hello
+                <asp:Label ID="lblTitle"  runat="server" Text=""></asp:Label>
         </asp:HyperLink>
-        <asp:Label ID="lblTitle"  runat="server" Text=""></asp:Label>
     </div>
     <div class="post_metadata">
         <div class="post_category">

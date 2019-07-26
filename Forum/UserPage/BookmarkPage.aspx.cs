@@ -28,6 +28,42 @@ namespace Forum.UserPage
                     Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
                     User = new User { Username = "Shiba Inu" }
                 },
+                 new Bookmark
+                {
+                    BookmarkId = 1,
+                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
+                    User = new User { Username = "Shiba Inu" }
+                },
+                new Bookmark
+                {
+                    BookmarkId = 1,
+                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
+                    User = new User { Username = "Shiba Inu" }
+                },
+                 new Bookmark
+                {
+                    BookmarkId = 1,
+                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
+                    User = new User { Username = "Shiba Inu" }
+                },
+                new Bookmark
+                {
+                    BookmarkId = 1,
+                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
+                    User = new User { Username = "Shiba Inu" }
+                },
+                 new Bookmark
+                {
+                    BookmarkId = 1,
+                    Post = new Post { Title = "I am lazy", CreatedAt = DateTime.Now, Category="Math"},
+                    User = new User { Username = "Shiba Inu" }
+                },
+                new Bookmark
+                {
+                    BookmarkId = 1,
+                    Post = new Post { Title = "I am lazy2", CreatedAt = DateTime.Now, Category="Food"},
+                    User = new User { Username = "Shiba Inu" }
+                },
             };
 
             foreach(var book in bookmarks)
