@@ -13,9 +13,9 @@ namespace Forum
         public static void RegisterRoutes(RouteCollection routeCollection)
         {
             //string id = Page.RouteData.Values["Id"].ToString();
-            routeCollection.MapPageRoute("RouteForUser", "users/{Id}", "~/Customer.aspx");
-            routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
-            routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
+            //routeCollection.MapPageRoute("RouteForUser", "users/{Id}", "~/Customer.aspx");
+            //routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
+            //routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
 
         }
 
