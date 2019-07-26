@@ -800,7 +800,8 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Styles\fontawesome.min.css" />
     <Content Include="Styles\userPage.css" />
-    <Content Include="UserControl\PostPreview.ascx" />
+    <Content Include="UserControl\BookmarkControl.ascx" />
+    <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="UserPage\ReferenceUsages.aspx" />

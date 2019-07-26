@@ -76,6 +76,12 @@ namespace Forum.UserPage
             string e = err ? "true" : "false";
             string script = $"<script>displayAlert('{message}',{e});</script>";
             Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", script);
+            foreach(var book in bookmarks)
+            {
+                BookmarkControl control = (BookmarkControl)Page.LoadControl("..\\UserControl\\BookmarkControl.ascx");
+                control.Bookmark = book;
+                PlaceHolder1.Controls.Add(control);             
+            }
         }
     }
 }
