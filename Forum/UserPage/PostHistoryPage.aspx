@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/UserPageMaster.Master" AutoEventWireup="true" CodeBehind="PostHistoryPage.aspx.cs" Inherits="Forum.UserPage.PostHistoryPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/UserPageMaster.Master" AutoEventWireup="true" CodeBehind="PostHistoryPage.aspx.cs" Inherits="Forum.UserPage.PostHistoryPage" MaintainScrollPositionOnPostback="True" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="display_opts">
         <div class="sort border_right">
             <label>Sort</label>
-            <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem>New</asp:ListItem>
+            <asp:DropDownList ID="sortOpt" runat="server">
+                <asp:ListItem Selected="True">New</asp:ListItem>
                 <asp:ListItem>Old</asp:ListItem>
             </asp:DropDownList>
         </div>
@@ -15,16 +15,16 @@
             <div class="filter_box" id="filter_box">
                 <div class="filter_opts" id="">
                     <div>
-                        <asp:CheckBox ID="CheckBox1" runat="server" Text="In Review" Checked="True" />
+                        <asp:CheckBox ID="cbReview" runat="server" Text="In Review" Checked="True" />
                     </div>
                     <div>
-                        <asp:CheckBox ID="CheckBox2" runat="server" Text="Public" Checked="True" />
+                        <asp:CheckBox ID="cbPublic" runat="server" Text="Public" Checked="True" />
                     </div>
                  </div>
             </div>
         </div>
         <div class="display_btn">
-            <asp:Button ID="btnFilter" runat="server" Text="Apply" />
+            <asp:Button ID="btnFilter" runat="server" Text="Apply" OnClick="btnFilter_Click" />
         </div>
     </div>
     
