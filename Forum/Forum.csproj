@@ -78,6 +78,18 @@
     <Content Include="css\fontawesome.min.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Global.asax" />
+
+    <Content Include="Images\commentIcon.png" />
+    <Content Include="Images\deleteIcon.png" />
+    <Content Include="Images\editIcon.png" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\userPage.css" />
+    <Content Include="UserControl\BookmarkControl.ascx" />
+    <Content Include="UserControl\PostPreviewWithActions.ascx" />
+    <Content Include="UserPage\BookmarkPage.aspx" />
+    <Content Include="UserControl\Header.ascx" />
+    <Content Include="UserPage\PostHistoryPage.aspx" />
+
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -120,6 +132,7 @@
     <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
+
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -141,7 +154,57 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ban.cs" />
+    <Compile Include="Models\Bookmark.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepo.cs" />
+    <Compile Include="Repositories\BookmarkRepo.cs" />
+    <Compile Include="Repositories\PostRepo.cs" />
+    <Compile Include="UserControl\BookmarkControl.ascx.cs">
+      <DependentUpon>BookmarkControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\BookmarkControl.ascx.designer.cs">
+      <DependentUpon>BookmarkControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
+      <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\PostPreviewWithActions.ascx.designer.cs">
+      <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\BookmarkPage.aspx.cs">
+      <DependentUpon>BookmarkPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\BookmarkPage.aspx.designer.cs">
+      <DependentUpon>BookmarkPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\PostHistoryPage.aspx.cs">
+      <DependentUpon>PostHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\PostHistoryPage.aspx.designer.cs">
+      <DependentUpon>PostHistoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserPageMaster.Master.cs">
+      <DependentUpon>UserPageMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UserPageMaster.Master.designer.cs">
+      <DependentUpon>UserPageMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +214,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
     <Content Include="css\bootstrap-grid.css.map" />
     <Content Include="css\bootstrap-grid.min.css.map" />
     <Content Include="css\bootstrap-reboot.css.map" />
@@ -174,7 +238,9 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Admin\admin.Master" />
+
     <None Include="packages.config" />
+    <Content Include="UserPage\UserPageMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,10 +249,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Post\" />
-    <Folder Include="Styles\" />
-    <Folder Include="UserControl\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

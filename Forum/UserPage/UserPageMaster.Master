@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserPageMaster.master.cs" Inherits="Forum.UserPage.UserPageMaster" %>
+
+<%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="../Styles/style.css" rel="stylesheet" />
+    <link href="../Styles/userPage.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <uc1:Header runat="server" ID="Header" />
+    <form id="form1" runat="server">
+        <div class="user_page">
+
+            <div class="user_left">
+                <div class="user_left_imgbx">
+                    <img src="https://png.pngtree.com/element_origin_min_pic/16/12/15/0b9d0603d2ee321a26bc7eebc5b80821.jpg" alt=""
+                    class="user_left_img">
+                </div>
+                <asp:Label class="user_left_name" ID="lblUsername" runat="server" Text="Shiba Inu"></asp:Label>
+                <asp:Label class="user_left_other" ID="lblCreatedDate" runat="server" Text="Shiba Inu">Joined</asp:Label>
+            </div>
+
+            <div class="user_right">
+                <div class="user_right_navbar">
+                    <asp:Button ID="btnProfileLink" runat="server" Text="Profile"  class="user_right_navlink" OnClick="btnProfileLink_Click"/>
+                    <asp:Button ID="btnBookmarkLink" runat="server" Text="Bookmarks"  class="user_right_navlink" OnClick="btnBookmarkLink_Click"/>
+                    <asp:Button ID="btnPostsLink" runat="server" Text="Posts"  class="user_right_navlink" OnClick="btnPostsLink_Click"/>
+                </div>
+
+                <div class="user_right_content" aria-checked="undefined">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>
