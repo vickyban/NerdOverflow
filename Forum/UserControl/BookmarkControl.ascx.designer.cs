@@ -67,15 +67,6 @@ namespace Forum.UserControl {
         protected global::System.Web.UI.WebControls.Label lblPostDate;
         
         /// <summary>
-        /// btnCommentIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCommentIcon;
-        
-        /// <summary>
         /// lblComment control.
         /// </summary>
         /// <remarks>
@@ -83,15 +74,6 @@ namespace Forum.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblComment;
-        
-        /// <summary>
-        /// btnDeleteIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDeleteIcon;
         
         /// <summary>
         /// btnDelte control.

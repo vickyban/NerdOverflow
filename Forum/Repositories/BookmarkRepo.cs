@@ -9,7 +9,7 @@ namespace Forum.Repositories
 {
     public class BookmarkRepo:BaseRepo
     {
-        public static List<Bookmark> GetBookmarks(int userId)
+        public static List<Bookmark> GetBookmarks(int userId, string orderBy)
         {
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = con.CreateCommand();
@@ -25,7 +25,7 @@ namespace Forum.Repositories
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
                 "WHERE b.user_id = @Userid " +
-                "ORDER BY p.created_at DESC";
+                "ORDER BY p.created_at " + orderBy;
             SqlParameter param = new SqlParameter("Userid", userId);
             cmd.CommandText = query;
             cmd.Parameters.Add(param);

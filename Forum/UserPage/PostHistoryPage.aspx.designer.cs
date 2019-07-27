@@ -13,31 +13,31 @@ namespace Forum.UserPage {
     public partial class PostHistoryPage {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// sortOpt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList sortOpt;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// cbReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox cbReview;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// cbPublic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox cbPublic;
         
         /// <summary>
         /// btnFilter control.
