@@ -9,7 +9,7 @@ namespace Forum.Repositories
 {
     public class BookmarkRepo:BaseRepo
     {
-        public List<Bookmark> GetBookmarks(int userId)
+        public static List<Bookmark> GetBookmarks(int userId)
         {
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = con.CreateCommand();
