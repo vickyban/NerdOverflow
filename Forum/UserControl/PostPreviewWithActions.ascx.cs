@@ -1,4 +1,5 @@
 ﻿using Forum.Models;
+using Forum.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,20 @@ namespace Forum.UserControl
             postUrl.NavigateUrl = "/posts/"+postId;
             int count = Post.TotalComments;
             lblComment.Text = count == 1 ? count + " Comment" : count + " Comments";
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/posts/{postId}/");
+        }
+
+        protected void btnDelte_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(postId.Value, out int id))
+            {
+                PostRepo.DeletePost(id);
+                Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
+            }
         }
     }
 }

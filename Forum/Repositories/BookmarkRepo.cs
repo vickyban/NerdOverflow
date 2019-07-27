@@ -22,7 +22,7 @@ namespace Forum.Repositories
                 "ON b.post_id = p.post_id " +
                 "INNER JOIN [User] u " +
                 "ON p.user_id = u.user_id " +
-                "INNER JOIN [Comment] c " +
+                "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
                 "WHERE b.user_id = @Userid " +
                 "ORDER BY p.created_at DESC";
