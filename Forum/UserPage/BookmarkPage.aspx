@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/UserPageMaster.Master" AutoEventWireup="true" CodeBehind="BookmarkPage.aspx.cs" Inherits="Forum.UserPage.BookmarkPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/UserPageMaster.Master" AutoEventWireup="true" CodeBehind="BookmarkPage.aspx.cs" Inherits="Forum.UserPage.BookmarkPage" MaintainScrollPositionOnPostback="True" %>
+<%@ MasterType VirtualPath="~/UserPage/UserPageMaster.Master" %> 
 
 <%@ Register Src="~/UserControl/BookmarkControl.ascx" TagPrefix="uc1" TagName="BookmarkControl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

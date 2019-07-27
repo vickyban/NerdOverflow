@@ -1,11 +1,11 @@
-﻿.user_page {
+﻿
+.user_page {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-areas: 'left right';
     width: 80%;
     min-height: 500px;
     margin: 2em auto;
-    background: yellow;
 }
 /* ==== user_left ==== */
 .user_left {
@@ -15,7 +15,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #f3f3f3;
+    background: #AAABBB;
+    color: #25274D;
 }
 
 .user_left_imgbx {
@@ -48,19 +49,30 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    border-bottom: 1px solid #b4b4b4;
+    background: #f3f3f3;
 }
 
 .user_right_navlink {
     all: unset;
+    height: 40px;
     padding: 5px 20px;
     background: #f3f3f3;
+    color: #25274D;
     font-size: 20px;
     font-weight: bold;
+    box-sizing:border-box;
 }
 
+.user_right_navlink:hover {
+    color: #2E9CCA;
+}
+.active {
+    color: #2E9CCA;
+    border-bottom: 3px solid #2E9CCA;
+}
+
+
 .user_right_content {
-    background: lightgrey;
 }
 
 .user_right_form {
@@ -206,7 +218,7 @@ post_right{
     display:flex;
     align-items:baseline;
     background: #fff;
-    padding: 5px;
+    padding: 5px 17px;
     font-weight: bold;
 }
 .display_opts > div{

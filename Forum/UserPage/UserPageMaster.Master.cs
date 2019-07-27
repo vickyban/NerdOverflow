@@ -9,9 +9,11 @@ namespace Forum.UserPage
 {
     public partial class UserPageMaster : System.Web.UI.MasterPage
     {
+        public Button ProfilePageBtn { get => btnProfileLink; }
+        public Button BookmarkPageBtn { get => btnBookmarkLink; }
+        public Button PostPageBtn { get => btnPostsLink; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnProfileLink_Click(object sender, EventArgs e)

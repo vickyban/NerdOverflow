@@ -56,5 +56,17 @@ namespace Forum.UserPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Forum.UserPage.UserPageMaster Master {
+            get {
+                return ((Forum.UserPage.UserPageMaster)(base.Master));
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace Forum.UserPage
         protected void Page_Load(object sender, EventArgs e)
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
+            this.Master.BookmarkPageBtn.CssClass = "user_right_navlink active";
             if (Page.IsPostBack) { }
             else
             {
