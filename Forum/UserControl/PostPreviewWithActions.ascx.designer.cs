@@ -85,24 +85,6 @@ namespace Forum.UserControl {
         protected global::System.Web.UI.WebControls.Label lblComment;
         
         /// <summary>
-        /// btnDeleteIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDeleteIcon;
-        
-        /// <summary>
-        /// btnDelte control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelte;
-        
-        /// <summary>
         /// btnEditIcon control.
         /// </summary>
         /// <remarks>
@@ -119,5 +101,23 @@ namespace Forum.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEdit;
+        
+        /// <summary>
+        /// btnDeleteIcon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnDeleteIcon;
+        
+        /// <summary>
+        /// btnDelte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelte;
     }
 }

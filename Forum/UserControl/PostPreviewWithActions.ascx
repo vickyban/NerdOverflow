@@ -22,14 +22,15 @@
             <asp:ImageButton ID="btnCommentIcon" runat="server" ImageUrl="~/Images/commentIcon.png" ImageAlign="Left" Width="22px" Height="17px" />
             <asp:Label ID="lblComment" runat="server" Text="Comment"></asp:Label>
         </div>
-        <div class="post_delete">
-            <asp:ImageButton ID="btnDeleteIcon" runat="server" ImageUrl="~/Images/deleteIcon.png" Width="22px" />
-            <asp:Button ID="btnDelte" runat="server" Text="Delete" />
-        </div>
         <div class="post_edit">
             <asp:ImageButton ID="btnEditIcon" runat="server" ImageUrl="~/Images/editIcon.png" Width="22px" />
-            <asp:Button ID="btnEdit" runat="server" Text="Edit" />
+            <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" />
         </div>
+        <div class="post_delete">
+            <asp:ImageButton ID="btnDeleteIcon" runat="server" ImageUrl="~/Images/deleteIcon.png" Width="22px" />
+            <asp:Button ID="btnDelte" runat="server" Text="Delete" OnClick="btnDelte_Click" />
+        </div>
+
     </div>
 
 </div> 
