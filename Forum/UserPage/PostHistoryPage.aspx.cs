@@ -28,8 +28,7 @@ namespace Forum.UserPage
 
         public List<Post> getPosts(int userId)
         {
-            PostRepo repo = new PostRepo();
-            return repo.getPosts(userId);
+            return PostRepo.getPosts(userId);
         }
     }
 }

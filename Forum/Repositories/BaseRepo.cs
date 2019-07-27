@@ -7,7 +7,7 @@ namespace Forum.Repositories
 {
     public abstract class BaseRepo
     {
-        protected string connectionString = System.Web.Configuration
+        protected static string connectionString = System.Web.Configuration
                 .WebConfigurationManager
                 .ConnectionStrings["CollegeDBConnectionString"]
                 .ToString();

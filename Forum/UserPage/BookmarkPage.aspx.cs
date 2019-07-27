@@ -27,8 +27,7 @@ namespace Forum.UserPage
         }
         public List<Bookmark> getBookmarks(int userId)
         {
-            BookmarkRepo repo = new BookmarkRepo();
-            return repo.GetBookmarks(userId);
+            return BookmarkRepo.GetBookmarks(userId);
         }
     }
 }

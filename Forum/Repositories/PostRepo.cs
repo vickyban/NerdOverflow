@@ -9,7 +9,7 @@ namespace Forum.Repositories
 {
     public class PostRepo : BaseRepo
     {
-        public List<Post> getPosts(int userId)
+        public static List<Post> getPosts(int userId)
         {
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = con.CreateCommand();
