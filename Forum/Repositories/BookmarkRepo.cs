@@ -76,5 +76,29 @@ namespace Forum.Repositories
             }
             return bookmarks;
         }
+
+        public static void DeleteBookmark(int bookmarkId)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            string query = "DELETE FROM [Bookmark] WHERE bookmark_id = @ID";
+            cmd.CommandText = query;
+            SqlParameter param = new SqlParameter("ID", bookmarkId);
+            cmd.Parameters.Add(param);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+        }
+
     }
 }
