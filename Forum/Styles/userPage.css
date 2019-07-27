@@ -99,17 +99,47 @@
 }
 
 .post {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-areas: 'left right';
     padding: 10px 20px;
     margin: 20px 0;
     background: #f3f3f3;
     border-radius: 10px;
+    color: #7e7e7e;
 }
+.post_left{
+    grid-area: left;
+    width: 100%;
+    box-sizing:border-box;
+}
+
+post_right{
+    grid-area: right;
+    display: grid;
+    grid-template-columns: auto 100px;
+    grid-template-areas:
+        'title action'
+        'metadata action'
+        ;
+}
+
 .post_title {
+    grid-area: title;
     font-weight: bold;
     font-size: 20px;
+    line-height: 1.5em;
+}
+.post_title > a{
+    text-decoration:none;
+    color: #1f1f1f;
+}
+.post_title > a:hover {
+    color: #47c5c9;
 }
 
 .post_metadata {
+    grid-area: metadata;
     display: flex;
     flex-direction: row;
     font-size: 15px;
@@ -121,10 +151,13 @@
 
 .post_category {
     font-weight: bold;
+    color: #1f1f1f;
 }
 
 .post_others {
+    grid-area: action;
     display: flex;
+    height: 35px;
     align-items: flex-end;
     color: #7e7e7e;
     font-size: 15px;
@@ -132,9 +165,19 @@
 }
 .post_others > div {
     margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 .post_others input{
     all:unset;
+}
+
+.post_others .action{
+    cursor:pointer;
+}
+.post_others .action:hover {
+    /*background: #bababa;*/
+    color: #47c5c9;
 }
 /* ===== SCROLL BAR ====*/
 .scrollbar {
@@ -156,4 +199,68 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #91919;
+}
+
+/* ===== Filter ===== */
+.display_opts{
+    display:flex;
+    align-items:baseline;
+    background: #fff;
+    padding: 5px;
+    font-weight: bold;
+}
+.display_opts > div{
+    /*margin-right: 10px;*/
+    padding: 7px;
+}
+.display_opts label{
+    margin: 0;
+}
+
+.display_opts input[type="submit"]{
+    all:unset;
+    font-weight:bold;
+    background: #ff006e;
+    color:#f3f3f3;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+.display_opts input[type="submit"]:hover {
+    background: #47c5c9;
+}
+.border_right {
+    border-right: 2px solid #f3f3f3;
+}
+
+.sort select{
+    border: none;
+    border-bottom: 2px solid #1f1f1f;
+    width: 70px;
+}
+#filter{
+    cursor: pointer;
+}
+#filter:hover{
+    color:aqua;
+}
+.filter_box{
+    display:none;
+    position:relative;
+}
+.filter_opts {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 140px;
+    padding: 5px;
+    background: yellow;
+    top:17px;
+}
+.filter_opts input{
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+}
+.filter_opts label{
+    margin: 0;
 }

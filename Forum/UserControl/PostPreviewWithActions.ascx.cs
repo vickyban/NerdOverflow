@@ -23,9 +23,10 @@ namespace Forum.UserControl
             lblAuthor.Text = Post.User.Username;
             lblCategory.Text = Post.Category;
             lblPostDate.Text = Post.CreatedAt.ToString();
-            lblTitle.Text = Post.Title;
+            //lblTitle.Text = Post.Title;
             postId.Value = Post.PostId.ToString();
             postUrl.NavigateUrl = "/posts/"+postId;
+            postUrl.Text = Post.Title;
             int count = Post.TotalComments;
             lblComment.Text = count == 1 ? count + " Comment" : count + " Comments";
         }
