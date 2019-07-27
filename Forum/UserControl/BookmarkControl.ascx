@@ -24,7 +24,7 @@
         </div>
         <div class="post_delete">
             <asp:ImageButton ID="btnDeleteIcon" runat="server" ImageUrl="~/Images/deleteIcon.png" Width="22px" />
-            <asp:Button ID="btnDelte" runat="server" Text="Unlike" />
+            <asp:Button ID="btnDelte" runat="server" Text="UnSave" OnClick="btnDelte_Click" />
         </div>
     </div>
 

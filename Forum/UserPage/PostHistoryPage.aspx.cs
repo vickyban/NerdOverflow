@@ -25,7 +25,6 @@ namespace Forum.UserPage
             }
         }
 
-
         public List<Post> getPosts(int userId)
         {
             return PostRepo.getPosts(userId);
