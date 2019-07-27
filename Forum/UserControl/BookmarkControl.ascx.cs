@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using Forum.Repositories;
 
 namespace Forum.UserControl
 {
@@ -28,6 +29,13 @@ namespace Forum.UserControl
             lblPostDate.Text = (Bookmark.Post.CreatedAt.ToString());
             int count = Bookmark.Post.TotalComments;
             lblComment.Text = count == 1 ? count + " Comment": count + " Comments" ;
+        }
+
+        protected void btnDelte_Click(object sender, EventArgs e)
+        {
+            int.TryParse(bookmarkId.Value, out int id);
+            BookmarkRepo.DeleteBookmark(id);       
+            Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/bookmarks/");
         }
     }
 }

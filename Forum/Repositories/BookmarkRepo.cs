@@ -9,7 +9,7 @@ namespace Forum.Repositories
 {
     public class BookmarkRepo:BaseRepo
     {
-        public List<Bookmark> GetBookmarks(int userId)
+        public static List<Bookmark> GetBookmarks(int userId, string orderBy)
         {
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = con.CreateCommand();
@@ -22,10 +22,10 @@ namespace Forum.Repositories
                 "ON b.post_id = p.post_id " +
                 "INNER JOIN [User] u " +
                 "ON p.user_id = u.user_id " +
-                "INNER JOIN [Comment] c " +
+                "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
                 "WHERE b.user_id = @Userid " +
-                "ORDER BY p.created_at DESC";
+                "ORDER BY p.created_at " + orderBy;
             SqlParameter param = new SqlParameter("Userid", userId);
             cmd.CommandText = query;
             cmd.Parameters.Add(param);
@@ -76,5 +76,29 @@ namespace Forum.Repositories
             }
             return bookmarks;
         }
+
+        public static void DeleteBookmark(int bookmarkId)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            string query = "DELETE FROM [Bookmark] WHERE bookmark_id = @ID";
+            cmd.CommandText = query;
+            SqlParameter param = new SqlParameter("ID", bookmarkId);
+            cmd.Parameters.Add(param);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+        }
+
     }
 }

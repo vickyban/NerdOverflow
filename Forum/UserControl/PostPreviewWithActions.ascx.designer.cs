@@ -31,15 +31,6 @@ namespace Forum.UserControl {
         protected global::System.Web.UI.WebControls.HyperLink postUrl;
         
         /// <summary>
-        /// lblTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
-        
-        /// <summary>
         /// lblCategory control.
         /// </summary>
         /// <remarks>
@@ -67,15 +58,6 @@ namespace Forum.UserControl {
         protected global::System.Web.UI.WebControls.Label lblPostDate;
         
         /// <summary>
-        /// btnCommentIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCommentIcon;
-        
-        /// <summary>
         /// lblComment control.
         /// </summary>
         /// <remarks>
@@ -85,13 +67,13 @@ namespace Forum.UserControl {
         protected global::System.Web.UI.WebControls.Label lblComment;
         
         /// <summary>
-        /// btnDeleteIcon control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDeleteIcon;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
         
         /// <summary>
         /// btnDelte control.
@@ -101,23 +83,5 @@ namespace Forum.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDelte;
-        
-        /// <summary>
-        /// btnEditIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnEditIcon;
-        
-        /// <summary>
-        /// btnEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
     }
 }

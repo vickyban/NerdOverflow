@@ -16,19 +16,39 @@ namespace Forum.UserPage
         protected void Page_Load(object sender, EventArgs e)
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
-            bookmarks= getBookmarks(userId);
+            this.Master.BookmarkPageBtn.CssClass = "user_right_navlink active";
+            if (Page.IsPostBack) { }
+            else
+            {
+                bookmarks = getBookmarks("DESC");
+                Render();
+            }
+        }
+        public List<Bookmark> getBookmarks(string orderBy)
+        {
+            int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
+            return BookmarkRepo.GetBookmarks(userId, orderBy);
+        }
 
-            foreach(var book in bookmarks)
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+            string orderBy = sortOpt.SelectedValue.Equals("New") ? "DESC" : "ASC";
+            List<string> filters = new List<string>();
+            if (cbReview.Checked) filters.Add("'review'");
+            if (cbPublic.Checked) filters.Add("'public'");
+            bookmarks = getBookmarks(orderBy);
+            Render();
+        }
+
+        private void Render()
+        {
+            PlaceHolder1.Controls.Clear();
+            foreach (var book in bookmarks)
             {
                 BookmarkControl control = (BookmarkControl)Page.LoadControl("..\\UserControl\\BookmarkControl.ascx");
                 control.Bookmark = book;
-                PlaceHolder1.Controls.Add(control);             
+                PlaceHolder1.Controls.Add(control);
             }
-        }
-        public List<Bookmark> getBookmarks(int userId)
-        {
-            BookmarkRepo repo = new BookmarkRepo();
-            return repo.GetBookmarks(userId);
         }
     }
 }
