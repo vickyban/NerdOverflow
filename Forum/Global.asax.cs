@@ -15,7 +15,6 @@ namespace Forum
             //string id = Page.RouteData.Values["Id"].ToString();
             routeCollection.MapPageRoute("RouteForUser", "users/{Id}", "~/Customer.aspx");
             routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
-
         }
 
         protected void Application_Start(object sender, EventArgs e)
