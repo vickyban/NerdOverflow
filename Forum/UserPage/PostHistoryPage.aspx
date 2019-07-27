@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/UserPageMaster.Master" AutoEventWireup="true" CodeBehind="PostHistoryPage.aspx.cs" Inherits="Forum.UserPage.PostHistoryPage" MaintainScrollPositionOnPostback="True" %>
+<%@ MasterType VirtualPath="~/UserPage/UserPageMaster.Master" %> 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
