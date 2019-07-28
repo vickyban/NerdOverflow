@@ -809,6 +809,9 @@
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="UserPage\ReferenceUsages.aspx" />
+    <Content Include="UserControl\Header.ascx" />
+    <Content Include="UserPage\PostHistoryPage.aspx" />
+    <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="Web.config" />
     <Content Include="CommentExample.aspx" />
   </ItemGroup>
