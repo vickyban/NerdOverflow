@@ -78,7 +78,6 @@
     <Content Include="css\fontawesome.min.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Global.asax" />
-
     <Content Include="Images\commentIcon.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
@@ -89,7 +88,6 @@
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
-
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -132,7 +130,7 @@
     <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
-
+    <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -198,6 +196,13 @@
     <Compile Include="UserPage\PostHistoryPage.aspx.designer.cs">
       <DependentUpon>PostHistoryPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\UserPageMaster.Master.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,7 +243,6 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Admin\admin.Master" />
-
     <None Include="packages.config" />
     <Content Include="UserPage\UserPageMaster.Master" />
     <None Include="Web.Debug.config">
