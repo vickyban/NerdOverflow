@@ -26,8 +26,10 @@
 
             <div class="user_left">
                 <div class="user_left_imgbx">
-                    <img src="https://png.pngtree.com/element_origin_min_pic/16/12/15/0b9d0603d2ee321a26bc7eebc5b80821.jpg" alt=""
-                    class="user_left_img">
+                    <asp:Image ID="imgProfile" runat="server" class="user_left_img"/>
+
+                    <%--<img src= alt=
+                    class="user_left_img">--%>
                 </div>
                 <asp:Label class="user_left_name" ID="lblUsername" runat="server" Text="Shiba Inu"></asp:Label>
                 <asp:Label class="user_left_other" ID="lblCreatedDate" runat="server" Text="Shiba Inu">Joined</asp:Label>

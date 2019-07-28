@@ -79,6 +79,7 @@
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\commentIcon.png" />
+    <Content Include="Images\default.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
     <Content Include="Styles\style.css" />
@@ -172,6 +173,7 @@
     <Compile Include="Repositories\BaseRepo.cs" />
     <Compile Include="Repositories\BookmarkRepo.cs" />
     <Compile Include="Repositories\PostRepo.cs" />
+    <Compile Include="Repositories\UserRepo.cs" />
     <Compile Include="UserControl\BookmarkControl.ascx.cs">
       <DependentUpon>BookmarkControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
