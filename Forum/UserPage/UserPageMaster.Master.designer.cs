@@ -58,6 +58,15 @@ namespace Forum.UserPage {
         protected global::System.Web.UI.WebControls.Label lblCreatedDate;
         
         /// <summary>
+        /// linkNewPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink linkNewPost;
+        
+        /// <summary>
         /// btnProfileLink control.
         /// </summary>
         /// <remarks>
