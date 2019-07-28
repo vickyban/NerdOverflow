@@ -41,6 +41,9 @@
     font-size: 20px;
     font-weight: bold;
 }
+.user_left_other{
+    font-size: 15px;
+}
 
 .post_new_url {
     padding: 5px 15px;
