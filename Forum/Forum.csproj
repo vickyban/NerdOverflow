@@ -82,9 +82,12 @@
     <Content Include="Images\default.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
+    <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
     <Content Include="UserControl\BookmarkControl.ascx" />
+    <Content Include="UserControl\CommentBox.ascx" />
+    <Content Include="UserControl\CommentSection.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
@@ -145,6 +148,7 @@
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\admin.aspx.cs">
@@ -164,6 +168,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CommentGraph.cs" />
     <Compile Include="Models\Ban.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -172,6 +177,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepo.cs" />
     <Compile Include="Repositories\BookmarkRepo.cs" />
+    <Compile Include="Repositories\CommentRepo.cs" />
     <Compile Include="Repositories\PostRepo.cs" />
     <Compile Include="Repositories\UserRepo.cs" />
     <Compile Include="UserControl\BookmarkControl.ascx.cs">
@@ -180,6 +186,20 @@
     </Compile>
     <Compile Include="UserControl\BookmarkControl.ascx.designer.cs">
       <DependentUpon>BookmarkControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CommentBox.ascx.cs">
+      <DependentUpon>CommentBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\CommentBox.ascx.designer.cs">
+      <DependentUpon>CommentBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CommentSection.ascx.cs">
+      <DependentUpon>CommentSection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\CommentSection.ascx.designer.cs">
+      <DependentUpon>CommentSection.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
       <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
@@ -229,6 +249,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
