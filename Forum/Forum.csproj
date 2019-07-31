@@ -744,6 +744,7 @@
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\postListStyle.css" />
     <Content Include="Styles\postPreview.css" />
+    <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
     <Content Include="Test.aspx" />
@@ -751,6 +752,8 @@
     <Content Include="UserControl\CommentBox.ascx" />
     <Content Include="UserControl\CommentSection.ascx" />
     <Content Include="UserControl\Footer.ascx" />
+    <Content Include="UserControl\CommentBox.ascx" />
+    <Content Include="UserControl\CommentSection.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
@@ -929,6 +932,20 @@
     </Compile>
     <Compile Include="UserControl\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CommentBox.ascx.cs">
+      <DependentUpon>CommentBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\CommentBox.ascx.designer.cs">
+      <DependentUpon>CommentBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CommentSection.ascx.cs">
+      <DependentUpon>CommentSection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\CommentSection.ascx.designer.cs">
+      <DependentUpon>CommentSection.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
       <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
