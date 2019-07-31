@@ -17,5 +17,8 @@ namespace Forum.Models
 
         public virtual User Users { get; set; }
         public virtual Comment Parent { get; set; }
+
+        public int Level { get; set; }
+        public List<Comment> Children { get; set; } = new List<Comment>();
     }
 }

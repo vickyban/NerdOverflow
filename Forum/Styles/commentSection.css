@@ -1,0 +1,35 @@
+﻿.comment_section{
+    width: 100%;
+}
+.comment_box {
+    position: relative;
+    list-style: none;
+    padding: 4px 5px 1px 14px;
+    border-left: 1px dashed #808080;
+}
+.comment_metadata{
+    font-size: 12px;
+    color:#0094ff;
+}
+.comment_content{
+
+}
+.comment_action{
+    color:#808080;
+}
+.comment_action input{
+    all:unset;
+}
+.comment_replies ul{
+    padding: 10px;
+}
+
+.comment_toggle {
+    position: absolute;
+    background: #ff006e;
+    color: #cbcbcb;
+    font-weight: bold;
+    padding: 1px 8px;
+    border-radius: 50%;
+    left: -14px;
+}

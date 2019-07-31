@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Forum.Models;
+using Forum.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,29 +14,50 @@ namespace Forum.UserPage
         public Button ProfilePageBtn { get => btnProfileLink; }
         public Button BookmarkPageBtn { get => btnBookmarkLink; }
         public Button PostPageBtn { get => btnPostsLink; }
+        public int UserId
+        {
+            get
+            {
+                if (int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId))
+                    return userId;
+                else { return 0; }
+            }
+        }
+        public User User;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            User = UserRepo.GetUser(UserId);
+            Render();
         }
 
         protected void btnProfileLink_Click(object sender, EventArgs e)
         {
-            string id = Page.RouteData.Values["Id"].ToString();
-            string url = $"/users/{id}/";
+            string url = $"/users/{UserId}/";
             Response.Redirect(url);
         }
 
         protected void btnBookmarkLink_Click(object sender, EventArgs e)
         {
-            string id = Page.RouteData.Values["Id"].ToString();
-            string url = $"/users/{id}/bookmarks/";
+            string url = $"/users/{UserId}/bookmarks/";
             Response.Redirect(url);
         }
 
         protected void btnPostsLink_Click(object sender, EventArgs e)
         {
-            string id = Page.RouteData.Values["Id"].ToString();
-            string url = $"/users/{id}/posts/";
+            string url = $"/users/{UserId}/posts/";
             Response.Redirect(url);
+        }
+
+        private void Render()
+        {
+            if (User == null) return;
+            lblUsername.Text = User.Username;
+            lblCreatedDate.Text = $"Joined on {User.CreatedAt.ToShortDateString()}";
+            if (User.Profile_img != null)
+                imgProfile.ImageUrl = "data:image;base64," + Convert.ToBase64String(User.Profile_img);
+            else
+                imgProfile.ImageUrl = "~\\Images\\default.png";
         }
     }
 }
