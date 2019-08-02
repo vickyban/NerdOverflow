@@ -14,7 +14,13 @@ namespace Forum.UserControl
         public Post Post { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if(Session["userId"] != null && Convert.ToInt32(Session["userId"].ToString()) == Post.UserId)
+            {
+                panelActions.Visible = true;
+            }
             Render();
+
         }
 
         private void Render()

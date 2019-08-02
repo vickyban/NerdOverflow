@@ -43,6 +43,7 @@ namespace Forum.Repositories
                         CreatedAt = reader.GetDateTime(3),
                         Status = reader.GetString(4),
                         TotalComments = reader.GetInt32(7),
+                        UserId = reader.GetInt32(5),
                         User = new User
                         {
                             UserId = reader.GetInt32(5),
