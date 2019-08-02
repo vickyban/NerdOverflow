@@ -50,7 +50,7 @@ namespace Forum.UserControl
             int userId = 2;
             Comment comment = new Comment { PostId = postId, Content = content, ParentId = parentId, UserId = userId };
             CommentRepo.InsertComment(comment);
-    
+            Response.Redirect($"/posts/{postId}/");
         }
     }
 }

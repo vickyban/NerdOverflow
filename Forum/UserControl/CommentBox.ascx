@@ -23,7 +23,7 @@
                 </label>
             </div>
             <div class="comment_form">
-                <asp:TextBox ID="txtReply" runat="server" TextMode="MultiLine" CssClass="textArea box" Rows="5" onchange="onTyping(event)"></asp:TextBox>
+                <asp:TextBox ID="txtReply" runat="server" TextMode="MultiLine" CssClass="textArea box" Rows="5"></asp:TextBox>
                 <div class="textArea toolbar">
                     <button class="toolbar_btn btnCancel" onclick="onCancelBtn(event)">Cancel</button>
                     <asp:Button ID="btnSendReply" runat="server" Text="Reply" class="toolbar_btn btnReply" disabled="disabled" OnClick="btnSendReply_Click" />
@@ -63,12 +63,11 @@
         $(e.target).parent().siblings(".box").val("");
         $(e.target).siblings(".btnReply").prop("disabled", true);
     }
-    function onTyping(e) {
+    $(".comment_form .box").on("change textInput input", e => {
         if ($(e.target).val() == '' && !$(e.target).siblings(".toolbar").children(".btnReply").prop("disabled")) {
             $(e.target).siblings(".toolbar").children(".btnReply").prop("disabled", true);
         } else if ($(e.target).val() != '' && $(e.target).siblings(".toolbar").children(".btnReply").prop("disabled")) {
             $(e.target).siblings(".toolbar").children(".btnReply").prop("disabled", false);
         }
-
-    }
+    })
 </script>
