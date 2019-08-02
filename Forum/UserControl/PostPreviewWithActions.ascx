@@ -28,15 +28,16 @@
                 <i class="fas fa-comment-alt"></i>
                 <asp:Label ID="lblComment" runat="server" Text="Comment"></asp:Label>
             </div>
-            <div class="post_edit action">
-                <i class="fas fa-edit"></i>
-                <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click"/>
-            </div>
-            <div class="post_delete action">
-               <i class="fas fa-trash-alt"></i>
-                <asp:Button ID="btnDelte" runat="server" Text="Delete" OnClick="btnDelte_Click" />
-            </div>
-
+            <asp:Panel ID="panelActions" runat="server" Visible="False">
+                <div class="post_edit action">
+                    <i class="fas fa-edit"></i>
+                    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click"/>
+                </div>
+                <div class="post_delete action">
+                   <i class="fas fa-trash-alt"></i>
+                    <asp:Button ID="btnDelte" runat="server" Text="Delete" OnClick="btnDelte_Click" />
+                </div>
+            </asp:Panel>
         </div>
     </div>
 
