@@ -1069,6 +1069,7 @@
     <Content Include="Styles\header.less" />
     <Content Include="Styles\home.less" />
     <Content Include="UserPage\UserPageMaster.Master" />
+    <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
