@@ -15,9 +15,9 @@ namespace Forum.UserControl
         protected void Page_Load(object sender, EventArgs e)
         {
             Render();
-            if (Session["user_id"] == null)
-                panelActions.Visible = false;
-            else
+            //if (Session["user_id"] == null)
+            //    panelActions.Visible = false;
+            //else
                 panelActions.Visible = true;
         }
 
@@ -25,6 +25,7 @@ namespace Forum.UserControl
         {
             fcommentId.Value = Comment.CommentId.ToString();
             fuserId.Value = Comment.UserId.ToString();
+            fpostId.Value = Comment.PostId.ToString();
             lblAuthor.Text = Comment.Users.Username;
             lblCreatedAt.Text = Comment.CreatedAt.ToString();
             lblContent.Text = Comment.Content;
@@ -45,7 +46,8 @@ namespace Forum.UserControl
             int parentId = Convert.ToInt32(fcommentId.Value);
             int postId = Convert.ToInt32(fpostId.Value);
             string content = txtReply.Text;
-            int userId = Convert.ToInt32(Session["user_id"].ToString());
+            //int userId = Convert.ToInt32(Session["user_id"].ToString());
+            int userId = 2;
             Comment comment = new Comment { PostId = postId, Content = content, ParentId = parentId, UserId = userId };
             CommentRepo.InsertComment(comment);
     

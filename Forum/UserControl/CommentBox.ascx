@@ -72,10 +72,3 @@
 
     }
 </script>
-<%--<script src="Scripts/ckeditor/adapters/jquery.js"></script>
-<script src="Scripts/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('.ckeditor').ckeditor({ toolbar: 'Basic', uiColor: '#f3f3f3', height: 200 });
-        });
-</script>--%>
