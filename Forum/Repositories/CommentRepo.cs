@@ -59,5 +59,30 @@ namespace Forum.Repositories
             }
             return root.Children;
         }
+
+        public static void InsertComment(Comment comment)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            string parentId = comment.ParentId > 0 ? comment.ParentId.ToString() : null;
+            string query = $"INSERT INTO [Comment](user_id,post_id,parent_id,content) " +
+                $"VALUES({comment.UserId},{comment.PostId},{parentId},@Content)";
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("Content", comment.Content);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+        }
     }
 }
