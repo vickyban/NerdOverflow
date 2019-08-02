@@ -38,6 +38,7 @@ namespace Forum.Repositories
                     {
                         CommentId = reader.GetInt32(0),
                         ParentId = parentId,
+                        PostId = post_id,
                         Level = reader.GetInt32(2),
                         Content = reader.GetString(3),
                         CreatedAt = reader.GetDateTime(4),
