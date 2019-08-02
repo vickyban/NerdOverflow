@@ -28,7 +28,7 @@ namespace Forum.UserControl
             fpostId.Value = Comment.PostId.ToString();
             lblAuthor.Text = Comment.Users.Username;
             lblCreatedAt.Text = Comment.CreatedAt.ToString();
-            lblContent.Text = Comment.Content;
+            //lblContent.Text = Comment.Content;
             List<Comment> replies = Comment.Children;
             if(replies != null && replies.Count > 0)
             {

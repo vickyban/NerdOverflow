@@ -11,8 +11,8 @@
     font-size: 12px;
     color:#0094ff;
 }
-.comment_content{
-
+.comment_content pre{
+    margin:0;
 }
 .comment_action{
     color:#808080;
