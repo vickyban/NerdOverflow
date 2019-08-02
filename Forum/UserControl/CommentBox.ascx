@@ -13,7 +13,8 @@
     </div>
     <div class="comment_toggle_box">
         <div class="comment_content">
-            <asp:Label ID="lblContent" runat="server" Text="This will be a long day"></asp:Label>
+            <pre><%= Comment.Content %></pre>
+           <%-- <asp:Label ID="lblContent" runat="server" Text="This will be a long day"></asp:Label>--%>
         </div>
         <asp:Panel ID="panelActions" runat="server">
             <div class="comment_action">
