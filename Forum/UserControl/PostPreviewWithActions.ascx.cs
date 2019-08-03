@@ -12,15 +12,17 @@ namespace Forum.UserControl
     public partial class PostPreviewWithActions : System.Web.UI.UserControl
     {
         public Post Post { get; set; }
+        public bool IsAuthour
+        {
+            get
+            {
+                return true;
+                //return Session["userId"] != null && Convert.ToInt32(Session["userId"].ToString()) == Post.UserId;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if(Session["userId"] != null && Convert.ToInt32(Session["userId"].ToString()) == Post.UserId)
-            {
-                panelActions.Visible = true;
-            }
             Render();
-
         }
 
         private void Render()
@@ -29,7 +31,6 @@ namespace Forum.UserControl
             lblAuthor.Text = Post.User.Username;
             lblCategory.Text = Post.Category;
             lblPostDate.Text = Post.CreatedAt.ToString();
-            //lblTitle.Text = Post.Title;
             postId.Value = Post.PostId.ToString();
             postUrl.NavigateUrl = "/posts/"+postId;
             postUrl.Text = Post.Title;
