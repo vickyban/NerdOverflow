@@ -744,7 +744,9 @@
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\postListStyle.css" />
     <Content Include="Styles\postPreview.css" />
+    <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="Styles\commentSection.css" />
+    <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
     <Content Include="Test.aspx" />
@@ -877,6 +879,13 @@
     </Compile>
     <Compile Include="PostPage\ViewPost.aspx.designer.cs">
       <DependentUpon>ViewPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostsPage\PostListPage.aspx.cs">
+      <DependentUpon>PostListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostsPage\PostListPage.aspx.designer.cs">
+      <DependentUpon>PostListPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostsPage\PostListPage.aspx.cs">
       <DependentUpon>PostListPage.aspx</DependentUpon>
@@ -1070,6 +1079,7 @@
     <Content Include="Styles\home.less" />
     <Content Include="UserPage\UserPageMaster.Master" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="Styles\postListStyle_less.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
