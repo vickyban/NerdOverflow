@@ -23,12 +23,23 @@
                 <asp:Label ID="lblPostDate"  runat="server"></asp:Label>
             </div>
         </div>
+        <div class="post_content">
+        <% if (Post != null && Post.Content != null){ %>
+        <pre >
+            <%= Post.Content %>
+         </pre>
+        <% } %>
+        </div>
         <div class="post_others">
             <div class="post_comment">
                 <i class="fas fa-comment-alt"></i>
                 <asp:Label ID="lblComment" runat="server" Text="Comment"></asp:Label>
             </div>
-            <asp:Panel ID="panelActions" runat="server" Visible="False">
+            <div class="post_save action">
+                <i class="fas fa-bookmark"></i>
+                <asp:Button ID="btnBookmark" runat="server" Text="Save"/>
+            </div>
+            <% if (IsAuthour){ %>
                 <div class="post_edit action">
                     <i class="fas fa-edit"></i>
                     <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click"/>
@@ -37,7 +48,7 @@
                    <i class="fas fa-trash-alt"></i>
                     <asp:Button ID="btnDelte" runat="server" Text="Delete" OnClick="btnDelte_Click" />
                 </div>
-            </asp:Panel>
+            <% }%>
         </div>
     </div>
 

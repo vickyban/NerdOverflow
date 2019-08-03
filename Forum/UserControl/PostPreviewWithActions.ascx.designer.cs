@@ -67,13 +67,13 @@ namespace Forum.UserControl {
         protected global::System.Web.UI.WebControls.Label lblComment;
         
         /// <summary>
-        /// panelActions control.
+        /// btnBookmark control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelActions;
+        protected global::System.Web.UI.WebControls.Button btnBookmark;
         
         /// <summary>
         /// btnEdit control.
