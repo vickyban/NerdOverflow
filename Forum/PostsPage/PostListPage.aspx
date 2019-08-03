@@ -102,7 +102,18 @@
         </div>
 
        <div class="content">
-           <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            <div class="content_mid">
+               <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            </div>
+           <div class="content_rule">
+               <h5>Rules</h5>
+               <ul>
+                   <li>Be Nice to Everyone</li>
+                   <li>No Discrimation</li>
+                   <li>Do NOT ask to do homework/assigments</li>
+                   <li>Ask specific questions</li>
+               </ul>
+           </div>
        </div>
     
     

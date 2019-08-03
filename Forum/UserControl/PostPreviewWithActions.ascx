@@ -25,9 +25,7 @@
         </div>
         <div class="post_content">
         <% if (Post != null && Post.Content != null){ %>
-        <pre >
-            <%= Post.Content %>
-         </pre>
+        <pre ><%= Post.Content %></pre>
         <% } %>
         </div>
         <div class="post_others">
@@ -35,10 +33,12 @@
                 <i class="fas fa-comment-alt"></i>
                 <asp:Label ID="lblComment" runat="server" Text="Comment"></asp:Label>
             </div>
+            <%if (Session["userId"] != null){ %>
             <div class="post_save action">
                 <i class="fas fa-bookmark"></i>
                 <asp:Button ID="btnBookmark" runat="server" Text="Save"/>
             </div>
+            <%} %>
             <% if (IsAuthour){ %>
                 <div class="post_edit action">
                     <i class="fas fa-edit"></i>

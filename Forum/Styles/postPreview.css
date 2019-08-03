@@ -10,7 +10,7 @@ display: grid;
 grid-template-columns: 50px auto;
 grid-template-areas: 'left right';
 padding: 10px 20px;
-margin: 20px 0;
+margin: 0px 0 20px;
 background: #f3f3f3;
 border-radius: 10px;
 color: #7e7e7e;
@@ -89,19 +89,21 @@ cursor: pointer;
     /*background: #bababa;*/
     color: #47c5c9;
 }
-.post_content{
+.post_content {
     width: 100%;
-    position:relative;
+    position: relative;
 }
 .post_content pre {
-    position:relative;
+    position: relative;
     width: 100%;
     white-space: pre-wrap;
     box-sizing: border-box;
+    padding: 0;
     margin: 0;
-    height: 80px;
+    max-height: 100px;
     overflow: hidden;
     z-index: 0;
+    font-size: 12px;
 }
 .post_content:after {
     position: absolute;
