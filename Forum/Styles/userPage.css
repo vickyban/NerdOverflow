@@ -1,4 +1,5 @@
-﻿
+﻿@import"style.css";
+@import "postPreview.css";
 .user_page {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -17,8 +18,8 @@
     justify-content: center;
     width: 100%;
     height: 350px;
-    background: #AAABBB;
-    color: #25274D;
+    background: #1D3557;
+    color: #f1faee;
     box-shadow: -15px 15px 14px -10px rgba(0,0,0,0.75);
     border-radius: 5px;
 }
@@ -40,9 +41,10 @@
 .user_left_name {
     font-size: 20px;
     font-weight: bold;
+    color: #e63945;
 }
 .user_left_other{
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 10px;
 }
 
@@ -50,13 +52,13 @@
     padding: 5px 15px;
     font-weight: bold;
     text-decoration: none;
-    background: #2E9CCA;
-    color: #f3f3f3;
-    border-radius:5px;
+    background: #ffe66d;
+    color: #457b9d;
+    border-radius: 5px;
 }
 
 .post_new_url:hover {
-    background: #29648A;
+    background: #ff6b6e;
     text-decoration: none;
     color: #f3f3f3;
 }
@@ -124,95 +126,6 @@
     padding: 5px;
     font-weight: bold;
 }
-/* ==== Bookmark ====*/
-.posts {
-    width: 100%;
-    height: 600px;
-    padding: 5px 20px;
-    box-sizing: border-box;
-}
-
-.post {
-    display: grid;
-    grid-template-columns: 50px auto;
-    grid-template-areas: 'left right';
-    padding: 10px 20px;
-    margin: 20px 0;
-    background: #f3f3f3;
-    border-radius: 10px;
-    color: #7e7e7e;
-}
-.post_left{
-    grid-area: left;
-    width: 100%;
-    box-sizing:border-box;
-}
-
-post_right{
-    grid-area: right;
-    display: grid;
-    grid-template-columns: auto 100px;
-    grid-template-areas:
-        'title action'
-        'metadata action'
-        ;
-}
-
-.post_title {
-    grid-area: title;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 1.5em;
-}
-.post_title > a{
-    text-decoration:none;
-    color: #1f1f1f;
-}
-.post_title > a:hover {
-    color: #47c5c9;
-}
-
-.post_metadata {
-    grid-area: metadata;
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-}
-
-.post_metadata > div {
-    margin-right: 15px;
-}
-
-.post_category {
-    font-weight: bold;
-    color: #1f1f1f;
-}
-
-.post_others {
-    grid-area: action;
-    display: flex;
-    height: 35px;
-    align-items: flex-end;
-    color: #7e7e7e;
-    font-size: 15px;
-    font-weight:bold;
-}
-.post_others > div {
-    margin-right: 10px;
-    padding: 5px;
-    border-radius: 5px;
-}
-.post_others input{
-    all:unset;
-}
-
-.post_others .action{
-    cursor:pointer;
-}
-.post_others .action:hover {
-    /*background: #bababa;*/
-    color: #47c5c9;
-}
 /* ===== SCROLL BAR ====*/
 .scrollbar {
     overflow-y: scroll;
@@ -251,14 +164,14 @@ post_right{
     margin: 0;
 }
 
-.display_opts input[type="submit"]{
-    all:unset;
-    font-weight:bold;
-    background: #ff006e;
-    color:#f3f3f3;
-    border-radius: 3px;
-    padding: 5px 10px;
-}
+    .display_opts input[type="submit"] {
+        all: unset;
+        font-weight: bold;
+        background: #ff6b6e;
+        color: #f3f3f3;
+        border-radius: 3px;
+        padding: 5px 10px;
+    }
 .display_opts input[type="submit"]:hover {
     background: #47c5c9;
 }
@@ -274,12 +187,12 @@ post_right{
 #filter{
     cursor: pointer;
 }
-#filter:hover{
-    color:aqua;
+#filter:hover {
+    color: #4ecdc4;
 }
-.filter_box{
-    display:none;
-    position:relative;
+.filter_box {
+    display: none;
+    position: relative;
 }
 .filter_opts {
     display: flex;
@@ -287,8 +200,9 @@ post_right{
     position: absolute;
     width: 140px;
     padding: 5px;
-    background: yellow;
-    top:17px;
+    background: #f3f3f3;
+    top: 17px;
+    border: 2px solid #f3f3f3;
 }
 .filter_opts input{
     width: 16px;

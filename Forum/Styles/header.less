@@ -1,17 +1,27 @@
-﻿@color-base: #D7CEC7;
-@font-color: #565656;
-@btn-background: #b200ff;
-@btn-color: #f3f3f3;
-@btn-background-hover: #ffd800;
-@color-hover: #ffd800;
+﻿@DarkBlue: #1D3557;
+@SemiDarkBlue: #457b9d;
+@lightBlue: #a8dadc;
+@Cream: #f1faee;
+@Red: #ff6b6e;
+@SemiDarkRed: #e63945;
+@SemiWhite: #f3f3f3;
+@white: #ffffff;
+
+
+header {
+    padding-left: 40px;
+}
 
 .smallFont {
     font-size: 13px;
 }
+.hightlight{
+    color:@SemiDarkRed;
+}
 
 .search_bar {
-    background: @color-base;
-    color: @font-color;
+    background: @DarkBlue;
+    color: @Cream;
     width: 100%;
     display: grid;
     grid-template-columns: 100px 140px 80px minmax(100px, auto) minmax(100px, 250px) 30px;
@@ -35,7 +45,7 @@
         }
 
         &:hover {
-            color: @color-hover;
+            color: @lightBlue;
         }
     }
 
@@ -64,7 +74,7 @@
 
         .filter_panel {
             display: none;
-            background: @color-base;
+            background: @DarkBlue;
             position: absolute;
             padding: 10px;
             width: 200px;
@@ -99,13 +109,13 @@
         input[type="submit"] {
             all: unset;
             padding: 3px 10px;
-            background: @btn-background;
-            color: @btn-color;
+            background: @SemiDarkRed;
+            color: @Cream;
             border-radius: 5px;
             font-weight: bold;
 
             &:hover {
-                background: @btn-background-hover;
+                background: @Red;
             }
         }
     }
@@ -123,18 +133,19 @@
             }
 
             &:hover {
-                color: @color-hover;
+                color: @lightBlue;
             }
         }
 
         .profile {
             position: relative;
+            z-index:2;
 
             > label {
                 padding: 5px 10px;
 
                 &:hover {
-                    color: @color-hover;
+                    color: @lightBlue;
                 }
             }
 
@@ -146,12 +157,15 @@
                 width: 150px;
                 padding: 10px;
                 /*background: @color-base;*/
-                background: #f3f3f3;
+                background: @white;
                 clip-path: polygon(88% 0, 93% 4%, 100% 4%, 100% 100%, 0 99%, 0 4%, 80% 4%);
-
+                border:1px solid @DarkBlue;
                 div {
                     display: flex;
                     flex-direction: column;
+                }
+                a:hover{
+                    color:@DarkBlue;
                 }
             }
         }

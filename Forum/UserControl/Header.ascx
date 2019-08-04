@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Forum.UserPage.Header" %>
 <header>
+    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.png" />
 </header>
 <div class="search_bar">
     <div class="sortBy">
@@ -14,7 +15,7 @@
             
         <asp:Panel ID="panel1" CssClass="filter_panel" runat="server">
             <div>
-                <label>Category</label>
+                <label class="hightlight">Category</label>
             </div>
             <div>
             <asp:CheckBox ID="cbAll" class="cbAll all" runat="server" Text="All" Checked="True" />
@@ -63,7 +64,7 @@
             <label id="profileToggle">Poyocat</label>
             <div id="account_opts">
                 <div>
-                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/" %>"<i class="fas fa-user"></i> Profile</a>
+                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/" %>"><i class="fas fa-user"></i> Profile</a>
                     <a class="lnk" href="<%= $"/users/{Session["userId"]}/bookmarks/" %>"><i class="fas fa-bookmark"></i> Bookmarks</a>
                     <a class="lnk" href="<%= $"/users/{Session["userId"]}/posts/" %>"><i class="fas fa-file"></i> My posts</a>
                 <hr />

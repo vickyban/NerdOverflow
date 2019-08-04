@@ -6,14 +6,15 @@ box-sizing: border-box;
 }
 
 .post {
-display: grid;
-grid-template-columns: 50px auto;
-grid-template-areas: 'left right';
-padding: 10px 20px;
-margin: 0px 0 20px;
-background: #f3f3f3;
-border-radius: 10px;
-color: #7e7e7e;
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-areas: 'left right';
+    padding: 10px 20px;
+    margin: 0px 0 20px;
+    background: #fff;
+    border: 2px solid #3d7e9a;
+    border-radius: 10px;
+    color: #7e7e7e;
 }
 
 .post_left {
@@ -30,15 +31,15 @@ grid-template-areas: 'title action' 'metadata action';
 }
 
 .post_title {
-grid-area: title;
-font-weight: bold;
-font-size: 20px;
-line-height: 1.5em;
+    grid-area: title;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5em;
 }
 
 .post_title > a {
 text-decoration: none;
-color: #1f1f1f;
+    color: #3d7e9a;
 }
 
 .post_title > a:hover {
@@ -112,7 +113,7 @@ cursor: pointer;
     height: 100%;
     width: 100%;
     content: "";
-    background: linear-gradient(to top, rgba(243,243,243, 1) 20%, rgba(243,243,243, 0) 80% );
+    background: linear-gradient(to top, rgba(255,255,255, 1) 20%, rgba(255,255,255, 0) 80% );
     pointer-events: none;
     z-index: 1;
 }
