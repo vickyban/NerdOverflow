@@ -43,9 +43,9 @@ namespace Forum.Repositories
             {
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.HasRows)
+                while (reader.Read())
                 {
-                    reader.Read();
+                    //reader.Read();
                     user = new User
                     {
                         UserId = userId,

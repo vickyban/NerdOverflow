@@ -30,9 +30,8 @@ namespace Forum.Repositories
             {
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.HasRows)
+                while (reader.Read())
                 {
-                    reader.Read();
                     int parentId = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
                     Comment comment = new Comment
                     {

@@ -34,9 +34,8 @@ namespace Forum.Repositories
             {
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.HasRows)
+                while (reader.Read())
                 {
-                    reader.Read();
                     int r = reader.GetInt32(0);
                     Bookmark bookmark = new Bookmark
                     {
