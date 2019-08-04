@@ -11,7 +11,7 @@ namespace Forum.UserPage
 {
     public partial class Header : System.Web.UI.UserControl
     {
-        public delegate void CallBack(List<Post> posts);
+        public delegate void CallBack(string keywor, string filter, string sort);
         public CallBack CallBackMethod { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,24 +22,24 @@ namespace Forum.UserPage
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string sort = dlistSortBy.SelectedValue;
-            string filter = null;
+            string filter = "";
             if (!cbAll.Checked)
             {
                 IEnumerable<string> filters = panel1.Controls.Cast<Control>()
                     .Where(c => c is CheckBox && ((CheckBox)c).Checked)
                     .Select(c => ((CheckBox)c).Text.ToLower() != "other" ? $"'{((CheckBox)c).Text}'" : $"'{txtOther.Text}'");
-                filter =  string.Join(",",filters) ;
+                filter = string.Join(",", filters);
             }
             string keyword = txtSearch.Text;
-            if (keyword == "")
-                keyword = null;
 
-            //string url = $"/posts/?search={txtSearch.Text}&filter={filter}&sort={sort}";
-            //Response.Redirect(url);
-            //string sort = Request.QueryString["sort"];
-            //if(sort == null ) sort = "DESC";
-            List<Post> posts = PostRepo.getPosts(filter, keyword, sort);
-            CallBackMethod(posts);
+            if (CallBackMethod == null)
+            {
+                Response.Redirect($"/posts/?keyword={keyword}&filter={filter}&sort={sort}");
+            }
+            else
+            {
+                CallBackMethod(keyword,filter, sort);
+            }
         }
     }
 }
