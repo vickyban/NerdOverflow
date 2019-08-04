@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Forum.UserPage.Header" %>
 <header>
-    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.png" />
+    <a href="/posts/">
+        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.png" />
+    </a>
 </header>
 <div class="search_bar">
     <div class="sortBy">

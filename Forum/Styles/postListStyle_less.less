@@ -30,8 +30,28 @@
     grid-template-areas: 'left mid right';
     grid-gap: 10px;
 }
+.content_left {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.content_mid{
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+
+        img {
+            width: 50px;
+            pointer-events: none;
+        }
+    }
+}
+
+.content_mid {
     grid-area: mid;
 }
 .content_rule {
