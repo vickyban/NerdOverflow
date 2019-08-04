@@ -82,6 +82,7 @@
     <Content Include="Images\default.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
+    <Content Include="PostPage\CreatePost.aspx" />
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
@@ -136,8 +137,6 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\admin.aspx.cs">
@@ -163,6 +162,20 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="PostPage\CreatePost.aspx.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostPage\CreatePost.aspx.designer.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostPage\PostPage.Master.cs">
+      <DependentUpon>PostPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostPage\PostPage.Master.designer.cs">
+      <DependentUpon>PostPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepo.cs" />
     <Compile Include="Repositories\BookmarkRepo.cs" />
@@ -232,19 +245,6 @@
     <Compile Include="UserPage\UserPageMaster.Master.designer.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
@@ -273,6 +273,7 @@
     <Content Include="Admin\admin.Master" />
     <None Include="packages.config" />
     <Content Include="UserPage\UserPageMaster.Master" />
+    <Content Include="PostPage\PostPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -280,9 +281,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PostPage\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
