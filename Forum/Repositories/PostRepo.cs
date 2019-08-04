@@ -28,7 +28,7 @@ namespace Forum.Repositories
             return getPosts(cmd);
         }
 
-        public static List<Post> getPosts(string filters, string keyword, string orderBy)
+        public static List<Post> getPosts(string keyword, string filter, string orderBy)
         {
             SqlCommand cmd = new SqlCommand();
             string query = "SELECT DISTINCT " +
@@ -41,10 +41,10 @@ namespace Forum.Repositories
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
                 "WHERE p.status = 'public' " +
-                (keyword != null ? "AND p.title LIKE '%'+ @Keyword + '%' ": "") + 
-                (filters != null ? $"AND p.category IN ({filters}) ": "") + 
+                (keyword != "" ? "AND p.title LIKE '%'+ @Keyword + '%' ": "") + 
+                (filter != "" ? $"AND p.category IN ({filter}) ": "") + 
                 "ORDER BY p.created_at " + orderBy;
-            if(keyword != null) cmd.Parameters.AddWithValue("Keyword", keyword);
+            if(keyword != "") cmd.Parameters.AddWithValue("Keyword", keyword);
             cmd.CommandText = query;
             return getPosts(cmd,true);
         }
@@ -58,9 +58,9 @@ namespace Forum.Repositories
             {
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.HasRows)
+                while (reader.Read())
                 {
-                    reader.Read();
+                    //reader.Read();
                     Post post = new Post
                     {
                         PostId = reader.GetInt32(0),

@@ -11,7 +11,8 @@ namespace Forum
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Session.Add("userId", 2);
+            this.Session.Add("isAdmin", true);
         }
     }
 }
