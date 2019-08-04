@@ -1,0 +1,154 @@
+﻿@color-base: #D7CEC7;
+@font-color: #565656;
+@btn-background: #b200ff;
+@btn-color: #f3f3f3;
+@btn-background-hover: #ffd800;
+@color-hover: #ffd800;
+
+.smallFont {
+    font-size: 13px;
+}
+
+.search_bar {
+    background: @color-base;
+    color: @font-color;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 140px 80px minmax(100px, auto) minmax(100px, 250px) 30px;
+    grid-template-areas: 'logo sort filter search account padding';
+    grid-gap: 5px;
+    box-sizing: border-box;
+    z-index: 2;
+
+    > div {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .lnk {
+        padding: 5px;
+        font-weight: bold;
+
+        i {
+            pointer-events: none
+        }
+
+        &:hover {
+            color: @color-hover;
+        }
+    }
+
+    label {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .sortBy {
+        grid-area: sort;
+
+        > label {
+            padding: 5px 8px;
+        }
+    }
+
+    .filter {
+        grid-area: filter;
+        position: relative;
+        box-sizing: border-box;
+        z-index: 5;
+
+        > label {
+            padding: 5px 8px;
+        }
+
+        .filter_opts {
+            display: none;
+            background: @color-base;
+            position: absolute;
+            padding: 10px;
+            width: 200px;
+            top: 100%;
+
+            label {
+                margin-left: 5px;
+            }
+        }
+
+        #other_value {
+            display: none;
+        }
+    }
+
+    .search_input {
+        grid-area: search;
+
+        input[type="text"] {
+            width: 60%;
+            padding: 5px;
+            margin-right: 7px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            all: unset;
+            padding: 3px 10px;
+            background: @btn-background;
+            color: @btn-color;
+            border-radius: 5px;
+            font-weight: bold;
+
+            &:hover {
+                background: @btn-background-hover;
+            }
+        }
+    }
+
+    .account {
+        grid-area: account;
+        justify-content: flex-end;
+
+        .lnk {
+            padding: 5px;
+            font-weight: bold;
+
+            i {
+                pointer-events: none
+            }
+
+            &:hover {
+                color: @color-hover;
+            }
+        }
+
+        .profile {
+            position: relative;
+
+            > label {
+                padding: 5px 10px;
+
+                &:hover {
+                    color: @color-hover;
+                }
+            }
+
+            #account_opts {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: -0%;
+                width: 150px;
+                padding: 10px;
+                /*background: @color-base;*/
+                background: #f3f3f3;
+                clip-path: polygon(88% 0, 93% 4%, 100% 4%, 100% 100%, 0 99%, 0 4%, 80% 4%);
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
