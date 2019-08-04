@@ -63,11 +63,11 @@
             <label id="profileToggle">Poyocat</label>
             <div id="account_opts">
                 <div>
-                    <a class="lnk"><i class="fas fa-user"></i> Profile</a>
-                    <a class="lnk"><i class="fas fa-bookmark"></i> Bookmarks</a>
-                    <a class="lnk"><i class="fas fa-file"></i> My posts</a>
+                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/" %>"<i class="fas fa-user"></i> Profile</a>
+                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/bookmarks/" %>"><i class="fas fa-bookmark"></i> Bookmarks</a>
+                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/posts/" %>"><i class="fas fa-file"></i> My posts</a>
                 <hr />
-                    <asp:HyperLink ID="lnkLogout" runat="server" class="lnk"><i class="fas fa-sign-out-alt"></i> Logout</asp:HyperLink>
+                    <asp:HyperLink ID="lnkLogout" runat="server" class="lnk" NavigateUrl="~/UserPage/LogoutPage.aspx"><i class="fas fa-sign-out-alt"></i> Logout</asp:HyperLink>
                 </div>
             </div>
         </div>

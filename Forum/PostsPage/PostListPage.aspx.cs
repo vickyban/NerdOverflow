@@ -27,7 +27,7 @@ namespace Forum.PostsPage
             }
             else if (!IsPostBack)
             {
-                Posts = PostRepo.getPosts(null, null, "DESC");
+                Posts = PostRepo.getPosts("", "", "DESC");
                 Render();
             }
 

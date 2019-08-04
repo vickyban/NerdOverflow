@@ -93,6 +93,7 @@
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
+    <Content Include="UserPage\LogoutPage.aspx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="UserControl\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\LogoutPage.aspx.cs">
+      <DependentUpon>LogoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\LogoutPage.aspx.designer.cs">
+      <DependentUpon>LogoutPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\PostHistoryPage.aspx.cs">
       <DependentUpon>PostHistoryPage.aspx</DependentUpon>
