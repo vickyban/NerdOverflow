@@ -9,10 +9,9 @@ namespace Forum.Repositories
 {
     public class PostRepo : BaseRepo
     {
-        public static List<Post> getPosts(int userId, List<string> filters, string orderBy)
+        public static List<Post> getPostsByAuthor(int userId, List<string> filters, string orderBy)
         {
-            SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand();
             string query = "SELECT DISTINCT " +
                 "p.post_id, p.title, p.category, p.created_at, p.status, " +
                 "u.user_id, u.username, " +
@@ -21,12 +20,39 @@ namespace Forum.Repositories
                 "ON p.user_id = u.user_id " +
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
-                "WHERE p.user_id = @Userid " +
+                "WHERE p.user_id = " + userId + " " +
                 "AND p.status IN (" + string.Join(", ", filters) + ") " +
                 "ORDER BY p.created_at " + orderBy;
-            SqlParameter param = new SqlParameter("Userid", userId);
             cmd.CommandText = query;
-            cmd.Parameters.Add(param);
+
+            return getPosts(cmd);
+        }
+
+        public static List<Post> getPosts(string filters, string keyword, string orderBy)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string query = "SELECT DISTINCT " +
+                "p.post_id, p.title, p.category, p.created_at, p.status, " +
+                "u.user_id, u.username, " +
+                "count(c.comment_id) OVER (PARTITION BY p.post_id) AS total_comment " +
+                "LEFT(p.content, 100) as content " +
+                "FROM [Post] p INNER JOIN [User] u " +
+                "ON p.user_id = u.user_id " +
+                "LEFT OUTER JOIN [Comment] c " +
+                "ON p.post_id = c.post_id " +
+                "WHERE p.status = 'public' " +
+                keyword != null ? "AND p.title LIKE @Keyword ": "" + 
+                filters != null ? $"AND p.category IN ({filters}) ": "" + 
+                "ORDER BY p.created_at " + orderBy;
+            if(keyword != null) cmd.Parameters.AddWithValue("Keyword", keyword);
+            cmd.CommandText = query;
+            return getPosts(cmd,true);
+        }
+
+        public static List<Post> getPosts(SqlCommand cmd, bool withContent = false)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            cmd.Connection = con;
             List<Post> posts = new List<Post>();
             try
             {
@@ -50,6 +76,7 @@ namespace Forum.Repositories
                             Username = reader.GetString(6)
                         }
                     };
+                    if (withContent) post.Content = HttpUtility.HtmlDecode((reader.GetString(8))); 
                     posts.Add(post);
                 }
                 reader.Close();

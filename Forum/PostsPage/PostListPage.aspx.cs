@@ -1,4 +1,5 @@
 ﻿using Forum.Models;
+using Forum.Repositories;
 using Forum.UserControl;
 using System;
 using System.Collections.Generic;
@@ -11,28 +12,35 @@ namespace Forum.PostsPage
 {
     public partial class PostListPage : System.Web.UI.Page
     {
+        public List<Post> Posts { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Post p = new Post
+            if (!IsPostBack)
             {
-                Title = " Hdjsfs dfa gda",
-                Content = HttpUtility.HtmlDecode("<p>Htish the nweme</p><p>Htish the nweme</p>"),
-                Category = "animal",
-                User = new User
-                {
-                    Username = "dfds",
-                }
-            };
-            PostPreviewWithActions c = (PostPreviewWithActions)Page.LoadControl("~\\UserControl\\PostPreviewWithActions.ascx");
-            PostPreviewWithActions c1 = (PostPreviewWithActions)Page.LoadControl("~\\UserControl\\PostPreviewWithActions.ascx");
-            PostPreviewWithActions c2 = (PostPreviewWithActions)Page.LoadControl("~\\UserControl\\PostPreviewWithActions.ascx");
-            c.Post = p;
-            c1.Post = p;
-            c2.Post = p;
+                Posts = PostRepo.getPosts("", "", "DESC");
+            }
+            else
+            {
+                string keyword = Request.QueryString["keyword"];
+                string filter = Request.QueryString["filter"];
+                string sort = Request.QueryString["sort"];
+                if(sort == null ) sort = "DESC";
+                Posts = PostRepo.getPosts(filter, keyword, sort);
+            }
+            Render();
             
-            PlaceHolder1.Controls.Add(c);
-            PlaceHolder1.Controls.Add(c1);
-            PlaceHolder1.Controls.Add(c2);
+
+        }
+
+        private void Render()
+        {
+            PlaceHolder1.Controls.Clear();
+            foreach (var post in Posts)
+            {
+                PostPreviewWithActions control = (PostPreviewWithActions)Page.LoadControl("..\\UserControl\\PostPreviewWithActions.ascx");
+                control.Post = post;
+                PlaceHolder1.Controls.Add(control);
+            }
         }
     }
 }

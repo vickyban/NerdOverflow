@@ -49,7 +49,7 @@
     
     <div class="search_input">
         <asp:TextBox ID="txtSearch" runat="server" placeholder="Search ..."></asp:TextBox>
-        <asp:Button ID="btnSearch" runat="server" Text="Search" />
+        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
     </div>
 
     <div class="account">

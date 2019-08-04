@@ -32,7 +32,7 @@ namespace Forum.UserPage
         public List<Post> getPosts( List<string> filters, string orderBy)
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
-            return PostRepo.getPosts(userId, filters, orderBy);
+            return PostRepo.getPostsByAuthor(userId, filters, orderBy);
         }
 
         protected void btnFilter_Click(object sender, EventArgs e)
