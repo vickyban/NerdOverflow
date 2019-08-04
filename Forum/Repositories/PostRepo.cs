@@ -34,15 +34,15 @@ namespace Forum.Repositories
             string query = "SELECT DISTINCT " +
                 "p.post_id, p.title, p.category, p.created_at, p.status, " +
                 "u.user_id, u.username, " +
-                "count(c.comment_id) OVER (PARTITION BY p.post_id) AS total_comment " +
+                "count(c.comment_id) OVER (PARTITION BY p.post_id) AS total_comment, " +
                 "LEFT(p.content, 100) as content " +
                 "FROM [Post] p INNER JOIN [User] u " +
                 "ON p.user_id = u.user_id " +
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
                 "WHERE p.status = 'public' " +
-                keyword != null ? "AND p.title LIKE @Keyword ": "" + 
-                filters != null ? $"AND p.category IN ({filters}) ": "" + 
+                (keyword != null ? "AND p.title LIKE '%'+ @Keyword + '%' ": "") + 
+                (filters != null ? $"AND p.category IN ({filters}) ": "") + 
                 "ORDER BY p.created_at " + orderBy;
             if(keyword != null) cmd.Parameters.AddWithValue("Keyword", keyword);
             cmd.CommandText = query;

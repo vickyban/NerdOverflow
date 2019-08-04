@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostListPage.aspx.cs" Inherits="Forum.PostsPage.PostListPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostListPage.aspx.cs" Inherits="Forum.PostsPage.PostListPage" MaintainScrollPositionOnPostback="True" %>
 
 <%@ Register Src="~/UserControl/PostPreviewWithActions.ascx" TagPrefix="uc1" TagName="PostPreviewWithActions" %>
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
