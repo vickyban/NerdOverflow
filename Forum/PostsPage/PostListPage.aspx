@@ -35,7 +35,7 @@
                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
             </div>
            <div class="content_rule">
-               <h5>Rules</h5>
+               <h5><strong>Rules</strong></h5>
                <ul>
                    <li>Be Nice to Everyone</li>
                    <li>No Discrimation</li>

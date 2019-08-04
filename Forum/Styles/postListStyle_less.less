@@ -7,10 +7,24 @@
 @btn-background-hover:#ffd800;
 @color-hover:#ffd800;
 
+@DarkBlue: #1D3557;
+@SemiDarkBlue: #457b9d;
+@lightBlue: #a8dadc;
+@Cream: #f1faee;
+@Red: #ff6b6e;
+@SemiDarkRed: #e63945;
+@SemiWhite: #f3f3f3;
+@white:#fff;
+@yellow:#ffe66d;
+
+
+.body{
+    background:@SemiWhite;
+}
+
 .content {
     width: 90%;
-    margin: 10px auto;
-    background: @color-base;
+    margin: 2em auto;
     display: grid;
     grid-template-columns: 1fr 3fr 1.5fr;
     grid-template-areas: 'left mid right';
@@ -20,10 +34,20 @@
 .content_mid{
     grid-area: mid;
 }
-.content_rule{
+.content_rule {
     grid-area: right;
-    background:#ffd800;
-    padding: 1em;
+    background: @yellow;
+    color: @DarkBlue;
+    /*padding: 1em;*/
     height: 200px;
-    box-sizing:border-box;
+    box-sizing: border-box;
+    border-radius:5px;
+    overflow:hidden;
+
+    h5 {
+        padding: 5px 1em;
+        background: @Red;
+        color: @white;
+    }
+
 }

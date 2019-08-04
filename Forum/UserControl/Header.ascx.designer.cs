@@ -13,6 +13,15 @@ namespace Forum.UserPage {
     public partial class Header {
         
         /// <summary>
+        /// imgLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgLogo;
+        
+        /// <summary>
         /// dlistSortBy control.
         /// </summary>
         /// <remarks>
