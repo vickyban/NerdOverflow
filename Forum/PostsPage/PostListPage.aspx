@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="../lib/font-awesome/css/all.css" />
    
     <link href="../Styles/style.css" rel="stylesheet" />
-    <link href="../Styles/postPreview.css" rel="stylesheet" />
 
     <link rel="stylesheet/less" type="text/css" href="../Styles/postListStyle_less.less" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
@@ -44,8 +43,7 @@
                    <li>Ask specific questions</li>
                </ul>
            </div>
-       </div>
-    
+       </div> 
     
     </form>
 
