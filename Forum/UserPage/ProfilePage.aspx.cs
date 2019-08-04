@@ -19,6 +19,7 @@ namespace Forum.UserPage
                 else { return 0; }
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.Master.ProfilePageBtn.CssClass = "user_right_navlink active";

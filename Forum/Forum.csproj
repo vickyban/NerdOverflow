@@ -241,7 +241,6 @@
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
@@ -282,7 +281,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Post\" />
+    <Folder Include="PostPage\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
