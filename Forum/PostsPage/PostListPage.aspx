@@ -31,6 +31,34 @@
         <uc1:Header runat="server" ID="Header" />
 
        <div class="content">
+           <div class="content_left">
+               <a href="/posts/?keyword=&filter=%27bio%27&sort=DESC">
+                   <asp:Image ID="imgBio" runat="server" ImageUrl="~/Images/bacteria.png" />
+                   Bio
+               </a>
+                <a href="/posts/?keyword=&filter=%27chem%27&sort=DESC">
+                   <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/flasks.png" />
+                   Chem
+               </a>
+                <a href="/posts/?keyword=&filter=%27maths%27&sort=DESC">
+                   <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/axis.png" />
+                   Maths
+               </a>
+            <a href="/posts/?keyword=&filter=%27geo%27&sort=DESC">
+                   <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/earth.png" />
+                   Geo
+               </a>
+                <a href="/posts/?keyword=&filter=%27physic%27&sort=DESC">
+                   <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/apple.png" />
+                   Physic
+               </a>
+                <a href="/posts/?keyword=&filter=%27programming%27&sort=DESC">
+                   <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/programming.png" />
+                   Programming
+               </a>
+
+           </div>
+
             <div class="content_mid">
                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
             </div>

@@ -78,10 +78,15 @@
     <Content Include="css\fontawesome.min.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\apple.png" />
+    <Content Include="Images\axis.png" />
+    <Content Include="Images\bacteria.png" />
     <Content Include="Images\commentIcon.png" />
     <Content Include="Images\default.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
+    <Content Include="Images\flasks.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\postPreview.css" />
@@ -138,6 +143,7 @@
     <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="UserPage\ProfilePage.aspx" />
+    <Content Include="UserPage\ReferenceUsages.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="CommentExample.aspx" />
@@ -241,6 +247,13 @@
     </Compile>
     <Compile Include="UserPage\ProfilePage.aspx.designer.cs">
       <DependentUpon>ProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\ReferenceUsages.aspx.cs">
+      <DependentUpon>ReferenceUsages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\ReferenceUsages.aspx.designer.cs">
+      <DependentUpon>ReferenceUsages.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserPageMaster.Master.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>
