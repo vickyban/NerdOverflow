@@ -6,39 +6,39 @@
         <label class="smallFont">SORT</label>
         <asp:DropDownList ID="dlistSortBy" runat="server">
             <asp:ListItem Value="DESC">Newest</asp:ListItem>
-            <asp:ListItem Value="ASCE">Oldest</asp:ListItem>
+            <asp:ListItem Value="ASC">Oldest</asp:ListItem>
         </asp:DropDownList>
     </div>
     <div class="filter"> 
         <label id="filter_toggle" class="lnk smallFont">FILTER <i class="fas fa-ellipsis-v"></i></label>
             
-        <asp:Panel ID="panel1" CssClass="filter_opts" runat="server">
+        <asp:Panel ID="panel1" CssClass="filter_panel" runat="server">
             <div>
                 <label>Category</label>
             </div>
             <div>
-            <asp:CheckBox ID="cbAll" CssClass="all" runat="server" Text="All" Checked="True" />
+            <asp:CheckBox ID="cbAll" class="cbAll all" runat="server" Text="All" Checked="True" />
             </div>
             <div>
-                <asp:CheckBox ID="cbMath" CssClass="opt" runat="server" Text="Maths" />
+                <asp:CheckBox ID="cbMath" class="opt" runat="server" Text="Maths" />
             </div>
             <div>
-                <asp:CheckBox ID="cbBio" CssClass="opt"  runat="server" Text="Bio" />
+                <asp:CheckBox ID="cbBio" class="opt"  runat="server" Text="Bio" />
             </div>
             <div>
-                    <asp:CheckBox ID="cbPhysic" CssClass="opt"  runat="server" Text="Physic" />
+                    <asp:CheckBox ID="cbPhysic" class="opt"  runat="server" Text="Physic" />
             </div>
             <div>
-                    <asp:CheckBox ID="cbChem" CssClass="opt"  runat="server" Text="Chemistry" />
+                    <asp:CheckBox ID="cbChem" class="opt"  runat="server" Text="Chemistry" />
             </div>       
             <div>
-                <asp:CheckBox ID="cbHistory" CssClass="opt"  runat="server" Text="History" />
+                <asp:CheckBox ID="cbHistory" class="opt"  runat="server" Text="History" />
             </div>
             <div>
-                    <asp:CheckBox ID="cbProgram" CssClass="opt"  runat="server" Text="Programing" />
+                    <asp:CheckBox ID="cbProgram" class="opt"  runat="server" Text="Programing" />
             </div>
             <div>
-                <asp:CheckBox ID="cbOther" CssClass="opt other"  runat="server" Text="Other" />
+                <asp:CheckBox ID="cbOther" class="opt other"  runat="server" Text="Other" />
                 <div id="other_value">
                     <asp:TextBox ID="txtOther" runat="server" placeholder="Please be specifc..."></asp:TextBox>
                 </div>
@@ -77,26 +77,26 @@
 
 <script type="text/javascript">
     $("#filter_toggle").on("click", e => {
-        if ($(".filter_opts").css("display") == "block") {
-            $(".filter_opts").css("display", "none");
+        if ($(".filter_panel").css("display") == "block") {
+            $(".filter_panel").css("display", "none");
         } else {
-            $(".filter_opts").css("display", "block");
+            $(".filter_panel").css("display", "block");
         }
     })
 
-    $("#cbAll").change(e => {
-        if ($("#cbAll").prop("checked")) {
+    $(".cbAll input").change(e => {
+        if ($(".cbAll input").prop("checked")) {
             $(".opt input").prop("checked", false);
         }
     })
-    $(".opt").change(e => {
-        if ($("#cbAll").prop("checked")) {
-            $("#cbAll").prop("checked", false);
+    $(".opt input").change(e => {
+        if ($(".cbAll input").prop("checked")) {
+            $(".cbAll input").prop("checked", false);
         }
     })
 
-    $("#cbOther").change(e => {
-        if ($("#cbOther").prop("checked")) {
+    $(".other input[type='checkbox']").change(e => {
+        if ($(".other input[type='checkbox']").prop("checked")) {
             console.log("check")
             $("#other_value").css("display", "block");
         } else {
