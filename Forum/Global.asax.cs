@@ -19,6 +19,7 @@ namespace Forum
 
             routeCollection.MapPageRoute("RouteForBookmarks", "users/{Id}/bookmarks/", "~/UserPage/BookmarkPage.aspx");
             routeCollection.MapPageRoute("RouteForPostHistory", "users/{Id}/posts/", "~/UserPage/PostHistoryPage.aspx");
+            routeCollection.MapPageRoute("RouteForHomePage", "", "~/StaticPages/HomePage.aspx");
 
         }
 

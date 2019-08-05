@@ -22,6 +22,11 @@
             <div class="post_date">
                 <asp:Label ID="lblPostDate"  runat="server"></asp:Label>
             </div>
+            <%if (Post.Status == "review"){%>
+            <div>
+                <label class="inReview">In Review</label>
+            </div>
+            <%} %>
         </div>
         <div class="post_content">
         <% if (Post != null && Post.Content != null){ %>
