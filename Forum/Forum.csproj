@@ -82,7 +82,9 @@
     <Content Include="Images\default.png" />
     <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\editIcon.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="PostPage\CreatePost.aspx" />
+    <Content Include="PostPage\PostMasterStyle.css" />
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
@@ -281,7 +283,66 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="lib\ckeditor\adapters\" />
+    <Folder Include="lib\ckeditor\lang\" />
+    <Folder Include="lib\ckeditor\plugins\a11yhelp\dialogs\lang\" />
+    <Folder Include="lib\ckeditor\plugins\about\dialogs\hidpi\" />
+    <Folder Include="lib\ckeditor\plugins\clipboard\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\colordialog\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\copyformatting\cursors\" />
+    <Folder Include="lib\ckeditor\plugins\copyformatting\styles\" />
+    <Folder Include="lib\ckeditor\plugins\dialog\" />
+    <Folder Include="lib\ckeditor\plugins\div\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\find\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\flash\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\flash\images\" />
+    <Folder Include="lib\ckeditor\plugins\forms\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\forms\images\" />
+    <Folder Include="lib\ckeditor\plugins\iframe\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\iframe\images\" />
+    <Folder Include="lib\ckeditor\plugins\image\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\image\images\" />
+    <Folder Include="lib\ckeditor\plugins\link\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\link\images\hidpi\" />
+    <Folder Include="lib\ckeditor\plugins\liststyle\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\magicline\images\hidpi\" />
+    <Folder Include="lib\ckeditor\plugins\pagebreak\images\" />
+    <Folder Include="lib\ckeditor\plugins\pastefromword\filter\" />
+    <Folder Include="lib\ckeditor\plugins\preview\" />
+    <Folder Include="lib\ckeditor\plugins\scayt\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\scayt\skins\moono-lisa\" />
+    <Folder Include="lib\ckeditor\plugins\showblocks\images\" />
+    <Folder Include="lib\ckeditor\plugins\smiley\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\smiley\images\" />
+    <Folder Include="lib\ckeditor\plugins\specialchar\dialogs\lang\" />
+    <Folder Include="lib\ckeditor\plugins\tableselection\styles\" />
+    <Folder Include="lib\ckeditor\plugins\tabletools\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\table\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\templates\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\templates\templates\images\" />
+    <Folder Include="lib\ckeditor\plugins\widget\images\" />
+    <Folder Include="lib\ckeditor\plugins\wsc\dialogs\" />
+    <Folder Include="lib\ckeditor\plugins\wsc\skins\moono-lisa\" />
+    <Folder Include="lib\ckeditor\samples\css\" />
+    <Folder Include="lib\ckeditor\samples\img\" />
+    <Folder Include="lib\ckeditor\samples\js\" />
+    <Folder Include="lib\ckeditor\samples\old\assets\inlineall\" />
+    <Folder Include="lib\ckeditor\samples\old\assets\outputxhtml\" />
+    <Folder Include="lib\ckeditor\samples\old\assets\uilanguages\" />
+    <Folder Include="lib\ckeditor\samples\old\dialog\assets\" />
+    <Folder Include="lib\ckeditor\samples\old\enterkey\" />
+    <Folder Include="lib\ckeditor\samples\old\htmlwriter\assets\outputforflash\" />
+    <Folder Include="lib\ckeditor\samples\old\magicline\" />
+    <Folder Include="lib\ckeditor\samples\old\toolbar\" />
+    <Folder Include="lib\ckeditor\samples\old\wysiwygarea\" />
+    <Folder Include="lib\ckeditor\samples\toolbarconfigurator\css\" />
+    <Folder Include="lib\ckeditor\samples\toolbarconfigurator\font\" />
+    <Folder Include="lib\ckeditor\samples\toolbarconfigurator\js\" />
+    <Folder Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\" />
+    <Folder Include="lib\ckeditor\skins\moono-lisa\images\hidpi\" />
+    <Folder Include="lib\ckeditor\vendor\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
