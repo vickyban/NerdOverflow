@@ -83,13 +83,13 @@
     <Content Include="Images\bacteria.png" />
     <Content Include="Images\commentIcon.png" />
     <Content Include="Images\default.png" />
-    <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\earth.png" />
-    <Content Include="Images\editIcon.png" />
     <Content Include="Images\flasks.png" />
+    <Content Include="Images\homepage.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\programming.png" />
     <Content Include="PostsPage\PostListPage.aspx" />
+    <Content Include="StaticPages\HomePage.aspx" />
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
@@ -198,6 +198,13 @@
     <Compile Include="Repositories\CommentRepo.cs" />
     <Compile Include="Repositories\PostRepo.cs" />
     <Compile Include="Repositories\UserRepo.cs" />
+    <Compile Include="StaticPages\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaticPages\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\BookmarkControl.ascx.cs">
       <DependentUpon>BookmarkControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,6 +326,7 @@
     <Content Include="UserPage\UserPageMaster.Master" />
     <Content Include="Styles\postListStyle_less.less" />
     <Content Include="Styles\header.less" />
+    <Content Include="Styles\home.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
