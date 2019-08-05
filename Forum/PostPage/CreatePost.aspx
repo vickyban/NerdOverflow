@@ -1,6 +1,7 @@
-﻿<%@ Page Title="Create Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="CreatePost.aspx.cs" Inherits="Forum.PostPage.CreatePost" %>
+﻿<%@ Page Title="Create Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="CreatePost.aspx.cs" Inherits="Forum.PostPage.CreatePost" ValidateRequest="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../lib/ckeditor/ckeditor.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
@@ -30,21 +31,49 @@
             <label for="txtContent">Post Content: </label>
             <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" class="form-control" Rows="7"></asp:TextBox>
         </div>
-        <br />
+   
 
-        <div class="upload">
+        <div class="float-left">
             <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden"/>
             <button type="button" id="btnUpload" class="uploadStyle btn btn-success">Choose a file</button>
             <span id="custom-text">No file chosen.</span>
         </div>
 
+        <div class="float-right">
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit Post" class="btn btn-outline-success" OnClick="btnSubmit_Click"/>
+        </div>
 
-        <br />
 
     </div>
 
+    <!-- JAVASCRIPT AREA -->
     <script>
-        CKEDITOR.replace("txtContent");
+        CKEDITOR.replace('<%= txtContent.ClientID %>');
+        const realFileBtn = document.getElementById('<%= FileUpload1.ClientID %>');
+        const customBtn = document.getElementById("btnUpload");
+        const customTxt = document.getElementById("custom-text");
+
+        // Button eventListener
+        customBtn.addEventListener("click", function () {
+            realFileBtn.click();
+
+        });
+
+        // File upload eventListener
+        realFileBtn.addEventListener("change", function () {
+            if (realFileBtn.value) {
+                customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            } else {
+                customTxt.innerHTML = "No file chosen, yet.";
+            }
+        });
+
+        $(document).ready(function () {
+            SNButton.init('<%= btnSubmit.ClientID %>', {
+                fields: ['<%= txtTitle.ClientID %>', '<%= ddCategory.ClientID %>']
+            })
+        });
+
     </script>
 
 </asp:Content>

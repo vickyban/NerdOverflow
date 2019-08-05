@@ -9,7 +9,33 @@
     </asp:ContentPlaceHolder>
     <link href="PostMasterStyle.css" rel="stylesheet" />
     <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/snbutton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="../lib/ckeditor/ckeditor.js"></script>
+
+    <script>
+        function successPost() {
+            Swal.fire({
+                type: 'success',
+                title: 'Success!',
+                text: 'Your post is created',
+            })
+        }
+
+        function error() {
+            Swal.fire({
+                type: 'error',
+                title: 'Failed!',
+                text: "Invalid file type. Please Try Again. . .",
+                footer: 'Upload function only takes a photo',
+            })
+        }
+
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -56,35 +82,10 @@
                 </div>
 
             </div>
-            <!-- HIDDEN UPLOAD BUTTON -->
-            <div class="upload">
-            <asp:FileUpload ID="FileUpload1" runat="server" hidden="hidden" />
-            </div>
         </div>
         <!-- END OF CONTAINER DIV -->
 
     </form>
 </body>
-    
-    <script>
-        const realFileBtn = document.getElementById("FileUpload1");
-        const customBtn = document.getElementById("btnUpload");
-        const customTxt = document.getElementById("custom-text");
 
-        // Button eventListener
-        customBtn.addEventListener("click", function () {
-            realFileBtn.click();
-
-        });
-
-        // File upload eventListener
-        realFileBtn.addEventListener("change", function () {
-            if (realFileBtn.value) {
-                customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-            } else {
-                customTxt.innerHTML = "No file chosen, yet.";
-            }
-        });
-
-    </script>
 </html>
