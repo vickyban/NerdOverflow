@@ -1,0 +1,126 @@
+﻿.inReview{
+    background:#ffd800;
+    color:#3d7e9a;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.posts {
+    width: 100%;
+    height: 600px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-areas: 'left right';
+    padding: 10px 20px;
+    margin: 0px 0 20px;
+    background: #fff;
+    border: 2px solid #3d7e9a;
+    border-radius: 10px;
+    color: #7e7e7e;
+}
+
+.post_left {
+grid-area: left;
+width: 100%;
+box-sizing: border-box;
+}
+
+post_right {
+grid-area: right;
+display: grid;
+grid-template-columns: auto 100px;
+grid-template-areas: 'title action' 'metadata action';
+}
+
+.post_title {
+    grid-area: title;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+.post_title > a {
+text-decoration: none;
+    color: #3d7e9a;
+}
+
+.post_title > a:hover {
+    color: #47c5c9;
+}
+
+.post_metadata {
+grid-area: metadata;
+display: flex;
+flex-direction: row;
+font-size: 15px;
+}
+
+.post_metadata > div {
+margin-right: 15px;
+}
+
+.post_category {
+font-weight: bold;
+color: #1f1f1f;
+}
+
+.post_others {
+grid-area: action;
+display: flex;
+height: 35px;
+align-items: flex-end;
+color: #7e7e7e;
+font-size: 15px;
+font-weight: bold;
+}
+
+.post_others > div {
+margin-right: 10px;
+padding: 5px;
+border-radius: 5px;
+}
+
+.post_others input {
+all: unset;
+}
+
+.post_others .action {
+cursor: pointer;
+}
+
+.post_others .action:hover {
+    /*background: #bababa;*/
+    color: #47c5c9;
+}
+.post_content {
+    width: 100%;
+    position: relative;
+}
+.post_content pre {
+    position: relative;
+    width: 100%;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    min-height:40px;
+    max-height: 100px;
+    overflow: hidden;
+    z-index: 0;
+    font-size: 12px;
+}
+.post_content:after {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to top, rgba(255,255,255, 1) 20%, rgba(255,255,255, 0) 80% );
+    pointer-events: none;
+    z-index: 1;
+}

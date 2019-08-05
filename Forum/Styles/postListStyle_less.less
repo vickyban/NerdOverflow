@@ -1,0 +1,73 @@
+﻿@import "header.less";
+@import "postPreview.css";
+@color-base: #D7CEC7;
+@font-color: #565656;
+@btn-background:#b200ff;
+@btn-color:#f3f3f3;
+@btn-background-hover:#ffd800;
+@color-hover:#ffd800;
+
+@DarkBlue: #1D3557;
+@SemiDarkBlue: #457b9d;
+@lightBlue: #a8dadc;
+@Cream: #f1faee;
+@Red: #ff6b6e;
+@SemiDarkRed: #e63945;
+@SemiWhite: #f3f3f3;
+@white:#fff;
+@yellow:#ffe66d;
+
+
+.body{
+    background:@SemiWhite;
+}
+
+.content {
+    width: 90%;
+    margin: 2em auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1.5fr;
+    grid-template-areas: 'left mid right';
+    grid-gap: 10px;
+}
+.content_left {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+
+        img {
+            width: 50px;
+            pointer-events: none;
+        }
+    }
+}
+
+.content_mid {
+    grid-area: mid;
+}
+.content_rule {
+    grid-area: right;
+    background: @yellow;
+    color: @DarkBlue;
+    /*padding: 1em;*/
+    height: 200px;
+    box-sizing: border-box;
+    border-radius:5px;
+    overflow:hidden;
+
+    h5 {
+        padding: 5px 1em;
+        background: @Red;
+        color: @white;
+    }
+
+}

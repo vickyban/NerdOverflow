@@ -34,9 +34,8 @@ namespace Forum.Repositories
             {
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.HasRows)
+                while (reader.Read())
                 {
-                    reader.Read();
                     int r = reader.GetInt32(0);
                     Bookmark bookmark = new Bookmark
                     {
@@ -98,6 +97,30 @@ namespace Forum.Repositories
                 cmd.Dispose();
                 con.Close();
             }
+        }
+
+        public static void CreateBookmark(Bookmark bookmark)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            string query = "INSERT INTO [Bookmark] (post_id, user_id) VALUES (@PostId, @UserId)";
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("PostId", bookmark.PostId);
+            cmd.Parameters.AddWithValue("UserId", bookmark.UserId);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Dispose();
+            }
+
         }
 
     }

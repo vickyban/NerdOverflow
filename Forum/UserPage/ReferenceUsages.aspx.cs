@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Forum
+namespace Forum.UserPage
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class ReferenceUsages : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Session.Add("userId", 2);
-            this.Session.Add("isAdmin", true);
+
         }
     }
 }

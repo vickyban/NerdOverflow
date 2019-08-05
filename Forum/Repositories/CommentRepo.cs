@@ -30,14 +30,14 @@ namespace Forum.Repositories
             {
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.HasRows)
+                while (reader.Read())
                 {
-                    reader.Read();
                     int parentId = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
                     Comment comment = new Comment
                     {
                         CommentId = reader.GetInt32(0),
                         ParentId = parentId,
+                        PostId = post_id,
                         Level = reader.GetInt32(2),
                         Content = reader.GetString(3),
                         CreatedAt = reader.GetDateTime(4),
@@ -58,6 +58,31 @@ namespace Forum.Repositories
                 con.Close();
             }
             return root.Children;
+        }
+
+        public static void InsertComment(Comment comment)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            string parentId = comment.ParentId > 0 ? comment.ParentId.ToString() : null;
+            string query = $"INSERT INTO [Comment](user_id,post_id,parent_id,content) " +
+                $"VALUES({comment.UserId},{comment.PostId},{parentId},@Content)";
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("Content", comment.Content);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
         }
     }
 }

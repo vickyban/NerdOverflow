@@ -7,82 +7,82 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Forum.UserControl {
+namespace Forum.PostsPage {
     
     
-    public partial class CommentBox {
+    public partial class PostListPage {
         
         /// <summary>
-        /// fcommentId control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField fcommentId;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// fpostId control.
+        /// Header control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField fpostId;
+        protected global::Forum.UserPage.Header Header;
         
         /// <summary>
-        /// fuserId control.
+        /// imgBio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField fuserId;
+        protected global::System.Web.UI.WebControls.Image imgBio;
         
         /// <summary>
-        /// lblAuthor control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAuthor;
+        protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// lblCreatedAt control.
+        /// Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreatedAt;
+        protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
-        /// panelActions control.
+        /// Image3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelActions;
+        protected global::System.Web.UI.WebControls.Image Image3;
         
         /// <summary>
-        /// txtReply control.
+        /// Image4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReply;
+        protected global::System.Web.UI.WebControls.Image Image4;
         
         /// <summary>
-        /// btnSendReply control.
+        /// Image5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSendReply;
+        protected global::System.Web.UI.WebControls.Image Image5;
         
         /// <summary>
         /// PlaceHolder1 control.
