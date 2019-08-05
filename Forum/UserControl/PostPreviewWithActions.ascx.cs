@@ -16,8 +16,7 @@ namespace Forum.UserControl
         {
             get
             {
-                return true;
-                //return Session["userId"] != null && Convert.ToInt32(Session["userId"].ToString()) == Post.UserId;
+                return Session["userId"] != null && Convert.ToInt32(Session["userId"].ToString()) == Post.UserId;
             }
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -50,6 +49,16 @@ namespace Forum.UserControl
                 PostRepo.DeletePost(id);
                 Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
             }
+        }
+
+        protected void btnBookmark_Click(object sender, EventArgs e)
+        {
+            Bookmark bookmark = new Bookmark
+            {
+                PostId = Convert.ToInt32(postId.Value),
+                UserId = Convert.ToInt32(Session["userId"])
+            };
+            BookmarkRepo.CreateBookmark(bookmark);
         }
     }
 }

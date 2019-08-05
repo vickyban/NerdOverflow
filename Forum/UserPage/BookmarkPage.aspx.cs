@@ -17,12 +17,8 @@ namespace Forum.UserPage
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
             this.Master.BookmarkPageBtn.CssClass = "user_right_navlink active";
-            if (Page.IsPostBack) { }
-            else
-            {
-                bookmarks = getBookmarks("DESC");
-                Render();
-            }
+            bookmarks = getBookmarks("DESC");
+            Render();
         }
         public List<Bookmark> getBookmarks(string orderBy)
         {

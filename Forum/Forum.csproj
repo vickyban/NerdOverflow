@@ -84,9 +84,11 @@
     <Content Include="Images\commentIcon.png" />
     <Content Include="Images\default.png" />
     <Content Include="Images\deleteIcon.png" />
+    <Content Include="Images\earth.png" />
     <Content Include="Images\editIcon.png" />
     <Content Include="Images\flasks.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\programming.png" />
     <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\postPreview.css" />
