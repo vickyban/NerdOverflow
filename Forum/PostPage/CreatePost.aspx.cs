@@ -140,7 +140,7 @@ namespace Forum.PostPage
                 }
                 else
                 {
-                    lblMessage.Text = ex.Message.ToString();
+
                 }
             }
             finally
