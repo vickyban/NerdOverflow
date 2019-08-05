@@ -14,7 +14,7 @@ namespace Forum.PostPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Session.Add("userID", 3);
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace Forum.PostPage
 
                 SqlParameter userID = new SqlParameter();
                 userID.ParameterName = "@UserID";
-                userID.Value = 2;
+                userID.Value = Convert.ToInt32(Session["userID"]);
 
                 SqlParameter title = new SqlParameter();
                 title.ParameterName = "@Title";
@@ -121,6 +121,7 @@ namespace Forum.PostPage
                 if (result > 0)
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "Success", "successPost()", true);
+                    Response.Redirect("ViewPost.aspx");
                     ddCategory.SelectedIndex = 0;
                     txtTitle.Text = "";
                     txtContent.Text = "";

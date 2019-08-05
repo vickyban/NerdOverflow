@@ -9,7 +9,7 @@ namespace Forum.Repositories
     {
         protected static string connectionString = System.Web.Configuration
                 .WebConfigurationManager
-                .ConnectionStrings["CollegeDBConnectionString"]
+                .ConnectionStrings["ForumConnectionString"]
                 .ToString();
     }
 }
