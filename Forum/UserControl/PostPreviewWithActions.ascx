@@ -36,7 +36,7 @@
             <%if (Session["userId"] != null){ %>
             <div class="post_save action">
                 <i class="fas fa-bookmark"></i>
-                <asp:Button ID="btnBookmark" runat="server" Text="Save"/>
+                <asp:Button ID="btnBookmark" runat="server" Text="Save" OnClick="btnBookmark_Click"/>
             </div>
             <%} %>
             <% if (IsAuthour){ %>

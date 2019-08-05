@@ -17,15 +17,8 @@ namespace Forum.UserPage
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
             this.Master.PostPageBtn.CssClass = "user_right_navlink active";
-            if (Page.IsPostBack)
-            {
-
-            }
-            else
-            {
-                posts = getPosts(new List<string> { "'review'", "'public'" }, "DESC");
-                Render();
-            }
+            posts = getPosts(new List<string> { "'review'", "'public'" }, "DESC");
+            Render();
         }
 
 

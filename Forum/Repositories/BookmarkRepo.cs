@@ -99,5 +99,29 @@ namespace Forum.Repositories
             }
         }
 
+        public static void CreateBookmark(Bookmark bookmark)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            string query = "INSERT INTO [Bookmark] (post_id, user_id) VALUES (@PostId, @UserId)";
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("PostId", bookmark.PostId);
+            cmd.Parameters.AddWithValue("UserId", bookmark.UserId);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Dispose();
+            }
+
+        }
+
     }
 }
