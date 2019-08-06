@@ -36,27 +36,27 @@
     <form id="form1" runat="server">
        <div class="content">
            <div class="content_left">
-               <a href="/posts/?keyword=&filter=bio&sort=DESC">
+               <a href="/posts/?keyword=&filters=bio&sort=DESC">
                    <asp:Image ID="imgBio" runat="server" ImageUrl="~/Images/bacteria.png" />
                    Bio
                </a>
-                <a href="/posts/?keyword=&filter=27chem&sort=DESC">
+                <a href="/posts/?keyword=&filters=27chem&sort=DESC">
                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/flasks.png" />
                    Chem
                </a>
-                <a href="/posts/?keyword=&filter=maths&sort=DESC">
+                <a href="/posts/?keyword=&filters=maths&sort=DESC">
                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/axis.png" />
                    Maths
                </a>
-            <a href="/posts/?keyword=&filter=geo&sort=DESC">
+            <a href="/posts/?keyword=&filters=geo&sort=DESC">
                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/earth.png" />
                    Geo
                </a>
-                <a href="/posts/?keyword=&filter=physic&sort=DESC">
+                <a href="/posts/?keyword=&filters=physic&sort=DESC">
                    <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/apple.png" />
                    Physic
                </a>
-                <a href="/posts/?keyword=&filter=programming&sort=DESC">
+                <a href="/posts/?keyword=&filters=programming&sort=DESC">
                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/programming.png" />
                    Programming
                </a>
