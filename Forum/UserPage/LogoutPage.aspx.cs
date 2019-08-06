@@ -5,14 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Forum.PostPage
+namespace Forum.UserPage
 {
-    public partial class PostPage : System.Web.UI.MasterPage
+    public partial class LogoutPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Session.Add("userId", 2);
-            this.Session.Add("isAdmin", true);
+            Session.RemoveAll();
+            Response.Redirect("/posts/");
         }
     }
 }

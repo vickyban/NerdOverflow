@@ -27,8 +27,22 @@ namespace Forum.UserPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            User = UserRepo.GetUser(UserId);
-            Render();
+            if(Session["userId"] == null)
+            {
+                Response.Redirect("~\\WebForm1.aspx");
+                return;
+            }
+            int.TryParse(Session["userId"].ToString(), out int curId);
+            if( curId == UserId)
+            {
+                User = UserRepo.GetUser(curId);
+                Render();
+            }
+            else
+            {
+                Response.Redirect($"/users/{curId}/posts/");
+            }
+        
         }
 
         protected void btnProfileLink_Click(object sender, EventArgs e)

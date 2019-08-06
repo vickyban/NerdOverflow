@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Forum {
+namespace Forum.UserControl {
     
     
-    public partial class WebForm2 {
+    public partial class Footer {
         
         /// <summary>
-        /// form1 control.
+        /// imgLogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// CommentSection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Forum.UserControl.CommentSection CommentSection;
+        protected global::System.Web.UI.WebControls.Image imgLogo;
     }
 }

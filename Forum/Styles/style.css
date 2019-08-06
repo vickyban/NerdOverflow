@@ -1,9 +1,23 @@
 ﻿body {
     margin: 0;
-    padding:0;
+    padding: 0;
+    background: #f0f0f0;
 }
 
-header {
-    height: 65px;
-    background: #24292e;
+footer {
+    background: #1D3557;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+footer img {
+    width: 110px;
+}
+
+footer p {
+    color: #bbbbbb;
+    margin-bottom: 0;
 }

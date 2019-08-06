@@ -17,30 +17,23 @@ namespace Forum.UserPage
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
             this.Master.PostPageBtn.CssClass = "user_right_navlink active";
-            if (Page.IsPostBack)
-            {
-
-            }
-            else
-            {
-                posts = getPosts(new List<string> { "'review'", "'public'" }, "DESC");
-                Render();
-            }
+            posts = getPosts(new List<string> { "'new'", "'approved'" }, "DESC");
+            Render();
         }
 
 
         public List<Post> getPosts( List<string> filters, string orderBy)
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
-            return PostRepo.getPosts(userId, filters, orderBy);
+            return PostRepo.getPostsByAuthor(userId, filters, orderBy);
         }
 
         protected void btnFilter_Click(object sender, EventArgs e)
         {
             string orderBy = sortOpt.SelectedValue.Equals("New") ? "DESC" : "ASC";
             List<string> filters = new List<string>();
-            if (cbReview.Checked) filters.Add("'review'");
-            if (cbPublic.Checked) filters.Add("'public'");
+            if (cbReview.Checked) filters.Add("'new'");
+            if (cbPublic.Checked) filters.Add("'approved'");
             posts = getPosts(filters, orderBy);
             Render();
         }

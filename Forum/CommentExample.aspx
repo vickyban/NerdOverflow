@@ -21,9 +21,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+  
                 <uc1:CommentSection runat="server" id="CommentSection" />
-            </asp:PlaceHolder>
+        
         </div>
     </form>
 </body>

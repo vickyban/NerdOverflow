@@ -11,8 +11,8 @@
     font-size: 12px;
     color:#0094ff;
 }
-.comment_content{
-
+.comment_content pre{
+    margin:0;
 }
 .comment_action{
     color:#808080;
@@ -32,4 +32,40 @@
     padding: 1px 8px;
     border-radius: 50%;
     left: -14px;
+}
+
+.btnReplyToggle i {
+    pointer-events: none
+}
+
+.comment_form {
+    display: none;
+}
+.comment_form .textArea {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+    border: 1px solid #ebebeb;
+}
+.comment_form .toolbar {
+    display: flex;
+    justify-content: flex-end;
+    background: #ebebeb;
+}
+.comment_form .toolbar_btn {
+    all: unset;
+    padding: 2px 26px;
+    margin: 6px 7px;
+    border-radius: 5px;
+}
+.comment_form .btnCancel {
+    color: #0094ff;
+}
+.comment_form .btnReply {
+    color: #f3f3f3;
+    background: #0094ff;
+}
+.comment_form .btnReply:disabled {
+    background: #4800ff;
 }

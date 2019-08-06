@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Forum {
+namespace Forum.StaticPages {
     
     
-    public partial class WebForm2 {
+    public partial class HomePage {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,30 @@ namespace Forum {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// CommentSection control.
+        /// Header control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Forum.UserControl.CommentSection CommentSection;
+        protected global::Forum.UserPage.Header Header;
+        
+        /// <summary>
+        /// imgShowcase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgShowcase;
+        
+        /// <summary>
+        /// Footer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Forum.UserControl.Footer Footer;
     }
 }
