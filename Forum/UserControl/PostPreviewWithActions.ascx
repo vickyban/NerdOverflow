@@ -22,9 +22,9 @@
             <div class="post_date">
                 <asp:Label ID="lblPostDate"  runat="server"></asp:Label>
             </div>
-            <%if (Post.Status == "new"){%>
+            <%if (Session["userId"] != null && IsAuthour && Post.Status == "review"){%>
             <div>
-                <label class="inReview">In Review</label>
+                <label class="inReview">Flagged</label>
             </div>
             <%} %>
         </div>

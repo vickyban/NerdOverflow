@@ -15,8 +15,9 @@
   <link href="../css/all.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="../lib/font-awesome/css/all.css" />
 
-    <link rel="stylesheet/less" type="text/css" href="../Styles/header.less" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <link href="../Styles/header.css" rel="stylesheet" />
+<%--    <link rel="stylesheet/less" type="text/css" href="../Styles/header.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>--%>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -25,9 +26,8 @@
 </head>
 <body>
     <script type="text/javascript" src='<% = ResolveUrl("~/js/alertBox.js")%>'></script>
- 
+    <uc1:Header runat="server" ID="Header" />
     <form id="form1" runat="server">
-           <uc1:Header runat="server" ID="Header" />
         <div class="user_page">
 
             <div class="user_left">

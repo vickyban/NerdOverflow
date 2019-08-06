@@ -3,6 +3,8 @@
 <%@ Register Src="~/UserControl/PostPreviewWithActions.ascx" TagPrefix="uc1" TagName="PostPreviewWithActions" %>
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+<%@ Register Src="~/UserControl/HeaderTest.ascx" TagPrefix="uc1" TagName="HeaderTest" %>
+
 
 
 
@@ -29,33 +31,32 @@
     <title></title>
 </head>
 <body>
-        <script type="text/javascript" src='<% = ResolveUrl("~/js/alertBox.js")%>'></script>
+    <script type="text/javascript" src='<% = ResolveUrl("~/js/alertBox.js")%>'></script>
+    <uc1:Header runat="server" id="Header" />
     <form id="form1" runat="server">
-        <uc1:Header runat="server" ID="Header" />
-
        <div class="content">
            <div class="content_left">
-               <a href="/posts/?keyword=&filter=%27bio%27&sort=DESC">
+               <a href="/posts/?keyword=&filter=bio&sort=DESC">
                    <asp:Image ID="imgBio" runat="server" ImageUrl="~/Images/bacteria.png" />
                    Bio
                </a>
-                <a href="/posts/?keyword=&filter=%27chem%27&sort=DESC">
+                <a href="/posts/?keyword=&filter=27chem&sort=DESC">
                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/flasks.png" />
                    Chem
                </a>
-                <a href="/posts/?keyword=&filter=%27maths%27&sort=DESC">
+                <a href="/posts/?keyword=&filter=maths&sort=DESC">
                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/axis.png" />
                    Maths
                </a>
-            <a href="/posts/?keyword=&filter=%27geo%27&sort=DESC">
+            <a href="/posts/?keyword=&filter=geo&sort=DESC">
                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/earth.png" />
                    Geo
                </a>
-                <a href="/posts/?keyword=&filter=%27physic%27&sort=DESC">
+                <a href="/posts/?keyword=&filter=physic&sort=DESC">
                    <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/apple.png" />
                    Physic
                </a>
-                <a href="/posts/?keyword=&filter=%27programming%27&sort=DESC">
+                <a href="/posts/?keyword=&filter=programming&sort=DESC">
                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/programming.png" />
                    Programming
                </a>
