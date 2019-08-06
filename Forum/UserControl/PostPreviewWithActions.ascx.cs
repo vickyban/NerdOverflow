@@ -11,6 +11,8 @@ namespace Forum.UserControl
 {
     public partial class PostPreviewWithActions : System.Web.UI.UserControl
     {
+        public delegate void Delegate(string message, bool err);
+        public Delegate Callback { get; set; }
         public Post Post { get; set; }
         public bool IsAuthour
         {
@@ -47,7 +49,8 @@ namespace Forum.UserControl
             if (int.TryParse(postId.Value, out int id))
             {
                 PostRepo.DeletePost(id);
-                Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
+                Callback("Successfully Deleted", false);
+                //Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
             }
         }
 
