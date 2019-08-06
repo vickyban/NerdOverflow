@@ -27,6 +27,7 @@
     <title></title>
 </head>
 <body>
+        <script type="text/javascript" src='<% = ResolveUrl("~/js/alertBox.js")%>'></script>
     <form id="form1" runat="server">
         <uc1:Header runat="server" ID="Header" />
 

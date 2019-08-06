@@ -19,8 +19,10 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
+    <script type="text/javascript" src='<% = ResolveUrl("~/js/alertBox.js")%>'></script>
  
     <form id="form1" runat="server">
            <uc1:Header runat="server" ID="Header" />
@@ -48,7 +50,5 @@
             </div>
         </div>
     </form>
-
-
 </body>
 </html>

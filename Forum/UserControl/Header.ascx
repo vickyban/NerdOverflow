@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Forum.UserPage.Header" %>
 <header>
-    <a href="/posts/">
+    <a href="/">
         <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/logo.png" />
     </a>
 </header>
