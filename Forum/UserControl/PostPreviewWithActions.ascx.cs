@@ -59,6 +59,7 @@ namespace Forum.UserControl
                 UserId = Convert.ToInt32(Session["userId"])
             };
             BookmarkRepo.CreateBookmark(bookmark);
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", "<script>displayAlert('Successfully Saved' ,false);</script>");
         }
     }
 }

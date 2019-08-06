@@ -17,7 +17,7 @@ namespace Forum.UserPage
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
             this.Master.PostPageBtn.CssClass = "user_right_navlink active";
-            posts = getPosts(new List<string> { "'review'", "'public'" }, "DESC");
+            posts = getPosts(new List<string> { "'new'", "'approved'" }, "DESC");
             Render();
         }
 
@@ -32,8 +32,8 @@ namespace Forum.UserPage
         {
             string orderBy = sortOpt.SelectedValue.Equals("New") ? "DESC" : "ASC";
             List<string> filters = new List<string>();
-            if (cbReview.Checked) filters.Add("'review'");
-            if (cbPublic.Checked) filters.Add("'public'");
+            if (cbReview.Checked) filters.Add("'new'");
+            if (cbPublic.Checked) filters.Add("'approved'");
             posts = getPosts(filters, orderBy);
             Render();
         }
