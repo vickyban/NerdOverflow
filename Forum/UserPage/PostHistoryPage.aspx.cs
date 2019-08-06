@@ -45,8 +45,18 @@ namespace Forum.UserPage
             {
                 PostPreviewWithActions control = (PostPreviewWithActions)Page.LoadControl("..\\UserControl\\PostPreviewWithActions.ascx");
                 control.Post = post;
+                control.Callback = this.Refresh;
                 PlaceHolder1.Controls.Add(control);
             }
+        }
+
+        public void Refresh(string message, bool err)
+        {
+            posts = getPosts(new List<string> { "'reivew'", "'published'" }, "DESC");
+            Render();
+            string e = err ? "true" : "false";
+            string script = $"<script>displayAlert('{message}',{e});</script>";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", script);
         }
     }
 }

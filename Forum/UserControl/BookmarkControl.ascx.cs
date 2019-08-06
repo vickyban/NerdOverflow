@@ -13,6 +13,8 @@ namespace Forum.UserControl
     public partial class BookmarkControl : System.Web.UI.UserControl
     {
         public Bookmark Bookmark { get; set; }
+        public delegate void Delegate(string message, bool err);
+        public Delegate Callback { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,8 +37,8 @@ namespace Forum.UserControl
         {
             int.TryParse(bookmarkId.Value, out int id);
             BookmarkRepo.DeleteBookmark(id);
-            Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/bookmarks/");
-            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", "<script>displayAlert('Successfully unSaved' ,false);</script>");
+            Callback("Successfully unsaved", false);
+            //Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/bookmarks/");
         }
     }
 }
