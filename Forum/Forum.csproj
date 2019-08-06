@@ -104,6 +104,9 @@
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\LogoutPage.aspx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
+    <Content Include="Images\delete.jpg" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\unban.png" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -157,6 +160,7 @@
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
+    <Content Include="Styles\buttonStyle.css" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="UserPage\ReferenceUsages.aspx" />
     <Content Include="Web.config" />
@@ -177,6 +181,11 @@
     </Compile>
     <Compile Include="Admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -330,6 +339,17 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Admin\admin.Master" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="UserPage\UserPageMaster.Master" />
