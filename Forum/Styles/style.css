@@ -1,0 +1,9 @@
+﻿body {
+    margin: 0;
+    padding:0;
+}
+
+header {
+    height: 65px;
+    background: #24292e;
+}
