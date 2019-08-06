@@ -43,8 +43,18 @@ namespace Forum.UserPage
             {
                 BookmarkControl control = (BookmarkControl)Page.LoadControl("..\\UserControl\\BookmarkControl.ascx");
                 control.Bookmark = book;
+                control.Callback = this.Refresh;
                 PlaceHolder1.Controls.Add(control);
             }
+        }
+
+        public void Refresh(string message, bool err)
+        {
+            bookmarks = getBookmarks("DESC");
+            Render();
+            string e = err ? "true" : "false";
+            string script = $"<script>displayAlert('{message}',{e});</script>";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", script);
         }
     }
 }
