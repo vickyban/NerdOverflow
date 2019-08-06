@@ -2,6 +2,8 @@
 
 <%@ Register Src="~/UserControl/PostPreviewWithActions.ascx" TagPrefix="uc1" TagName="PostPreviewWithActions" %>
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
 
 
 
@@ -73,6 +75,8 @@
                </ul>
            </div>
        </div> 
+
+        <uc1:Footer runat="server" id="Footer" />
     
     </form>
 

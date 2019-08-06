@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserPageMaster.master.cs" Inherits="Forum.UserPage.UserPageMaster" %>
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
 
 
 <!DOCTYPE html>
@@ -49,6 +51,9 @@
                 </div>
             </div>
         </div>
+
+        <uc1:Footer runat="server" id="Footer" />
     </form>
+
 </body>
 </html>
