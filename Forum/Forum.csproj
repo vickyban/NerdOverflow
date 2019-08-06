@@ -81,7 +81,6 @@
     <Content Include="Images\apple.png" />
     <Content Include="Images\axis.png" />
     <Content Include="Images\bacteria.png" />
-    <Content Include="Images\commentIcon.png" />
     <Content Include="Images\default.png" />
     <Content Include="Images\earth.png" />
     <Content Include="Images\flasks.png" />
@@ -92,6 +91,7 @@
     <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="StaticPages\HomePage.aspx" />
     <Content Include="Styles\commentSection.css" />
+    <Content Include="Styles\header.css" />
     <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
@@ -99,6 +99,7 @@
     <Content Include="UserControl\CommentBox.ascx" />
     <Content Include="UserControl\CommentSection.ascx" />
     <Content Include="UserControl\Footer.ascx" />
+    <Content Include="UserControl\HeaderTest.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="UserControl\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HeaderTest.ascx.cs">
+      <DependentUpon>HeaderTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\HeaderTest.ascx.designer.cs">
+      <DependentUpon>HeaderTest.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
       <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>

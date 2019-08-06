@@ -1,35 +1,27 @@
-﻿@DarkBlue: #1D3557;
-@SemiDarkBlue: #457b9d;
-@lightBlue: #a8dadc;
-@Cream: #f1faee;
-@Red: #ff6b6e;
-@SemiDarkRed: #e63945;
-@SemiWhite: #f3f3f3;
-@white: #ffffff;
-
-
-header {
+﻿header {
     padding-left: 100px;
-    a {
+}
+
+    header a {
         height: 100%;
         display: inline-block;
     }
 
-    img {
+    header img {
         pointer-events: none;
     }
-}
 
 .smallFont {
     font-size: 13px;
 }
-.hightlight{
-    color:@SemiDarkRed;
+
+.hightlight {
+    color: #e63945;
 }
 
-.search_bar form{
-    background: @DarkBlue;
-    color: @Cream;
+.search_bar form {
+    background: #1d3557;
+    color: #f1faee;
     width: 100%;
     display: grid;
     grid-template-columns: 100px 140px 80px minmax(100px, auto) minmax(100px, 250px) 30px;
@@ -37,76 +29,78 @@ header {
     grid-gap: 5px;
     box-sizing: border-box;
     z-index: 2;
+}
 
-    > div {
+    .search_bar form > div {
         padding: 10px 0;
         display: flex;
         align-items: center;
     }
 
-    .lnk {
+    .search_bar form .lnk {
         padding: 5px;
         font-weight: bold;
-
-        i {
-            pointer-events: none
-        }
-
-        &:hover {
-            color: @lightBlue;
-        }
     }
 
-    label {
+        .search_bar form .lnk i {
+            pointer-events: none;
+        }
+
+        .search_bar form .lnk:hover {
+            color: #a8dadc;
+        }
+
+    .search_bar form label {
         margin: 0;
         font-weight: bold;
     }
 
-    .sortBy {
+    .search_bar form .sortBy {
         grid-area: sort;
-
-        > label {
-            padding: 5px 8px;
-        }
     }
 
-    .filter {
+        .search_bar form .sortBy > label {
+            padding: 5px 8px;
+        }
+
+    .search_bar form .filter {
         grid-area: filter;
         position: relative;
         box-sizing: border-box;
         z-index: 5;
+    }
 
-        > label {
+        .search_bar form .filter > label {
             padding: 5px 8px;
         }
 
-        .filter_panel {
+        .search_bar form .filter .filter_panel {
             display: none;
-            background: @DarkBlue;
+            background: #1d3557;
             position: absolute;
             padding: 10px;
             width: 200px;
             top: 100%;
+        }
 
-            label {
+            .search_bar form .filter .filter_panel label {
                 margin-left: 5px;
             }
-        }
 
-        #other_value {
+        .search_bar form .filter #other_value {
             display: none;
             position: relative;
+        }
 
-            input {
+            .search_bar form .filter #other_value input {
                 width: 100%;
             }
-        }
+
+    .search_bar form .search_input {
+        grid-area: search;
     }
 
-    .search_input {
-        grid-area: search;
-
-        input[type="text"] {
+        .search_bar form .search_input input[type="text"] {
             width: 60%;
             padding: 5px;
             margin-right: 7px;
@@ -114,68 +108,68 @@ header {
             border-radius: 3px;
         }
 
-        input[type="submit"] {
+        .search_bar form .search_input input[type="submit"] {
             all: unset;
             padding: 3px 10px;
-            background: @SemiDarkRed;
-            color: @Cream;
+            background: #e63945;
+            color: #f1faee;
             border-radius: 5px;
             font-weight: bold;
-
-            &:hover {
-                background: @Red;
-            }
         }
-    }
 
-    .account {
+            .search_bar form .search_input input[type="submit"]:hover {
+                background: #ff6b6e;
+            }
+
+    .search_bar form .account {
         grid-area: account;
         justify-content: flex-end;
+    }
 
-        .lnk {
+        .search_bar form .account .lnk {
             padding: 5px;
             font-weight: bold;
-
-            i {
-                pointer-events: none
-            }
-
-            &:hover {
-                color: @lightBlue;
-            }
         }
 
-        .profile {
-            position: relative;
-            z-index:2;
-
-            > label {
-                padding: 5px 10px;
-
-                &:hover {
-                    color: @lightBlue;
-                }
+            .search_bar form .account .lnk i {
+                pointer-events: none;
             }
 
-            #account_opts {
+            .search_bar form .account .lnk:hover {
+                color: #a8dadc;
+            }
+
+        .search_bar form .account .profile {
+            position: relative;
+            z-index: 2;
+        }
+
+            .search_bar form .account .profile > label {
+                padding: 5px 10px;
+            }
+
+                .search_bar form .account .profile > label:hover {
+                    color: #a8dadc;
+                }
+
+            .search_bar form .account .profile #account_opts {
                 display: none;
                 position: absolute;
                 top: 100%;
-                right: -0%;
+                right: 0%;
                 width: 150px;
                 padding: 10px;
                 /*background: @color-base;*/
-                background: @white;
+                background: #ffffff;
                 clip-path: polygon(88% 0, 93% 4%, 100% 4%, 100% 100%, 0 99%, 0 4%, 80% 4%);
-                border:1px solid @DarkBlue;
-                div {
+                border: 1px solid #1d3557;
+            }
+
+                .search_bar form .account .profile #account_opts div {
                     display: flex;
                     flex-direction: column;
                 }
-                a:hover{
-                    color:@DarkBlue;
+
+                .search_bar form .account .profile #account_opts a:hover {
+                    color: #1d3557;
                 }
-            }
-        }
-    }
-}
