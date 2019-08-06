@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="Forum.StaticPages.HomePage" %>
 
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
 
 
 <!DOCTYPE html>
@@ -59,6 +61,7 @@
             </div>
 
         </div>
+        <uc1:Footer runat="server" id="Footer" />
     </form>
 </body>
 </html>

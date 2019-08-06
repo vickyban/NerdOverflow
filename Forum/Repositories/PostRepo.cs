@@ -40,7 +40,7 @@ namespace Forum.Repositories
                 "ON p.user_id = u.user_id " +
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
-                "WHERE p.status = 'public' " +
+                "WHERE p.status = 'approved' " +
                 (keyword != "" ? "AND p.title LIKE '%'+ @Keyword + '%' ": "") + 
                 (filter != "" ? $"AND p.category IN ({filter}) ": "") + 
                 "ORDER BY p.created_at " + orderBy;

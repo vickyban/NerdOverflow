@@ -88,6 +88,7 @@
     <Content Include="Images\homepage.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\programming.png" />
+    <Content Include="js\alertBox.js" />
     <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="StaticPages\HomePage.aspx" />
     <Content Include="Styles\commentSection.css" />
@@ -97,6 +98,7 @@
     <Content Include="UserControl\BookmarkControl.ascx" />
     <Content Include="UserControl\CommentBox.ascx" />
     <Content Include="UserControl\CommentSection.ascx" />
+    <Content Include="UserControl\Footer.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
@@ -214,6 +216,13 @@
     </Compile>
     <Compile Include="UserControl\CommentSection.ascx.designer.cs">
       <DependentUpon>CommentSection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
       <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>

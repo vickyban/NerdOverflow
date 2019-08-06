@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserPageMaster.master.cs" Inherits="Forum.UserPage.UserPageMaster" %>
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
 
 
 <!DOCTYPE html>
@@ -19,8 +21,10 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
+    <script type="text/javascript" src='<% = ResolveUrl("~/js/alertBox.js")%>'></script>
  
     <form id="form1" runat="server">
            <uc1:Header runat="server" ID="Header" />
@@ -47,8 +51,9 @@
                 </div>
             </div>
         </div>
-    </form>
 
+        <uc1:Footer runat="server" id="Footer" />
+    </form>
 
 </body>
 </html>
