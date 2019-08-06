@@ -27,8 +27,8 @@
     <title></title>
 </head>
 <body>
+    <uc1:Header runat="server" ID="Header" />
     <form id="form1" runat="server">
-        <uc1:Header runat="server" ID="Header" />
         <div class="showcase">
             <asp:Image ID="imgShowcase" runat="server" ImageUrl="~/Images/homepage.jpg" />
             <h2>:D We <3 to Help Students</h2>

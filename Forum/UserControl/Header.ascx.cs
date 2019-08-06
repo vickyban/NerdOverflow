@@ -18,28 +18,5 @@ namespace Forum.UserPage
         {
 
         }
-
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            string sort = dlistSortBy.SelectedValue;
-            string filter = "";
-            if (!cbAll.Checked)
-            {
-                IEnumerable<string> filters = panel1.Controls.Cast<Control>()
-                    .Where(c => c is CheckBox && ((CheckBox)c).Checked)
-                    .Select(c => ((CheckBox)c).Text.ToLower() != "other" ? $"'{((CheckBox)c).Text}'" : $"'{txtOther.Text}'");
-                filter = string.Join(",", filters);
-            }
-            string keyword = txtSearch.Text;
-
-            if (CallBackMethod == null)
-            {
-                Response.Redirect($"/posts/?keyword={keyword}&filter={filter}&sort={sort}");
-            }
-            else
-            {
-                CallBackMethod(keyword,filter, sort);
-            }
-        }
     }
 }
