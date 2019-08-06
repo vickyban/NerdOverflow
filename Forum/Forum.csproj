@@ -761,6 +761,9 @@
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\LogoutPage.aspx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
+    <Content Include="Images\delete.jpg" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\unban.png" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -816,6 +819,7 @@
     <Content Include="UserPage\ReferenceUsages.aspx" />
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
+    <Content Include="Styles\buttonStyle.css" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="Web.config" />
     <Content Include="CommentExample.aspx" />
@@ -841,6 +845,11 @@
     </Compile>
     <Compile Include="FakeSession.aspx.designer.cs">
       <DependentUpon>FakeSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1060,6 +1069,18 @@
     <Content Include="lib\CreatePost ckEditor\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="lib\CreatePost ckEditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="lib\CreatePost ckEditor\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="UserPage\UserPageMaster.Master" />
     <Content Include="PostPage\PostPage.Master" />
