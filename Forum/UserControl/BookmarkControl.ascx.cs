@@ -36,6 +36,7 @@ namespace Forum.UserControl
             int.TryParse(bookmarkId.Value, out int id);
             BookmarkRepo.DeleteBookmark(id);
             Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/bookmarks/");
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", "<script>displayAlert('Successfully unSaved' ,false);</script>");
         }
     }
 }

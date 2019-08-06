@@ -20,7 +20,7 @@
                         <asp:CheckBox ID="cbReview" runat="server" Text="In Review" Checked="True" />
                     </div>
                     <div>
-                        <asp:CheckBox ID="cbPublic" runat="server" Text="Public" Checked="True" />
+                        <asp:CheckBox ID="cbPublic" runat="server" Text="Approved" Checked="True" />
                     </div>
                  </div>
             </div>
