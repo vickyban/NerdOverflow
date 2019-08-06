@@ -22,7 +22,7 @@
             <div class="post_date">
                 <asp:Label ID="lblPostDate"  runat="server"></asp:Label>
             </div>
-            <%if (Post.Status == "review"){%>
+            <%if (Post.Status == "new"){%>
             <div>
                 <label class="inReview">In Review</label>
             </div>
