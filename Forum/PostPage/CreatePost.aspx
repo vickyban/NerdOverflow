@@ -1,7 +1,7 @@
-﻿<%@ Page Title="Create Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="CreatePost.aspx.cs" Inherits="Forum.PostPage.CreatePost" ValidateRequest="false"%>
+﻿<%@ Page Title="Create Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="CreatePost.aspx.cs" Inherits="Forum.PostPage.CreatePost" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../lib/ckeditor/ckeditor.js"></script>
+    <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
@@ -27,20 +27,19 @@
             </asp:DropDownList>
         </div>
 
-        <div class="form-group ">
-            <label for="txtContent">Post Content: </label>
-            <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" class="form-control" Rows="7"></asp:TextBox>
+        <div class="form-group">
+            <label for="txtContent">Post Content: </label>    
+            <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" class="form-control" Rows="8"></asp:TextBox>        
         </div>
-   
 
         <div class="float-left">
-            <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden"/>
+            <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden" />
             <button type="button" id="btnUpload" class="uploadStyle btn btn-success">Choose a file</button>
             <span id="custom-text">No file chosen.</span>
         </div>
 
         <div class="float-right">
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit Post" class="btn btn-outline-success" OnClick="btnSubmit_Click"/>
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit Post" class="btn btn-outline-success" OnClick="btnSubmit_Click" />
         </div>
 
 
@@ -49,6 +48,7 @@
     <!-- JAVASCRIPT AREA -->
     <script>
         CKEDITOR.replace('<%= txtContent.ClientID %>');
+
         const realFileBtn = document.getElementById('<%= FileUpload1.ClientID %>');
         const customBtn = document.getElementById("btnUpload");
         const customTxt = document.getElementById("custom-text");

@@ -111,7 +111,7 @@ namespace Forum.Repositories
 
             try
             {
-                string query = "Select * From Post Where post_id =" + 8;
+                string query = "Select * From Post Where post_id =" + postID;
 
                 dbConnect.Open();
 

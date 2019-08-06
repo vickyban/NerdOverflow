@@ -121,7 +121,6 @@ namespace Forum.PostPage
                 if (result > 0)
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "Success", "successPost()", true);
-                    Response.Redirect("ViewPost.aspx");
                     ddCategory.SelectedIndex = 0;
                     txtTitle.Text = "";
                     txtContent.Text = "";

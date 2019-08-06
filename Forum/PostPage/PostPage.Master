@@ -11,10 +11,17 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <script src="../js/jquery.min.js"></script>
     <script src="../Scripts/popper.min.js"></script>
+    <script src="../Scripts/popper.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/snbutton.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../lib/ckeditor/ckeditor.js"></script>
+    <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
+    <link href="../lib/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <script>
         function successPost() {
@@ -77,6 +84,7 @@
                                 </asp:ContentPlaceHolder>
                             </div>
                         </div>
+                        
                     </div>
 
                 </div>
