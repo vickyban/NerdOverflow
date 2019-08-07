@@ -33,7 +33,7 @@ namespace Forum.UserControl
             lblCategory.Text = Post.Category;
             lblPostDate.Text = Post.CreatedAt.ToString();
             postId.Value = Post.PostId.ToString();
-            postUrl.NavigateUrl = "/posts/"+postId;
+            postUrl.NavigateUrl = "/posts/"+ Post.PostId;
             postUrl.Text = Post.Title;
             int count = Post.TotalComments;
             lblComment.Text = count == 1 ? count + " Comment" : count + " Comments";

@@ -8,9 +8,9 @@
     <div class="post_right">
       
         <div class="post_title">
-            <asp:HyperLink ID="postUrl" runat="server" BorderStyle="None" NavigateUrl="https://www.google.ca/">
-                  <%--  <asp:Label ID="lblTitle"  runat="server" Text=""></asp:Label>--%>
-            </asp:HyperLink>
+            <asp:HyperLink ID="postUrl" runat="server">HyperLink</asp:HyperLink>
+<%--            <asp:HyperLink ID="" runat="server" BorderStyle="None" NavigateUrl="<%=  %>"">
+            </asp:HyperLink>--%>
         </div>
         <div class="post_metadata">
             <div class="post_category">
