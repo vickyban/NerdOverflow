@@ -295,30 +295,36 @@
                   <h6 class="m-0 font-weight-bold text-primary">Status</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold"> Bio <span class="float-right">20%</span></h4>
+                  <h4 class="small font-weight-bold"> Bio <span class="float-right">
+                      <asp:Label ID="lblBio" runat="server" Text=""></asp:Label></span></h4>
                   <div class="progress mb-4">
                     <div id="bio" class="progress-bar bg-danger" role="progressbar"  aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                   </div>
-                  <h4  class="small font-weight-bold"> Chem <span class="float-right">40%</span></h4>
+                  <h4  class="small font-weight-bold"> Chem <span class="float-right">
+                      <asp:Label ID="lblChem" runat="server" Text=""></asp:Label></span></h4>
                   <div class="progress mb-4">
-                    <div id="chem" class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
+                    <div id="chem" class="progress-bar bg-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                   </div>
-                  <h4  class="small font-weight-bold"> Math <span class="float-right">60%</span></h4>
+                  <h4  class="small font-weight-bold"> Maths <span class="float-right">
+                      <asp:Label ID="lblMaths" runat="server" Text=""></asp:Label></span></h4>
                   <div class="progress mb-4">
-                    <div id="math" class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
+                    <div id="maths" class="progress-bar" role="progressbar"  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                   </div>
-                  <h4  class="small font-weight-bold"> Geo <span class="float-right">80%</span></h4>
+                  <h4  class="small font-weight-bold"> Geo <span class="float-right">
+                      <asp:Label ID="lblGeo" runat="server" Text=""></asp:Label></span></h4>
                   <div class="progress mb-4">
-                    <div id="geo" class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
+                    <div id="geo" class="progress-bar bg-info" role="progressbar"  aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                   </div>
-                  <h4  class="small font-weight-bold"> Physic <span class="float-right">100%</span></h4>
+                  <h4  class="small font-weight-bold"> Physic <span class="float-right">
+                      <asp:Label ID="lblPhysic" runat="server" Text=""></asp:Label></span></h4>
                   <div class="progress">
-                    <div id="physic" class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
+                    <div id="physic" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                   </div>
                     <br />
-                  <h4  class="small font-weight-bold"> Programming <span class="float-right">100%</span></h4>
+                  <h4  class="small font-weight-bold"> Programming <span class="float-right">
+                      <asp:Label ID="lblProgramming" runat="server" Text=""></asp:Label></span></h4>
                   <div class="progress">
-                    <div id="programming" class="progress-bar bg-dark" role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
+                    <div id="programming" class="progress-bar bg-dark" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                   </div>
                 </div>
               </div>

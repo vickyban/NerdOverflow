@@ -29,11 +29,15 @@ namespace Forum
 
             string queryCountUser = "SELECT COUNT(*) AS totalUser FROM [User];";
             string queryCountPost = "SELECT COUNT(*) AS totalPost FROM [Post];";
-            string queryApprovedPost = "SELECT COUNT(*) AS AprovedPost FROM Post WHERE(status = 'approved'); ";
+            string queryApprovedPost = "SELECT COUNT(*) AS AprovedPost FROM Post WHERE(status = 'published'); ";
             string queryBannedUser= "SELECT COUNT(*) AS UserBan FROM [Ban];";
             //Category
-            string queryCabio = "SELECT COUNT(*) AS Categorybio FROM Post WHERE(category = 'school');  ";
-            
+            string queryCabioBio = "SELECT COUNT(*) AS Categorybio FROM Post WHERE(category = 'bio');  ";
+            string queryCabioChem = "SELECT COUNT(*) AS Categorychem FROM Post WHERE(category = 'chem');  ";
+            string queryCabioMaths = "SELECT COUNT(*) AS Categorymaths FROM Post WHERE(category = 'maths');  ";
+            string queryCabioGeo = "SELECT COUNT(*) AS Categorygeo FROM Post WHERE(category = 'geo');  ";
+            string queryCabioPhysic = "SELECT COUNT(*) AS Categoryphysic FROM Post WHERE(category = 'physic');  ";
+            string queryCabioProgramming = "SELECT COUNT(*) AS Categoryprogramming FROM Post WHERE(category = 'programming');  ";
 
             DbConnect.Open();
 
@@ -70,12 +74,41 @@ namespace Forum
             reader3.Close();
 
             //Count total Bio post
-            comPost = new SqlCommand(queryCabio, DbConnect);
+            comPost = new SqlCommand(queryCabioBio, DbConnect);
             SqlDataReader reader4 = comPost.ExecuteReader();
             reader4.Read();
             string totalbio = reader4["Categorybio"].ToString();
-            Categorybio.Value = totalbio;
             reader4.Close();
+            //Count total Chem post
+            comPost = new SqlCommand(queryCabioChem, DbConnect);
+            SqlDataReader reader5 = comPost.ExecuteReader();
+            reader5.Read();
+            string totalChem = reader5["Categorychem"].ToString();
+            reader5.Close();
+            //Count total Maths post
+            comPost = new SqlCommand(queryCabioMaths, DbConnect);
+            SqlDataReader reader6 = comPost.ExecuteReader();
+            reader6.Read();
+            string totalMaths = reader6["Categorymaths"].ToString();
+            reader6.Close();
+            //Count total Geo post
+            comPost = new SqlCommand(queryCabioGeo, DbConnect);
+            SqlDataReader reader7 = comPost.ExecuteReader();
+            reader7.Read();
+            string totalGeo = reader7["Categorygeo"].ToString();
+            reader7.Close();
+            //Count total Physic post
+            comPost = new SqlCommand(queryCabioPhysic, DbConnect);
+            SqlDataReader reader8 = comPost.ExecuteReader();
+            reader8.Read();
+            string totalPhysic = reader8["Categoryphysic"].ToString();
+            reader8.Close();
+            //Count total Programming post
+            comPost = new SqlCommand(queryCabioProgramming, DbConnect);
+            SqlDataReader reader9 = comPost.ExecuteReader();
+            reader9.Read();
+            string totalprogramming = reader9["Categoryprogramming"].ToString();
+            reader9.Close();
 
 
             DbConnect.Close();
@@ -86,8 +119,30 @@ namespace Forum
 
             txtStartDate.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
 
-            string test = 10 + "%";
-            bio.Style.Add("width", test);
+            //Bio implement to admin page
+            decimal bioResult = Math.Round((Convert.ToDecimal(totalbio) / totalPost) * 100, 0);
+            bio.Style.Add("width", bioResult + "%");
+            lblBio.Text = bioResult + "%";
+            //Chem implement to admin page
+            decimal chemResult = Math.Round((Convert.ToDecimal(totalChem) / totalPost) * 100, 0);
+            chem.Style.Add("width", chemResult + "%");
+            lblChem.Text = chemResult + "%";
+            //Maths implement to admin page
+            decimal mathsResult = Math.Round((Convert.ToDecimal(totalMaths) / totalPost) * 100, 0);
+            maths.Style.Add("width", mathsResult + "%");
+            lblMaths.Text = mathsResult + "%";
+            //Geo implement to admin page
+            decimal geoResult = Math.Round((Convert.ToDecimal(totalGeo) / totalPost) * 100, 0);
+            geo.Style.Add("width", geoResult + "%");
+            lblGeo.Text = geoResult + "%";
+            //Physic implement to admin page
+            decimal physicResult = Math.Round((Convert.ToDecimal(totalPhysic) / totalPost) * 100, 0);
+            physic.Style.Add("width", physicResult + "%");
+            lblPhysic.Text = physicResult + "%";
+            //Programming implement to admin page
+            decimal programmingResult = Math.Round((Convert.ToDecimal(totalprogramming) / totalPost) * 100, 0);
+            programming.Style.Add("width", programmingResult + "%");
+            lblProgramming.Text = programmingResult + "%";
         }
 
         protected void btnViewUser_Click(object sender, EventArgs e)
@@ -158,7 +213,7 @@ namespace Forum
                     btnApprove1.Enabled = true;
                 }else
                 {
-                    if (lblStatus.Text == "approved") {
+                    if (lblStatus.Text == "published") {
                         lblStatus.ForeColor = System.Drawing.Color.Green;
                         btnApprove1.Enabled = false;
                         btnBanUser1.Enabled = true;
@@ -193,7 +248,7 @@ namespace Forum
             post.Fill(ds1.Post);
             DataRow[] dr = ds1.Post.Select("post_id=" + updateID);
        
-            dr[0]["status"] = "approved";
+            dr[0]["status"] = "published";
 
             post.Update(ds1.Post);
             GridView1.DataBind();
@@ -292,7 +347,7 @@ namespace Forum
                 string updateCommand = "UPDATE Post SET status=@sta WHERE user_id = "+ UserID;
                 SqlParameter userIDparam = new SqlParameter();
                 userIDparam.ParameterName = "@sta";
-                userIDparam.Value = "approved";
+                userIDparam.Value = "published";
 
                 cmd.CommandText = updateCommand;
                 cmd.Parameters.Add(userIDparam);
