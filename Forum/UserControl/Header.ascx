@@ -80,7 +80,7 @@
                     <a class="lnk" href="<%= $"/users/{Session["userId"]}/bookmarks/" %>"><i class="fas fa-bookmark"></i> Bookmarks</a>
                     <a class="lnk" href="<%= $"/users/{Session["userId"]}/posts/" %>"><i class="fas fa-file"></i> My posts</a>
                 <hr />
-                    <a id="lnkLogout" class="lnk" href="~/UserPage/LogoutPage.aspx"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a id="lnkLogout" class="lnk" href="/UserPage/LogoutPage.aspx"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
         </div>

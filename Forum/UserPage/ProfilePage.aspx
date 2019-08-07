@@ -5,6 +5,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="profile_content">
+        <div class="password_form">
+            <h4>Change Paswword</h4>
+            <div>
+                <label>Old password</label>
+                <asp:TextBox ID="txtOldPass" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorOPass" runat="server" ErrorMessage="Old password is required" ControlToValidate="txtOldPass" ValidationGroup="pass_form" Display="Dynamic" Font-Bold="True" ForeColor="#0E6394"></asp:RequiredFieldValidator>
+            </div>
+            <div>
+                <label>New password</label>
+                <asp:TextBox ID="txtNewPass" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorNPass" runat="server" ErrorMessage="New password is required" ValidationGroup="pass_form" ControlToValidate="txtNewPass" Display="Dynamic" ForeColor="#0E6394"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidatorPass" runat="server" ErrorMessage="Confirmed and new passwords must match" ControlToValidate="txtNewPass" ControlToCompare="txtConfirmedPass" ValidationGroup="pass_form" ForeColor="#0E6394"></asp:CompareValidator>
+            </div>
+            <div>
+                <label>Confirmed password</label>
+                <asp:TextBox ID="txtConfirmedPass" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorCPass" runat="server" ErrorMessage="Confirmed password is required" ValidationGroup="pass_form" ControlToValidate="txtConfirmedPass" Display="Dynamic" ForeColor="#0E6394"></asp:RequiredFieldValidator>
+            </div>
+            <asp:Button ID="btnUpdatePass" runat="server" Text="Change Password" ValidationGroup="pass_form" />
+        </div>
+
         <h4>Profile image</h4>
         <p>Images must be .png or .jpg format</p>
 
