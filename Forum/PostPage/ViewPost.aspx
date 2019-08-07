@@ -1,8 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="ViewPost.aspx.cs" Inherits="Forum.PostPage.ViewPost" ValidateRequest="false" %>
+﻿<%@ Page Title="View Post" MaintainScrollPositionOnPostBack="true" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="ViewPost.aspx.cs" Inherits="Forum.PostPage.ViewPost" ValidateRequest="false" %>
 
 <%@ Register Src="~/UserControl/CommentSection.ascx" TagPrefix="uc1" TagName="CommentSection" %>
-<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
-
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../lib/Comment%20ckEditor/ckeditor/ckeditor.js"></script>
@@ -16,7 +14,7 @@
                 <br />
                 <br />
 
-                <asp:Image ID="postImage" runat="server" class="image" />
+                <asp:Image ID="postImage" runat="server" class="image rounded" />
                 <br />
                 <br />
 
@@ -54,8 +52,6 @@
                 Recent Posts
             </div>
         </div>
-
-        <asp:Label ID="test" runat="server" Text="Label"></asp:Label>
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">

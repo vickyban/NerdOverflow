@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="EditPost.aspx.cs" Inherits="Forum.PostPage.EditPost" ValidateRequest="false"%>
+﻿<%@ Page Title="Edit Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="EditPost.aspx.cs" Inherits="Forum.PostPage.EditPost" ValidateRequest="false" MaintainScrollPositionOnPostBack="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
 </asp:Content>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="float-left">
-            <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden" />
+            <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden" accept=".png,.jpg,.jpeg,.gif,.bmp"/>
             <button type="button" id="btnUpload" class="uploadStyle btn btn-success">Choose a file</button>
             <span id="custom-text">No file chosen.</span><br /><br />
             <asp:CheckBox ID="chkDelete" runat="server" class="chkDelete text-danger" Text="   *Select a file to change photo or check the box to delete the current one" />

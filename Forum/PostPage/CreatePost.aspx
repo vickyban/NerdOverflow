@@ -33,7 +33,7 @@
         </div>
 
         <div class="float-left">
-            <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden" />
+            <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden" accept=".png,.jpg,.jpeg,.gif,.bmp"/>
             <button type="button" id="btnUpload" class="uploadStyle btn btn-success">Choose a file</button>
             <span id="custom-text">No file chosen.</span>
         </div>

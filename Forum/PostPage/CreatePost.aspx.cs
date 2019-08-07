@@ -44,7 +44,7 @@ namespace Forum.PostPage
                     string fileExtension = Path.GetExtension(fileName);
 
                     if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
-                    || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
+                    || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp" || fileExtension.ToLower() == ".jpeg")
                     {
                         Stream stream = postedFile.InputStream;
                         BinaryReader binaryReader = new BinaryReader(stream);
@@ -126,7 +126,7 @@ namespace Forum.PostPage
                 {
                     string ext = System.IO.Path.GetExtension(this.FileUpload1.PostedFile.FileName).ToLower();
 
-                    if (ext != "jpg" || ext != "bmp" || ext != "png" || ext != "gif")
+                    if (ext != "jpg" || ext != "bmp" || ext != "png" || ext != "gif" || ext != "jpeg")
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "error", "error()", true);
                     }

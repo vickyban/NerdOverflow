@@ -19,11 +19,11 @@ namespace Forum.PostPage
 
             // Convert.ToInt32(Session["userID"]; For Session
             // viewPost takes a parameter is POSTID
-            userPost = Repositories.PostRepo.getPost(9);
+            userPost = Repositories.PostRepo.getPost(25);
             showPost();
 
             // POSTID
-            List<Comment> comments = CommentRepo.GetComments(9);
+            List<Comment> comments = CommentRepo.GetComments(25);
             CommentSection.Comments = comments;
 
         }
@@ -85,13 +85,11 @@ namespace Forum.PostPage
                 postImage.Visible = true;
             }
 
-            test.Text = "data:Image/png;base64," + userPost.Image;
-
             // CONTENT TEXT
             lblContentMessage.Text = userPost.Content.ToString();
 
             // Comment - CHANGE THE POSTID
-            int commentCount = CommentRepo.commentCount(9);
+            int commentCount = CommentRepo.commentCount(25);
             if (commentCount > 1)
             {
                 lblComment.Text = commentCount.ToString() + " Comments";
@@ -112,7 +110,7 @@ namespace Forum.PostPage
         protected void btnComment_Click(object sender, EventArgs e)
         {
             // CHANGE THE PARAMETERS
-            submitComment(3, 9);
+            submitComment(3, 25);
             txtComment.Text = "";
         }
 
@@ -185,7 +183,7 @@ namespace Forum.PostPage
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // CHANGE THE USERID AND POSTID
-            reportPost(2, 9);
+            reportPost(2, 25);
             // Update post status. CHANGE POSTID
         }
 

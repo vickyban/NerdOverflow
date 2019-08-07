@@ -17,7 +17,7 @@ namespace Forum.PostPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            post = Repositories.PostRepo.getPost(9);
+            post = Repositories.PostRepo.getPost(24);
 
             // GET ALL VALUES OF THE POST. CHANGE THE POSTID
             if (!Page.IsPostBack) { 
@@ -74,7 +74,7 @@ namespace Forum.PostPage
                 {
                     query = "UPDATE Post " +
                     "SET title = @Title , category = @Category , content = @Content , post_image = @Image , updated_at = '" + DateTime.Now + "'" +
-                    "WHERE post_id = " + 9;
+                    "WHERE post_id = " + 24;
 
                     SqlParameter image = new SqlParameter();
                     image.ParameterName = "@Image";
@@ -84,7 +84,7 @@ namespace Forum.PostPage
                     string fileExtension = Path.GetExtension(fileName);
 
                     if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
-                    || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
+                    || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp" || fileExtension.ToLower() == ".jpeg")
                     {
                         Stream stream = postedFile.InputStream;
                         BinaryReader binaryReader = new BinaryReader(stream);
@@ -97,12 +97,12 @@ namespace Forum.PostPage
                 {
                     query = "UPDATE Post " +
                     "SET title = @Title , category = @Category , content = @Content , post_image = NULL , updated_at = '" + DateTime.Now + "'" +
-                    "WHERE post_id = " + 9;
+                    "WHERE post_id = " + 24;
                 } else
                 {
                     query = "UPDATE Post " +
                     "SET title = @Title , category = @Category , content = @Content , updated_at = '" + DateTime.Now + "'" +
-                    "WHERE post_id = " + 9;
+                    "WHERE post_id = " + 24;
                 }
 
                 SqlParameter title = new SqlParameter();
@@ -143,7 +143,7 @@ namespace Forum.PostPage
                 {
                     string ext = System.IO.Path.GetExtension(this.FileUpload1.PostedFile.FileName).ToLower();
 
-                    if (ext != "jpg" || ext != "bmp" || ext != "png" || ext != "gif")
+                    if (ext != "jpg" || ext != "bmp" || ext != "png" || ext != "gif" || ext != ".jpeg")
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "error", "error()", true);
                     }
