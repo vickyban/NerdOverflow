@@ -84,3 +84,7 @@ body {
     background-color: transparent;
     border: none;
 }
+
+.chkDelete{
+   font-size: 12px;
+}

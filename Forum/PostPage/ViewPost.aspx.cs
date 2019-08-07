@@ -16,15 +16,15 @@ namespace Forum.PostPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
-            if (Page.IsPostBack == false)
-            {
-                // Convert.ToInt32(Session["userID"]; For Session
-                // viewPost takes 2 parameter which are USERID and POSTID
-                userPost = Repositories.PostRepo.viewPost(3, 9);
-                showPost();
-            } 
+            // Convert.ToInt32(Session["userID"]; For Session
+            // viewPost takes a parameter is POSTID
+            userPost = Repositories.PostRepo.getPost(9);
+            showPost();
+
+            // POSTID
+            List<Comment> comments = CommentRepo.GetComments(9);
+            CommentSection.Comments = comments;
 
         }
 
@@ -56,7 +56,8 @@ namespace Forum.PostPage
                     else if (minutes == 1)
                     {
                         lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + minutes + " minute ago";
-                    } else
+                    }
+                    else
                     {
                         lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + " just now";
                     }
@@ -84,24 +85,39 @@ namespace Forum.PostPage
                 postImage.Visible = true;
             }
 
+            test.Text = "data:Image/png;base64," + userPost.Image;
+
             // CONTENT TEXT
             lblContentMessage.Text = userPost.Content.ToString();
+
+            // Comment - CHANGE THE POSTID
+            int commentCount = CommentRepo.commentCount(9);
+            if (commentCount > 1)
+            {
+                lblComment.Text = commentCount.ToString() + " Comments";
+            }
+            else
+            {
+                lblComment.Text = commentCount.ToString();
+            }
+
         }
 
         protected void btnReport_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        
-
+        // COMMENT TO DATABASE
         protected void btnComment_Click(object sender, EventArgs e)
         {
-            submitComment(3, 12, txtComment.ToString());
+            // CHANGE THE PARAMETERS
+            submitComment(3, 9);
             txtComment.Text = "";
         }
 
-        void submitComment(int userID, int postID, string content)
+
+        void submitComment(int userID, int postID)
         {
             SqlConnection dbConnect = new SqlConnection();
 
@@ -150,12 +166,86 @@ namespace Forum.PostPage
 
                 if (result > 0)
                 {
-                  
+
                 }
             }
             catch (SqlException ex)
             {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                dbConnect.Close();
+                Response.Redirect(Request.RawUrl);
+            }
+        }
+
+        // REPORTED POST TO DATABASE
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // CHANGE THE USERID AND POSTID
+            reportPost(2, 9);
+            // Update post status. CHANGE POSTID
+        }
+
+        void reportPost(int userID, int postID)
+        {
+            SqlConnection dbConnect = new SqlConnection();
+
+            SqlCommand cmd = dbConnect.CreateCommand();
+
+            dbConnect.ConnectionString =
+                System.Web.Configuration.WebConfigurationManager.ConnectionStrings["ForumConnectionString"].ToString();
+
+            try
+            {
+                string query = "Insert into Reported values (@UserID, @PostID, @Reason, @Date1);";
                
+                // CHANGE POST_ID
+                string query2 = "UPDATE Post " +
+                                "SET status = 'review' , updated_at = '"  + DateTime.Now +"'" +
+                                "WHERE post_id = 7;";
+
+                SqlParameter user = new SqlParameter();
+                user.ParameterName = "@UserID";
+                user.Value = userID;
+
+                SqlParameter post = new SqlParameter();
+                post.ParameterName = "@PostID";
+                post.Value = postID;
+
+                SqlParameter reason = new SqlParameter();
+                reason.ParameterName = "@Reason";
+                reason.Value = txtReason.Text.ToString();
+
+                SqlParameter created = new SqlParameter();
+                created.ParameterName = "@Date1";
+                created.Value = DateTime.Now;
+
+                cmd.CommandText = query;
+
+                cmd.Parameters.Add(user);
+                cmd.Parameters.Add(post);
+                cmd.Parameters.Add(reason);
+                cmd.Parameters.Add(created);
+
+                dbConnect.Open();
+
+                // execute the query code
+                int result = cmd.ExecuteNonQuery();
+
+                if (result > 0)
+                {
+                    cmd.CommandText = query2;
+                    cmd.ExecuteNonQuery();
+                    ClientScript.RegisterStartupScript(this.GetType(), "Success", "successPost()", true);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+
             }
             finally
             {

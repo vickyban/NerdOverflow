@@ -1,13 +1,12 @@
-﻿<%@ Page Title="Create Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="CreatePost.aspx.cs" Inherits="Forum.PostPage.CreatePost" ValidateRequest="false" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="EditPost.aspx.cs" Inherits="Forum.PostPage.EditPost" ValidateRequest="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
-        <h2 class="text-primary">Create a post</h2>
+        <h2 class="text-primary">Edit post</h2>
         <hr />
-
+        <br />
         <div class="form-group">
             <label for="txtTitle">Title: </label>
             <asp:TextBox ID="txtTitle" runat="server" class="form-control"></asp:TextBox>
@@ -35,13 +34,14 @@
         <div class="float-left">
             <asp:FileUpload ID="FileUpload1" runat="server" class="FileUpload" hidden="hidden" />
             <button type="button" id="btnUpload" class="uploadStyle btn btn-success">Choose a file</button>
-            <span id="custom-text">No file chosen.</span>
+            <span id="custom-text">No file chosen.</span><br /><br />
+            <asp:CheckBox ID="chkDelete" runat="server" class="chkDelete text-danger" Text="   *Select a file to change photo or check the box to delete the current one" />
         </div>
+        
 
         <div class="float-right">
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit Post" class="btn btn-outline-success" OnClick="btnSubmit_Click" />
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit Post" class="btn btn-outline-success" OnClick="btnSubmit_Click"/>
         </div>
-
 
     </div>
 
@@ -75,5 +75,4 @@
         });
 
     </script>
-
 </asp:Content>

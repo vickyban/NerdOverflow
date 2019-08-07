@@ -8,7 +8,7 @@ using Forum.Helpers;
 
 namespace Forum.Repositories
 {
-    public class CommentRepo:BaseRepo
+    public class CommentRepo : BaseRepo
     {
 
         public static List<Comment> GetComments(int post_id)
@@ -20,9 +20,9 @@ namespace Forum.Repositories
                 "FROM [Comment] p INNER JOIN [User] u ON p.user_id = u.user_id " +
                 "WHERE  post_id = @ID and parent_id is null " +
                 "UNION ALL " +
-                "SELECT m.comment_id, m.parent_id, level + 1, m.content,m.created_at, u.user_id, u.username "+
-                "FROM [Comment] m INNER JOIN n  on m.parent_id = n.comment_id INNER JOIN [User] u ON m.user_id = u.user_id "+
-                ")Select  * from n ORDER BY level, parent_id, created_at; ";
+                "SELECT m.comment_id, m.parent_id, level + 1, m.content,m.created_at, u.user_id, u.username " +
+                "FROM [Comment] m INNER JOIN n  on m.parent_id = n.comment_id INNER JOIN [User] u ON m.user_id = u.user_id " +
+                ")Select  * from n ORDER BY level, parent_id, created_at DESC; ";
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("ID", post_id);
             Comment root = new Comment { CommentId = 0, Level = 0 };
@@ -48,7 +48,8 @@ namespace Forum.Repositories
                 }
                 reader.Close();
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
@@ -72,9 +73,11 @@ namespace Forum.Repositories
             try
             {
                 con.Open();
-                cmd.ExecuteNonQuery();
 
-            }catch(Exception ex)
+                SqlDataReader reader = cmd.ExecuteReader();
+
+            }
+            catch (Exception ex)
             {
 
             }
@@ -83,6 +86,46 @@ namespace Forum.Repositories
                 cmd.Dispose();
                 con.Close();
             }
+        }
+
+        public static int commentCount(int postID)
+        {
+            SqlConnection dbConnect = new SqlConnection();
+
+            SqlCommand cmd = dbConnect.CreateCommand();
+
+            dbConnect.ConnectionString =
+                System.Web.Configuration.WebConfigurationManager.ConnectionStrings["ForumConnectionString"].ToString();
+
+            int count = 0;
+
+            try
+            {
+                // ADD the post_ID
+                string query = "Select Count(*) from Comment where post_id =" + postID;
+
+                cmd.CommandText = query;
+
+                dbConnect.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+
+                count = reader.GetInt32(0);
+
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            finally
+            {
+                cmd.Dispose();
+                dbConnect.Close();
+            }
+
+            return count;
         }
     }
 }

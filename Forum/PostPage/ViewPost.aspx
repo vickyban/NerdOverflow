@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="ViewPost.aspx.cs" Inherits="Forum.PostPage.ViewPost" ValidateRequest="false" %>
 
+<%@ Register Src="~/UserControl/CommentSection.ascx" TagPrefix="uc1" TagName="CommentSection" %>
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../lib/Comment%20ckEditor/ckeditor/ckeditor.js"></script>
 </asp:Content>
@@ -20,7 +24,7 @@
                 <br />
 
                 <div class="afterPost">
-                   <i class="fas fa-comments">
+                    <i class="fas fa-comments">
                         <asp:Label ID="lblComment" runat="server" Text=" 0 "></asp:Label>
                     </i>&nbsp; &nbsp;&nbsp;
                     <button id="btnFA" class="btnReport" data-toggle="modal" data-target="#myModal" onclick="return false;">
@@ -40,6 +44,9 @@
                 <br />
                 <hr />
                 <br />
+
+                <!-- Comments -->
+                <uc1:CommentSection runat="server" ID="CommentSection" />
             </div>
 
             <!-- Recent Post Section -->
@@ -47,6 +54,8 @@
                 Recent Posts
             </div>
         </div>
+
+        <asp:Label ID="test" runat="server" Text="Label"></asp:Label>
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
@@ -61,12 +70,12 @@
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="txtTitle">Reason: </label>
-                            <asp:TextBox ID="txtTitle" runat="server" class="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                            <label for="txtReason">What do you think this post violated? </label>
+                            <asp:TextBox ID="txtReason" runat="server" class="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary" />
+                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="btnSubmit_Click"/>
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">cancel</button>
                     </div>
                 </div>
@@ -75,10 +84,15 @@
         </div>
 
     </div>
+
     <script>
         CKEDITOR.replace('<%= txtComment.ClientID %>');
         CKEDITOR.config.height = 100;
-        // CKEDITOR VALIDATION
 
+        $(document).ready(function () {
+            SNButton.init('<%= btnSubmit.ClientID %>', {
+                fields: ['<%= txtReason.ClientID %>']
+            })
+        });
     </script>
 </asp:Content>

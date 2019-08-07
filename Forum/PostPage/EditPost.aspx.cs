@@ -1,23 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using System.IO;
+using Forum.Models;
+using Forum.Repositories;
 
 namespace Forum.PostPage
 {
-    public partial class CreatePost : System.Web.UI.Page
+    public partial class EditPost : System.Web.UI.Page
     {
+        Post post = new Post();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Session.Add("userID", 3);
+            post = Repositories.PostRepo.getPost(9);
+
+            // GET ALL VALUES OF THE POST. CHANGE THE POSTID
+            if (!Page.IsPostBack) { 
+            txtTitle.Text = post.Title;
+            ddCategory.SelectedValue = post.Category;
+            txtContent.Text = post.Content;
+            } else
+            {
+              //  Response.Redirect(Request.RawUrl);
+            }
         }
 
+ 
+
         protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtTitle.Text == post.Title && ddCategory.SelectedValue == post.Category
+               && txtContent.Text == post.Content && chkDelete.Checked == false && !FileUpload1.HasFile)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Info", "noUpdate()", true);
+            }
+            else if (txtTitle.Text != post.Title || ddCategory.SelectedValue != post.Category
+               || txtContent.Text != post.Content || chkDelete.Checked != false || FileUpload1.HasFile)
+            {
+                if (FileUpload1.HasFile && chkDelete.Checked == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "Error", "errorImage()", true);
+                } else
+                {
+                    updatePost();
+                    chkDelete.Checked = false;
+                }
+                            
+            }
+        }
+
+        // UPDATE THE POST
+        void updatePost()
         {
             SqlConnection dbConnect = new SqlConnection();
 
@@ -34,7 +72,9 @@ namespace Forum.PostPage
 
                 if (FileUpload1.HasFile)
                 {
-                    query = "Insert into Post values (@UserID, @Title, @Category, @Content, @Image, @Status,@Date,@Date2);";
+                    query = "UPDATE Post " +
+                    "SET title = @Title , category = @Category , content = @Content , post_image = @Image , updated_at = '" + DateTime.Now + "'" +
+                    "WHERE post_id = " + 9;
 
                     SqlParameter image = new SqlParameter();
                     image.ParameterName = "@Image";
@@ -52,21 +92,18 @@ namespace Forum.PostPage
                         image.Value = bytes;
                         cmd.Parameters.Add(image);
                     }
-                    else
-                    {
-
-
-                    }
-
                 }
-                else
+                else if(chkDelete.Checked == true)
                 {
-                    query = "Insert into Post values (@UserID, @Title, @Category, @Content, NULL, @Status,@Date,@Date2);";
+                    query = "UPDATE Post " +
+                    "SET title = @Title , category = @Category , content = @Content , post_image = NULL , updated_at = '" + DateTime.Now + "'" +
+                    "WHERE post_id = " + 9;
+                } else
+                {
+                    query = "UPDATE Post " +
+                    "SET title = @Title , category = @Category , content = @Content , updated_at = '" + DateTime.Now + "'" +
+                    "WHERE post_id = " + 9;
                 }
-
-                SqlParameter userID = new SqlParameter();
-                userID.ParameterName = "@UserID";
-                userID.Value = Convert.ToInt32(Session["userID"]);
 
                 SqlParameter title = new SqlParameter();
                 title.ParameterName = "@Title";
@@ -80,31 +117,14 @@ namespace Forum.PostPage
                 category.ParameterName = "@Category";
                 category.Value = ddCategory.SelectedValue.ToString();
 
-                SqlParameter status = new SqlParameter();
-                status.ParameterName = "@Status";
-                status.Value = "published";
-              
-
-                SqlParameter dateCreated = new SqlParameter();
-                dateCreated.ParameterName = "@Date";
-                dateCreated.Value = DateTime.Now;
-
-                SqlParameter dateUpdated = new SqlParameter();
-                dateUpdated.ParameterName = "@Date2";
-                dateUpdated.Value = DateTime.Now;
-
-
                 // step 5: Set the commandtext to the query you made
                 cmd.CommandText = query;
 
                 // step 6: Add the parameters to the SqlCommand
-                cmd.Parameters.Add(userID);
                 cmd.Parameters.Add(title);
                 cmd.Parameters.Add(content);
                 cmd.Parameters.Add(category);
-                cmd.Parameters.Add(status);
-                cmd.Parameters.Add(dateCreated);
-                cmd.Parameters.Add(dateUpdated);
+
 
                 // Open the sql Connection
                 dbConnect.Open();
@@ -114,10 +134,7 @@ namespace Forum.PostPage
 
                 if (result > 0)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Success", "postCreated()", true);
-                    ddCategory.SelectedIndex = 0;
-                    txtTitle.Text = "";
-                    txtContent.Text = "";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Success", "postUpdated()", true);
                 }
             }
             catch (SqlException ex)
@@ -134,7 +151,7 @@ namespace Forum.PostPage
                 }
                 else
                 {
-
+                    
                 }
             }
             finally

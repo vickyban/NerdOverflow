@@ -91,6 +91,7 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\programming.png" />
     <Content Include="js\alertBox.js" />
+    <Content Include="PostPage\EditPost.aspx" />
     <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="StaticPages\HomePage.aspx" />
     <Content Include="Images\deleteIcon.png" />
@@ -797,7 +798,6 @@
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="UserPage\ReferenceUsages.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="CommentExample.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -830,6 +830,13 @@
     </Compile>
     <Compile Include="PostPage\CreatePost.aspx.designer.cs">
       <DependentUpon>CreatePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostPage\EditPost.aspx.cs">
+      <DependentUpon>EditPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostPage\EditPost.aspx.designer.cs">
+      <DependentUpon>EditPost.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostPage\PostPage.Master.cs">
       <DependentUpon>PostPage.Master</DependentUpon>
@@ -948,13 +955,6 @@
     </Compile>
     <Compile Include="UserPage\UserPageMaster.Master.designer.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="CommentExample.aspx.cs">
       <DependentUpon>CommentExample.aspx</DependentUpon>

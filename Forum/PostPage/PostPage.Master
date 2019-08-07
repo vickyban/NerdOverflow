@@ -22,13 +22,13 @@
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-
+    <link href="../Styles/commentSection.css" rel="stylesheet" />
     <script>
         function successPost() {
             Swal.fire({
                 type: 'success',
-                title: 'Success!',
-                text: 'Your post is created',
+                title: 'Report submitted',
+                text: 'Thank you for your help. Our admin will review this post.',
             })
         }
 
@@ -38,6 +38,57 @@
                 title: 'Failed!',
                 text: "Invalid file type. Please Try Again. . .",
                 footer: 'Upload function only takes a photo',
+            })
+        }
+
+        function errorImage() {
+            Swal.fire({
+                type: 'error',
+                title: 'Failed!',
+                text: "You are uploading a file",
+                footer: 'Please uncheck the check box to proceed',
+            })
+        }
+
+        function postCreated() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom',
+            showConfirmButton: false,
+            timer: 4500
+        });
+
+        Toast.fire({
+            type: 'success',
+            title: 'Post created successfully'
+        })
+        }
+
+        function postUpdated() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom',
+                showConfirmButton: false,
+                timer: 4500
+            });
+
+            Toast.fire({
+                type: 'success',
+                title: 'Post updated successfully'
+            })
+        }
+
+        function noUpdate() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom',
+                showConfirmButton: false,
+                timer: 4500
+            });
+
+            Toast.fire({
+                type: 'info',
+                title: 'No new values to update'
             })
         }
 
