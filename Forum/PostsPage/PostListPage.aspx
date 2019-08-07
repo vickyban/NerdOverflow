@@ -3,9 +3,6 @@
 <%@ Register Src="~/UserControl/PostPreviewWithActions.ascx" TagPrefix="uc1" TagName="PostPreviewWithActions" %>
 <%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
-<%@ Register Src="~/UserControl/HeaderTest.ascx" TagPrefix="uc1" TagName="HeaderTest" %>
-
-
 
 
 
