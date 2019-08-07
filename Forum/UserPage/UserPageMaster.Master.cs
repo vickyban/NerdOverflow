@@ -29,7 +29,7 @@ namespace Forum.UserPage
         {
             if(Session["userId"] == null)
             {
-                Response.Redirect("~\\WebForm1.aspx");
+                Response.Redirect("/");
                 return;
             }
             int.TryParse(Session["userId"].ToString(), out int curId);

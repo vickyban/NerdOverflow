@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Forum.PostPage
+namespace Forum
 {
-    public partial class PostPage : System.Web.UI.MasterPage
+    public partial class FakeSession : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["userId"] = "2";
         }
     }
 }

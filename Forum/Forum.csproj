@@ -79,6 +79,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\fontawesome.min.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="FakeSession.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\apple.png" />
     <Content Include="Images\axis.png" />
@@ -814,6 +815,13 @@
     </Compile>
     <Compile Include="Admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FakeSession.aspx.cs">
+      <DependentUpon>FakeSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FakeSession.aspx.designer.cs">
+      <DependentUpon>FakeSession.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
