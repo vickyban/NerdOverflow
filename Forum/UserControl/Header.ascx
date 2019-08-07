@@ -71,7 +71,7 @@
                 <a class="lnk">Sign In</a>
         <%}else{ %>
         <a ID="linkAdmin" class="lnk smallFont"><i class="fas fa-user-cog"></i> ADMIN</a>
-        <a class="lnk smallFont"><i class="far fa-edit"></i> NEW</a>
+        <a class="lnk smallFont" href="/posts/new"><i class="far fa-edit"></i> NEW</a>
         <div class="profile">
             <label id="profileToggle">Poyocat</label>
             <div id="account_opts">

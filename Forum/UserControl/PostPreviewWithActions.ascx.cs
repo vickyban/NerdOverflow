@@ -41,7 +41,7 @@ namespace Forum.UserControl
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"/posts/{postId}/");
+            Response.Redirect($"/posts/{postId}/edit");
         }
 
         protected void btnDelte_Click(object sender, EventArgs e)
