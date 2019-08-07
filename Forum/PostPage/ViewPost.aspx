@@ -14,12 +14,12 @@
                 <br />
                 <br />
 
-                <asp:Image ID="postImage" runat="server" class="image rounded" />
+                <asp:Image ID="postImage" runat="server" class="image rounded "/>
                 <br />
                 <br />
 
                 <asp:Label ID="lblContentMessage" runat="server" Text="Label"></asp:Label>
-                <br />
+                <br /><br />
 
                 <div class="afterPost">
                     <i class="fas fa-comments">
@@ -32,16 +32,15 @@
                 </div>
                 <br />
                 <br />
-
-                <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" class="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtComment">
+                </asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" class="form-control commentContent"></asp:TextBox>
                 <div class="float-right">
-                    <asp:Button ID="btnComment" runat="server" Text="Comment" class="btn btn-outline-primary btn-sm btnComment" OnClick="btnComment_Click" />
+                <asp:Button ID="btnComment" runat="server" Text="Comment" class="btn btn-outline-primary btn-sm btnComment" OnClick="btnComment_Click" />
                 </div>
                 <br />
                 <br />
-                <br />
                 <hr />
-                <br />
 
                 <!-- Comments -->
                 <uc1:CommentSection runat="server" ID="CommentSection" />
@@ -78,7 +77,6 @@
 
             </div>
         </div>
-
     </div>
 
     <script>
@@ -89,6 +87,7 @@
             SNButton.init('<%= btnSubmit.ClientID %>', {
                 fields: ['<%= txtReason.ClientID %>']
             })
-        });
+        }); 
+
     </script>
 </asp:Content>

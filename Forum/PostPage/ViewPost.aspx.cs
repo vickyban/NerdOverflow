@@ -13,6 +13,7 @@ namespace Forum.PostPage
     public partial class ViewPost : System.Web.UI.Page
     {
         Post userPost = new Post();
+        int postID;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +21,8 @@ namespace Forum.PostPage
             // Convert.ToInt32(Session["userID"]; For Session
             // viewPost takes a parameter is POSTID
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
+            postID = postId;
+
             userPost = Repositories.PostRepo.getPost(postId);
             showPost();
 
@@ -84,13 +87,18 @@ namespace Forum.PostPage
             {
                 postImage.ImageUrl = "data:Image/png;base64," + userPost.Image;
                 postImage.Visible = true;
+            } else
+            {
+                postImage.Visible = false;
+                postImage.CssClass = "noImage";
             }
 
             // CONTENT TEXT
             lblContentMessage.Text = userPost.Content.ToString();
+           
 
             // Comment - CHANGE THE POSTID
-            int commentCount = CommentRepo.commentCount(25);
+            int commentCount = CommentRepo.commentCount(postID);
             if (commentCount > 1)
             {
                 lblComment.Text = commentCount.ToString() + " Comments";
@@ -111,7 +119,7 @@ namespace Forum.PostPage
         protected void btnComment_Click(object sender, EventArgs e)
         {
             // CHANGE THE PARAMETERS
-            submitComment(3, 25);
+            submitComment(3, postID);
             txtComment.Text = "";
         }
 
@@ -184,7 +192,7 @@ namespace Forum.PostPage
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // CHANGE THE USERID AND POSTID
-            reportPost(2, 25);
+            reportPost(2, postID);
             // Update post status. CHANGE POSTID
         }
 
@@ -204,7 +212,7 @@ namespace Forum.PostPage
                 // CHANGE POST_ID
                 string query2 = "UPDATE Post " +
                                 "SET status = 'review' , updated_at = '"  + DateTime.Now +"'" +
-                                "WHERE post_id = 7;";
+                                "WHERE post_id = " + postID;
 
                 SqlParameter user = new SqlParameter();
                 user.ParameterName = "@UserID";

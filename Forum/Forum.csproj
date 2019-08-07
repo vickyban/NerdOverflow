@@ -744,6 +744,7 @@
     <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
+    <Content Include="Test.aspx" />
     <Content Include="UserControl\BookmarkControl.ascx" />
     <Content Include="UserControl\CommentBox.ascx" />
     <Content Include="UserControl\CommentSection.ascx" />
@@ -871,6 +872,13 @@
     </Compile>
     <Compile Include="StaticPages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\BookmarkControl.ascx.cs">
       <DependentUpon>BookmarkControl.ascx</DependentUpon>

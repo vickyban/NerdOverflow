@@ -63,6 +63,7 @@
         $(e.target).parent().siblings(".box").val("");
         $(e.target).siblings(".btnReply").prop("disabled", true);
     }
+
     $(".comment_form .box").on("change textInput input", e => {
         if ($(e.target).val() == '' && !$(e.target).siblings(".toolbar").children(".btnReply").prop("disabled")) {
             $(e.target).siblings(".toolbar").children(".btnReply").prop("disabled", true);
