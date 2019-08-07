@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PostPage.master.cs" Inherits="Forum.PostPage.PostPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="PostMasterStyle.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
+    <script src="../Scripts/popper.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/snbutton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
+    <link href="../lib/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link href="../Styles/commentSection.css" rel="stylesheet" />
+    <script>
+        function successPost() {
+            Swal.fire({
+                type: 'success',
+                title: 'Report submitted',
+                text: 'Thank you for your help. Our admin will review this post.',
+            })
+        }
+
+        function error() {
+            Swal.fire({
+                type: 'error',
+                title: 'Failed!',
+                text: "Invalid file type. Please Try Again. . .",
+                footer: 'Upload function only takes a photo',
+            })
+        }
+
+        function errorImage() {
+            Swal.fire({
+                type: 'error',
+                title: 'Failed!',
+                text: "You are uploading a file",
+                footer: 'Please uncheck the check box to proceed',
+            })
+        }
+
+        function postCreated() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom',
+            showConfirmButton: false,
+            timer: 4500
+        });
+
+        Toast.fire({
+            type: 'success',
+            title: 'Post created successfully'
+        })
+        }
+
+        function postUpdated() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom',
+                showConfirmButton: false,
+                timer: 4500
+            });
+
+            Toast.fire({
+                type: 'success',
+                title: 'Post updated successfully'
+            })
+        }
+
+        function noUpdate() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom',
+                showConfirmButton: false,
+                timer: 4500
+            });
+
+            Toast.fire({
+                type: 'info',
+                title: 'No new values to update'
+            })
+        }
+
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!--CONTAINER DIV -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="../Images/logo.png" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bookmark </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Post </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Logoff </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END OF CONTAINER DIV -->
+
+        <!--CONTAINER DIV -->
+        <div class="container">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feauture-box">
+                            <div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- END OF CONTAINER DIV -->
+
+    </form>
+</body>
+
+</html>

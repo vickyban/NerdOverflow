@@ -14,7 +14,7 @@ namespace Forum
         {
             //string id = Page.RouteData.Values["Id"].ToString();
             routeCollection.MapPageRoute("RouteForUserProfile", "users/{Id}/", "~/UserPage/ProfilePage.aspx");
-            routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/Customer.aspx");
+            routeCollection.MapPageRoute("RouteForPost", "posts/{Id}", "~/PostPage/ViewPost.aspx");
             routeCollection.MapPageRoute("RouteForPosts", "posts/", "~/PostsPage/PostListPage.aspx");
 
             routeCollection.MapPageRoute("RouteForBookmarks", "users/{Id}/bookmarks/", "~/UserPage/BookmarkPage.aspx");

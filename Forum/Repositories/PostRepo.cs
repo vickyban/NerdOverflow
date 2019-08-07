@@ -40,7 +40,7 @@ namespace Forum.Repositories
                 "ON p.user_id = u.user_id " +
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
-                "WHERE p.status = 'approved' " +
+                "WHERE p.status = 'published' OR p.status = 'review' " +
                 (keyword != "" ? "AND p.title LIKE '%'+ @Keyword + '%' ": "") + 
                 (filter != "" ? $"AND p.category IN ({filter}) ": "") + 
                 "ORDER BY p.created_at " + orderBy;
@@ -127,6 +127,106 @@ namespace Forum.Repositories
                 cmd.Dispose();
                 con.Close();
             }
+        }
+
+        // GET POST WITH JUST POSTID
+        public static Post getPost(int postID)
+        {
+            SqlConnection dbConnect = new SqlConnection(connectionString);
+
+            SqlCommand cmd = dbConnect.CreateCommand();
+
+            Post userPost = new Post();
+
+            try
+            {
+                string query = "Select * From Post Where post_id =" + postID;
+
+                dbConnect.Open();
+
+                // These two are important when using SqlDataReader
+                cmd.CommandText = query;
+                cmd.Connection = dbConnect;
+
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                {
+                    rd.Read();
+                    userPost.UserId = Convert.ToInt32(rd[1]);             
+                    userPost.Title = rd[2].ToString();
+                    userPost.Category = rd[3].ToString();
+                    userPost.Content = rd[4].ToString();
+                    if (rd[5] != DBNull.Value)
+                    {
+                        byte[] image = (byte[])rd[5];
+                        userPost.Image = Convert.ToBase64String(image);
+                    }
+                    
+                    userPost.CreatedAt = Convert.ToDateTime(rd[7]);
+                }
+                
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message.ToString()); 
+            }
+            finally
+            {
+                cmd.Dispose();
+                dbConnect.Close();
+            }
+            return userPost;
+        }
+
+        // GET POST WITH POSTID AND USEID
+        public static Post getPost(int userID, int postID)
+        {
+            SqlConnection dbConnect = new SqlConnection(connectionString);
+
+            SqlCommand cmd = dbConnect.CreateCommand();
+
+            Post userPost = new Post();
+
+            try
+            {
+                string query = "Select * From Post Where post_id =" + postID;
+
+                dbConnect.Open();
+
+                // These two are important when using SqlDataReader
+                cmd.CommandText = query;
+                cmd.Connection = dbConnect;
+
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                {
+                    rd.Read();
+                    userPost.UserId = Convert.ToInt32(rd[1]);
+                    userPost.Title = rd[2].ToString();
+                    userPost.Category = rd[3].ToString();
+                    userPost.Content = rd[4].ToString();
+                    if (rd[5] != DBNull.Value)
+                    {
+                        byte[] image = (byte[])rd[5];
+                        userPost.Image = Convert.ToBase64String(image);
+                    }
+
+                    userPost.CreatedAt = Convert.ToDateTime(rd[7]);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+            finally
+            {
+                cmd.Dispose();
+                dbConnect.Close();
+            }
+            return userPost;
         }
     }
 }
