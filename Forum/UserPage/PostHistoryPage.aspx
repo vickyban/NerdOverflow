@@ -17,10 +17,10 @@
             <div class="filter_box" id="filter_box">
                 <div class="filter_opts" id="">
                     <div>
-                        <asp:CheckBox ID="cbReview" runat="server" Text="In Review" Checked="True" />
+                        <asp:CheckBox ID="cbReview" runat="server" Text="Flagged" Checked="True" />
                     </div>
                     <div>
-                        <asp:CheckBox ID="cbPublic" runat="server" Text="Approved" Checked="True" />
+                        <asp:CheckBox ID="cbPublic" runat="server" Text="Published" Checked="True" />
                     </div>
                  </div>
             </div>

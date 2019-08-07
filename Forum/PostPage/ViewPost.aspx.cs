@@ -19,11 +19,12 @@ namespace Forum.PostPage
 
             // Convert.ToInt32(Session["userID"]; For Session
             // viewPost takes a parameter is POSTID
-            userPost = Repositories.PostRepo.getPost(25);
+            int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
+            userPost = Repositories.PostRepo.getPost(postId);
             showPost();
 
             // POSTID
-            List<Comment> comments = CommentRepo.GetComments(25);
+            List<Comment> comments = CommentRepo.GetComments(postId);
             CommentSection.Comments = comments;
 
         }

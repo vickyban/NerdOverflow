@@ -15,14 +15,16 @@ namespace Forum.PostsPage
         public List<Post> Posts { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Header.CallBackMethod = this.Search;
 
             if(Request.QueryString["keyword"]!= null)
             {
                 string keyword = Request.QueryString["keyword"];
-                string filter = Request.QueryString["filter"];
+                string rawfilters = Request.QueryString["filters"];
+                string filters = "";
+                if (rawfilters != "")
+                filters = string.Join(",",rawfilters.Split(',').Select(v => $"'{v}'"));
                 string sort = Request.QueryString["sort"];
-                Posts = PostRepo.getPosts( keyword,filter, sort);
+                Posts = PostRepo.getPosts( keyword,filters, sort);
                 Render();
             }
             else if (!IsPostBack)
@@ -42,11 +44,6 @@ namespace Forum.PostsPage
                 control.Post = post;
                 PlaceHolder1.Controls.Add(control);
             }
-        }
-        public void Search(string keyword, string filter, string sort)
-        {
-            Posts = PostRepo.getPosts(keyword, filter, sort);
-            Render();
         }
     }
 }

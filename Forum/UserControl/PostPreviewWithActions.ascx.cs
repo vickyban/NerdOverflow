@@ -11,6 +11,8 @@ namespace Forum.UserControl
 {
     public partial class PostPreviewWithActions : System.Web.UI.UserControl
     {
+        public delegate void Delegate(string message, bool err);
+        public Delegate Callback { get; set; }
         public Post Post { get; set; }
         public bool IsAuthour
         {
@@ -31,7 +33,7 @@ namespace Forum.UserControl
             lblCategory.Text = Post.Category;
             lblPostDate.Text = Post.CreatedAt.ToString();
             postId.Value = Post.PostId.ToString();
-            postUrl.NavigateUrl = "/posts/"+postId;
+            postUrl.NavigateUrl = "/posts/"+ Post.PostId;
             postUrl.Text = Post.Title;
             int count = Post.TotalComments;
             lblComment.Text = count == 1 ? count + " Comment" : count + " Comments";
@@ -39,7 +41,7 @@ namespace Forum.UserControl
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"/posts/{postId}/");
+            Response.Redirect($"/posts/{postId}/edit");
         }
 
         protected void btnDelte_Click(object sender, EventArgs e)
@@ -47,7 +49,8 @@ namespace Forum.UserControl
             if (int.TryParse(postId.Value, out int id))
             {
                 PostRepo.DeletePost(id);
-                Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
+                Callback("Successfully Deleted", false);
+                //Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
             }
         }
 

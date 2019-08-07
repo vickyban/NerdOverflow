@@ -8,9 +8,9 @@
     <div class="post_right">
       
         <div class="post_title">
-            <asp:HyperLink ID="postUrl" runat="server" BorderStyle="None" NavigateUrl="https://www.google.ca/">
-                  <%--  <asp:Label ID="lblTitle"  runat="server" Text=""></asp:Label>--%>
-            </asp:HyperLink>
+            <asp:HyperLink ID="postUrl" runat="server">HyperLink</asp:HyperLink>
+<%--            <asp:HyperLink ID="" runat="server" BorderStyle="None" NavigateUrl="<%=  %>"">
+            </asp:HyperLink>--%>
         </div>
         <div class="post_metadata">
             <div class="post_category">
@@ -22,9 +22,9 @@
             <div class="post_date">
                 <asp:Label ID="lblPostDate"  runat="server"></asp:Label>
             </div>
-            <%if (Post.Status == "new"){%>
+            <%if (Session["userId"] != null && IsAuthour && Post.Status == "review"){%>
             <div>
-                <label class="inReview">In Review</label>
+                <label class="inReview">Flagged</label>
             </div>
             <%} %>
         </div>

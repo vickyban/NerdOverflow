@@ -17,7 +17,7 @@ namespace Forum.UserPage
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
             this.Master.PostPageBtn.CssClass = "user_right_navlink active";
-            posts = getPosts(new List<string> { "'new'", "'approved'" }, "DESC");
+            posts = getPosts(new List<string> { "'reivew'", "'published'" }, "DESC");
             Render();
         }
 
@@ -32,8 +32,8 @@ namespace Forum.UserPage
         {
             string orderBy = sortOpt.SelectedValue.Equals("New") ? "DESC" : "ASC";
             List<string> filters = new List<string>();
-            if (cbReview.Checked) filters.Add("'new'");
-            if (cbPublic.Checked) filters.Add("'approved'");
+            if (cbReview.Checked) filters.Add("'review'");
+            if (cbPublic.Checked) filters.Add("'published'");
             posts = getPosts(filters, orderBy);
             Render();
         }
@@ -45,8 +45,18 @@ namespace Forum.UserPage
             {
                 PostPreviewWithActions control = (PostPreviewWithActions)Page.LoadControl("..\\UserControl\\PostPreviewWithActions.ascx");
                 control.Post = post;
+                control.Callback = this.Refresh;
                 PlaceHolder1.Controls.Add(control);
             }
+        }
+
+        public void Refresh(string message, bool err)
+        {
+            posts = getPosts(new List<string> { "'reivew'", "'published'" }, "DESC");
+            Render();
+            string e = err ? "true" : "false";
+            string script = $"<script>displayAlert('{message}',{e});</script>";
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", script);
         }
     }
 }
