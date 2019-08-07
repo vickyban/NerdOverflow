@@ -103,6 +103,15 @@ namespace Forum {
         protected global::System.Web.UI.WebControls.Label lblTotalPost;
         
         /// <summary>
+        /// lblBio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBio;
+        
+        /// <summary>
         /// bio control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace Forum {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl bio;
+        
+        /// <summary>
+        /// lblChem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblChem;
         
         /// <summary>
         /// chem control.
@@ -121,13 +139,31 @@ namespace Forum {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl chem;
         
         /// <summary>
-        /// math control.
+        /// lblMaths control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl math;
+        protected global::System.Web.UI.WebControls.Label lblMaths;
+        
+        /// <summary>
+        /// maths control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl maths;
+        
+        /// <summary>
+        /// lblGeo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGeo;
         
         /// <summary>
         /// geo control.
@@ -139,6 +175,15 @@ namespace Forum {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl geo;
         
         /// <summary>
+        /// lblPhysic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhysic;
+        
+        /// <summary>
         /// physic control.
         /// </summary>
         /// <remarks>
@@ -146,6 +191,15 @@ namespace Forum {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl physic;
+        
+        /// <summary>
+        /// lblProgramming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProgramming;
         
         /// <summary>
         /// programming control.
