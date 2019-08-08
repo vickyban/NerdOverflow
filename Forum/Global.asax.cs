@@ -13,14 +13,13 @@ namespace Forum
         public static void RegisterRoutes(RouteCollection routeCollection)
         {
             //string id = Page.RouteData.Values["Id"].ToString();
-            routeCollection.MapPageRoute("RouteForUserProfile", "users/{Id}/", "~/UserPage/ProfilePage.aspx");
-            routeCollection.MapPageRoute("RouteForPost", "posts/{Id}/", "~/PostPage/ViewPost.aspx");
-            routeCollection.MapPageRoute("RouteForEditPost", "posts/{Id}/edit/", "~/PostPage/EditPost.aspx");
-            routeCollection.MapPageRoute("RouteForCreatePost", "posts/new/", "~/PostPage/CreatePost.aspx");
-            routeCollection.MapPageRoute("RouteForPosts", "posts/", "~/PostsPage/PostListPage.aspx");
-
             routeCollection.MapPageRoute("RouteForBookmarks", "users/{Id}/bookmarks/", "~/UserPage/BookmarkPage.aspx");
             routeCollection.MapPageRoute("RouteForPostHistory", "users/{Id}/posts/", "~/UserPage/PostHistoryPage.aspx");
+            routeCollection.MapPageRoute("RouteForUserProfile", "users/{Id}/", "~/UserPage/ProfilePage.aspx");
+            routeCollection.MapPageRoute("RouteForCreatePost", "posts/new/", "~/PostPage/CreatePost.aspx");
+            routeCollection.MapPageRoute("RouteForEditPost", "posts/{Id}/edit/", "~/PostPage/EditPost.aspx");
+            routeCollection.MapPageRoute("RouteForPost", "posts/{Id}/", "~/PostPage/ViewPost.aspx");
+            routeCollection.MapPageRoute("RouteForPosts", "posts/", "~/PostsPage/PostListPage.aspx");
             routeCollection.MapPageRoute("RouteForHomePage", "", "~/StaticPages/HomePage.aspx");
 
         }
@@ -37,7 +36,7 @@ namespace Forum
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

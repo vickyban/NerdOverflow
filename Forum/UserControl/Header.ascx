@@ -66,19 +66,21 @@
     </div>
 
     <div class="account">
-        <%if (Session["userId"] == null){ %>
+        <%if (Session["UserId"] == null){ %>
                 <a class="lnk">Register</a>
                 <a class="lnk">Sign In</a>
         <%}else{ %>
+        <% if (Session["IsAdmin"] != null && Convert.ToBoolean(Session["IsAdmin"])) { %>
         <a ID="linkAdmin" class="lnk smallFont"><i class="fas fa-user-cog"></i> ADMIN</a>
+        <%} %>
         <a class="lnk smallFont" href="/posts/new"><i class="far fa-edit"></i> NEW</a>
         <div class="profile">
             <label id="profileToggle">Poyocat</label>
             <div id="account_opts">
                 <div>
-                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/" %>"><i class="fas fa-user"></i> Profile</a>
-                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/bookmarks/" %>"><i class="fas fa-bookmark"></i> Bookmarks</a>
-                    <a class="lnk" href="<%= $"/users/{Session["userId"]}/posts/" %>"><i class="fas fa-file"></i> My posts</a>
+                    <a class="lnk" href="<%= $"/users/{Session["UserId"]}/" %>"><i class="fas fa-user"></i> Profile</a>
+                    <a class="lnk" href="<%= $"/users/{Session["UserId"]}/bookmarks/" %>"><i class="fas fa-bookmark"></i> Bookmarks</a>
+                    <a class="lnk" href="<%= $"/users/{Session["UserId"]}/posts/" %>"><i class="fas fa-file"></i> My posts</a>
                 <hr />
                     <a id="lnkLogout" class="lnk" href="/UserPage/LogoutPage.aspx"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>

@@ -29,6 +29,7 @@ namespace Forum.UserPage
         {
             // change class style to mark User profile is active 
             this.Master.ProfilePageBtn.CssClass = "user_right_navlink active";
+            txtPassErr.Text = "";
         }
 
         /// <summary>

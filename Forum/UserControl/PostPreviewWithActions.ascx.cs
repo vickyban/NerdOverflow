@@ -25,12 +25,11 @@ namespace Forum.UserControl
         {
             get
             {
-                return Session["userId"] != null && Convert.ToInt32(Session["userId"].ToString()) == Post.UserId;
+                return Session["UserId"] != null && Convert.ToInt32(Session["UserId"].ToString()) == Post.UserId;
             }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            var s = Session["userId"];
             Render();
         }
 
@@ -52,7 +51,7 @@ namespace Forum.UserControl
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"/posts/{postId}/edit");
+            Response.Redirect($"/posts/{postId.Value}/edit");
         }
 
         protected void btnDelte_Click(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace Forum.UserControl
             Bookmark bookmark = new Bookmark
             {
                 PostId = Convert.ToInt32(postId.Value),
-                UserId = Convert.ToInt32(Session["userId"])
+                UserId = Convert.ToInt32(Session["UserId"])
             };
             BookmarkRepo.CreateBookmark(bookmark);
             Page.ClientScript.RegisterStartupScript(Page.GetType(), "Javascript", "<script>displayAlert('Successfully Saved' ,false);</script>");
