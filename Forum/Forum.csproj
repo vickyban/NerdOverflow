@@ -899,6 +899,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Styles\commentSection.css" />
+    <Content Include="Styles\header.css" />
     <Content Include="Styles\postListStyle.css" />
     <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />

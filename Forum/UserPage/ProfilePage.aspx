@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="profile_content">
         <div class="password_form">
             <h4>Change Password</h4>
@@ -29,7 +30,7 @@
             <asp:CompareValidator ID="CompareValidatorPass" runat="server" ErrorMessage="Confirmed and new passwords must match" ControlToValidate="txtNewPass" ControlToCompare="txtConfirmedPass" ValidationGroup="pass_form" ForeColor="#0E6394" Display="None"></asp:CompareValidator>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorCPass" runat="server" ErrorMessage="Confirmed password is required" ValidationGroup="pass_form" ControlToValidate="txtConfirmedPass" Display="None" ForeColor="#0E6394"></asp:RequiredFieldValidator>
             </div>
-            <asp:Button ID="btnUpdatePass" runat="server" Text="Change Password" ValidationGroup="pass_form" OnClick="btnUpdatePass_Click" />
+            <asp:Button ID="btnUpdatePass" class="btnUpload" runat="server" Text="Change Password" ValidationGroup="pass_form" OnClick="btnUpdatePass_Click" />
         </div>
         <hr />
 

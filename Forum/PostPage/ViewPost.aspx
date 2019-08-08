@@ -3,7 +3,7 @@
 <%@ Register Src="~/UserControl/CommentSection.ascx" TagPrefix="uc1" TagName="CommentSection" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../lib/Comment%20ckEditor/ckeditor/ckeditor.js"></script>
+    <script src="/lib/Comment%20ckEditor/ckeditor/ckeditor.js"></script>
     <style>
         .btnPosts:hover {
             color: #fff;

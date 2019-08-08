@@ -5,6 +5,10 @@
     header a {
         height: 100%;
         display: inline-block;
+        color: #f1faee;
+    }
+    header a:visited{
+
     }
 
     header img {

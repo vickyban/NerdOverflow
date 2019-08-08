@@ -9,6 +9,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
         <link href="../Styles/style.css" rel="stylesheet" />
     <link href="../Styles/userPage.css" rel="stylesheet" />
     <link href="../css/all.min.css" rel="stylesheet" />

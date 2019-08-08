@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Create Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="CreatePost.aspx.cs" Inherits="Forum.PostPage.CreatePost" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
+    <script src="/lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
