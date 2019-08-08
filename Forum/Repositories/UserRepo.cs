@@ -10,6 +10,45 @@ namespace Forum.Repositories
 {
     public class UserRepo:BaseRepo
     {
+        public static string GetUserPassword(int userId)
+        {
+            string query = "Select password FROM [User] WHERE user_id = " + userId;
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = query;
+            string encryptPass = null;
+            try
+            {
+                con.Open();
+                encryptPass = cmd.ExecuteScalar().ToString();
+            }catch(Exception ex) { }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+            return encryptPass;
+        }
+
+        public static void UpdatePassword(int userId, string password)
+        {
+            string query = "UPDATE [USER] SET password = @Password WHERE user_id = " + userId;
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("Password", password);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+        }
         public static void SaveImage(int userId, byte[] image)
         {
             SqlConnection con = new SqlConnection(connectionString);

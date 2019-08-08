@@ -827,6 +827,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CommentGraph.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Models\Ban.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Comment.cs" />
