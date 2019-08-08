@@ -9,6 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserPage
 {
+    /// <summary>
+    ///  Author: Gia Vien Banh - 991501653
+    ///  Business logic for User Profile page, allow user to update password and profile image
+    /// </summary>
     public partial class ProfilePage : System.Web.UI.Page
     {
         public int UserId
@@ -23,9 +27,15 @@ namespace Forum.UserPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // change class style to mark User profile is active 
             this.Master.ProfilePageBtn.CssClass = "user_right_navlink active";
         }
 
+        /// <summary>
+        /// Handle submission to upload profile image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             // check if file is uploaded 
@@ -47,6 +57,11 @@ namespace Forum.UserPage
             }
         }
 
+        /// <summary>
+        /// Handle submission to update user password. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnUpdatePass_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
@@ -67,6 +82,9 @@ namespace Forum.UserPage
             }
         }
 
+        /// <summary>
+        /// Clear all text fields in the password updating form
+        /// </summary>
         private void ClearPasswordForm()
         {
             txtOldPass.Text = "";
@@ -74,6 +92,11 @@ namespace Forum.UserPage
             txtConfirmedPass.Text = "";
         }
 
+        /// <summary>
+        /// invoke js message box on the Page
+        /// </summary>
+        /// <param name="message">Message to be displayed in the alert box</param>
+        /// <param name="err">bool if this is an err or normal message</param>
         private void DisplayAlert(string message, bool err)
         {
             string e = err ? "true" : "false";

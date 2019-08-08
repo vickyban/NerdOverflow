@@ -10,6 +10,9 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserPage
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// </summary>
     public partial class BookmarkPage : System.Web.UI.Page
     {
         private List<Bookmark> bookmarks = new List<Bookmark>();

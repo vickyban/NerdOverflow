@@ -9,6 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserControl
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// Comment box user control
+    /// </summary>
     public partial class CommentBox : System.Web.UI.UserControl
     {
         public Comment Comment { get; set; }

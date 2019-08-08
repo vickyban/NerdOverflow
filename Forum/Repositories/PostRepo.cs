@@ -7,8 +7,18 @@ using System.Web;
 
 namespace Forum.Repositories
 {
+    /// <summary>
+    /// Author: Gia Vien Banh, Jhon Jherick Maravilla
+    /// </summary>
     public class PostRepo : BaseRepo
     {
+        /// <summary>
+        /// Get list of posts created by a specific user
+        /// </summary>
+        /// <param name="userId">user id of the author</param>
+        /// <param name="filters">category filter string </param>
+        /// <param name="orderBy">to sort the list returned posts</param>
+        /// <returns></returns>
         public static List<Post> getPostsByAuthor(int userId, List<string> filters, string orderBy)
         {
             SqlCommand cmd = new SqlCommand();
@@ -27,7 +37,13 @@ namespace Forum.Repositories
 
             return getPosts(cmd);
         }
-
+        /// <summary>
+        /// get list of post that contain the keywork in the title and match the filter category string
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <param name="filter"></param>
+        /// <param name="orderBy"></param>
+        /// <returns></returns>
         public static List<Post> getPosts(string keyword, string filter, string orderBy)
         {
             SqlCommand cmd = new SqlCommand();
@@ -49,6 +65,12 @@ namespace Forum.Repositories
             return getPosts(cmd,true);
         }
 
+        /// <summary>
+        /// Get Posts 
+        /// </summary>
+        /// <param name="cmd">Command line instance to execute</param>
+        /// <param name="withContent">get post's content or not</param>
+        /// <returns>List of Post</returns>
         public static List<Post> getPosts(SqlCommand cmd, bool withContent = false)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -93,6 +115,10 @@ namespace Forum.Repositories
             return posts;
         }
     
+        /// <summary>
+        /// Delete post
+        /// </summary>
+        /// <param name="postId"></param>
         public static void DeletePost(int postId)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -145,7 +171,6 @@ namespace Forum.Repositories
             try
             {
                 string query = "Select * From Post Where post_id =" + postID;
-                
 
                 dbConnect.Open();
 
@@ -170,7 +195,7 @@ namespace Forum.Repositories
                     
                     userPost.CreatedAt = Convert.ToDateTime(rd[7]);
                 }
-
+                
             }
             catch (SqlException ex)
             {

@@ -9,6 +9,9 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserPage
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// </summary>
     public partial class UserPageMaster : System.Web.UI.MasterPage
     {
         public Button ProfilePageBtn { get => btnProfileLink; }
@@ -27,18 +30,19 @@ namespace Forum.UserPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Protected route, if the user is not login, redirect to home page
             if(Session["userId"] == null)
             {
                 Response.Redirect("/");
                 return;
             }
             int.TryParse(Session["userId"].ToString(), out int curId);
-            if( curId == UserId)
+            if( curId == UserId)  // the user access his profile
             {
                 User = UserRepo.GetUser(curId);
                 Render();
             }
-            else
+            else // else if the user try to access someone else 's profile , redirect to his profile instead
             {
                 Response.Redirect($"/users/{curId}/posts/");
             }
@@ -63,6 +67,9 @@ namespace Forum.UserPage
             Response.Redirect(url);
         }
 
+        /// <summary>
+        ///  Render controls in the master page with the user info
+        /// </summary>
         private void Render()
         {
             if (User == null) return;
