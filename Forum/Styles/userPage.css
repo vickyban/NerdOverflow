@@ -276,3 +276,14 @@
     margin-top: 10px;
 
 }
+.password_form{
+}
+
+.password_form > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.err {
+    color: #e63945;
+}

@@ -13,6 +13,15 @@ namespace Forum.UserPage {
     public partial class ProfilePage {
         
         /// <summary>
+        /// txtPassErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtPassErr;
+        
+        /// <summary>
         /// txtOldPass control.
         /// </summary>
         /// <remarks>
@@ -22,15 +31,6 @@ namespace Forum.UserPage {
         protected global::System.Web.UI.WebControls.TextBox txtOldPass;
         
         /// <summary>
-        /// RequiredFieldValidatorOPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorOPass;
-        
-        /// <summary>
         /// txtNewPass control.
         /// </summary>
         /// <remarks>
@@ -38,6 +38,33 @@ namespace Forum.UserPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNewPass;
+        
+        /// <summary>
+        /// txtConfirmedPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmedPass;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
+        /// RequiredFieldValidatorOPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorOPass;
         
         /// <summary>
         /// RequiredFieldValidatorNPass control.
@@ -56,15 +83,6 @@ namespace Forum.UserPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorPass;
-        
-        /// <summary>
-        /// txtConfirmedPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmedPass;
         
         /// <summary>
         /// RequiredFieldValidatorCPass control.
