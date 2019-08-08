@@ -10,6 +10,9 @@ using Forum.Repositories;
 
 namespace Forum.UserControl
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// </summary>
     public partial class BookmarkControl : System.Web.UI.UserControl
     {
         public Bookmark Bookmark { get; set; }

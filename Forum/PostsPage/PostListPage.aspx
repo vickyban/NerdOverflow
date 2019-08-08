@@ -10,19 +10,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
     <link href="../Styles/style.css" rel="stylesheet" />
     <link href="../Styles/userPage.css" rel="stylesheet" />
     <link href="../css/all.min.css" rel="stylesheet" />
-    <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="../css/all.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../lib/font-awesome/css/all.css" />
    
     <link href="../Styles/style.css" rel="stylesheet" />
 
-    <link rel="stylesheet/less" type="text/css" href="../Styles/postListStyle_less.less" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
-
+    <link href="../Styles/postListStyle.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
    
     <title></title>

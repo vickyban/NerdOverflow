@@ -8,6 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserControl
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// comment section acts as a placeholder for comment box user controls
+    /// </summary>
     public partial class CommentSection : System.Web.UI.UserControl
     {
        public List<Comment> Comments { get; set; }
@@ -16,6 +20,9 @@ namespace Forum.UserControl
             Render();
         }
 
+        /// <summary>
+        /// Render list of post preview control based on the posts property
+        /// </summary>
         private void Render()
         {
             if(Comments != null && Comments.Count > 0)

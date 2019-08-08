@@ -1,10 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PostPage.master.cs" Inherits="Forum.PostPage.PostPage" %>
 
+<%@ Register Src="~/UserControl/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+
+
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title></title>
+        <link href="../Styles/header.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="PostMasterStyle.css" rel="stylesheet" />
@@ -97,32 +101,9 @@
     </script>
 </head>
 <body>
+    <uc1:Header runat="server" ID="Header" />
     <form id="form1" runat="server">
 
-        <!--CONTAINER DIV -->
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <asp:Image ImageUrl="~/Images/logo.png" ID="Image1" runat="server" />
-                </a>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Profile </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Bookmark </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Post </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Logoff </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
         <!-- END OF CONTAINER DIV -->
 
         <!--CONTAINER DIV -->

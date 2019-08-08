@@ -11,7 +11,7 @@ namespace Forum.UserPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.RemoveAll();
+            Session.Clear();
             Response.Redirect("/posts/");
         }
     }

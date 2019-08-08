@@ -9,14 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserPage
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// Header user control
+    /// </summary>
     public partial class Header : System.Web.UI.UserControl
     {
-        public delegate void CallBack(string keywor, string filter, string sort);
-        public CallBack CallBackMethod { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

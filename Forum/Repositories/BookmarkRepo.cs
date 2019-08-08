@@ -7,8 +7,17 @@ using Forum.Models;
 
 namespace Forum.Repositories
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// </summary>
     public class BookmarkRepo:BaseRepo
     {
+        /// <summary>
+        /// Get list of Bookmark details of specific user 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="orderBy"></param>
+        /// <returns></returns>
         public static List<Bookmark> GetBookmarks(int userId, string orderBy)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -76,6 +85,10 @@ namespace Forum.Repositories
             return bookmarks;
         }
 
+        /// <summary>
+        /// Delete bookmark 
+        /// </summary>
+        /// <param name="bookmarkId">bookmark id to be deleted</param>
         public static void DeleteBookmark(int bookmarkId)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -99,6 +112,10 @@ namespace Forum.Repositories
             }
         }
 
+        /// <summary>
+        /// Create new bookmark
+        /// </summary>
+        /// <param name="bookmark"></param>
         public static void CreateBookmark(Bookmark bookmark)
         {
             SqlConnection con = new SqlConnection(connectionString);

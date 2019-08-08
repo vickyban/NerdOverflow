@@ -79,6 +79,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\fontawesome.min.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="FakeSession.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\apple.png" />
     <Content Include="Images\axis.png" />
@@ -741,6 +742,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Styles\commentSection.css" />
+    <Content Include="Styles\postListStyle.css" />
     <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
@@ -816,10 +818,18 @@
     <Compile Include="Admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="FakeSession.aspx.cs">
+      <DependentUpon>FakeSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FakeSession.aspx.designer.cs">
+      <DependentUpon>FakeSession.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CommentGraph.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Models\Ban.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Comment.cs" />
