@@ -17,7 +17,8 @@ namespace Forum.PostPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            post = Repositories.PostRepo.getPost(24);
+            int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
+            post = Repositories.PostRepo.GetPost(postId);
 
             // GET ALL VALUES OF THE POST. CHANGE THE POSTID
             if (!Page.IsPostBack) { 
@@ -74,7 +75,7 @@ namespace Forum.PostPage
                 {
                     query = "UPDATE Post " +
                     "SET title = @Title , category = @Category , content = @Content , post_image = @Image , updated_at = '" + DateTime.Now + "'" +
-                    "WHERE post_id = " + 24;
+                    "WHERE post_id = " + post.PostId;
 
                     SqlParameter image = new SqlParameter();
                     image.ParameterName = "@Image";
@@ -97,12 +98,12 @@ namespace Forum.PostPage
                 {
                     query = "UPDATE Post " +
                     "SET title = @Title , category = @Category , content = @Content , post_image = NULL , updated_at = '" + DateTime.Now + "'" +
-                    "WHERE post_id = " + 24;
+                    "WHERE post_id = " + post.PostId;
                 } else
                 {
                     query = "UPDATE Post " +
                     "SET title = @Title , category = @Category , content = @Content , updated_at = '" + DateTime.Now + "'" +
-                    "WHERE post_id = " + 24;
+                    "WHERE post_id = " + post.PostId;
                 }
 
                 SqlParameter title = new SqlParameter();

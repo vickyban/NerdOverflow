@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommentBox.ascx.cs" Inherits="Forum.UserControl.CommentBox" %>
+﻿<%@ Control Language="C#"  AutoEventWireup="true" CodeBehind="CommentBox.ascx.cs" Inherits="Forum.UserControl.CommentBox" %>
 
 <li class="comment_box">
     <asp:HiddenField ID="fcommentId" runat="server" />
@@ -63,6 +63,7 @@
         $(e.target).parent().siblings(".box").val("");
         $(e.target).siblings(".btnReply").prop("disabled", true);
     }
+
     $(".comment_form .box").on("change textInput input", e => {
         if ($(e.target).val() == '' && !$(e.target).siblings(".toolbar").children(".btnReply").prop("disabled")) {
             $(e.target).siblings(".toolbar").children(".btnReply").prop("disabled", true);

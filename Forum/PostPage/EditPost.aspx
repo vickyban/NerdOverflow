@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Edit Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="EditPost.aspx.cs" Inherits="Forum.PostPage.EditPost" ValidateRequest="false" MaintainScrollPositionOnPostBack="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
+    <script src="/lib/CreatePost%20ckEditor/ckeditor/ckeditor.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
@@ -56,7 +56,6 @@
         // Button eventListener
         customBtn.addEventListener("click", function () {
             realFileBtn.click();
-
         });
 
         // File upload eventListener
