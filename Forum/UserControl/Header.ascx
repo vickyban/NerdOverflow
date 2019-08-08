@@ -71,11 +71,11 @@
                 <a class="lnk">Sign In</a>
         <%}else{ %>
         <% if (Session["IsAdmin"] != null && Convert.ToBoolean(Session["IsAdmin"])) { %>
-        <a ID="linkAdmin" class="lnk smallFont"><i class="fas fa-user-cog"></i> ADMIN</a>
+        <a ID="linkAdmin" class="lnk smallFont" style="color: #f1faee;"><i class="fas fa-user-cog"></i> ADMIN</a>
         <%} %>
-        <a class="lnk smallFont" href="/posts/new"><i class="far fa-edit"></i> NEW</a>
+        <a class="lnk smallFont" href="/posts/new" style="color: #f1faee;"><i class="far fa-edit"></i> NEW</a>
         <div class="profile">
-            <label id="profileToggle">Poyocat</label>
+            <label id="profileToggle"><%= Session["Username"] %> <i class="fas fa-angle-down"></i></label>
             <div id="account_opts">
                 <div>
                     <a class="lnk" href="<%= $"/users/{Session["UserId"]}/" %>"><i class="fas fa-user"></i> Profile</a>
