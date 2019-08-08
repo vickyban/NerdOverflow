@@ -23,17 +23,20 @@ namespace Forum.PostPage
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
 
-            userPost = Repositories.PostRepo.getPost(postId);
-            showPost();
+      
+            userPost = Repositories.PostRepo.GetPost(postId);
+            ShowPost();
 
             // POSTID
             List<Comment> comments = CommentRepo.GetComments(postId);
             CommentSection.Comments = comments;
 
+            btnPost1.Text = "August 8 2019      \n" +  + " Poyo                                                  " +  "This exam is crazy!";
+
         }
        
 
-        void showPost()
+        void ShowPost()
         {
             // ------------------------ THIS IS FOR TIME -----------------------------------
             DateTime postedDate = userPost.CreatedAt;
@@ -120,12 +123,12 @@ namespace Forum.PostPage
         protected void btnComment_Click(object sender, EventArgs e)
         {
             // CHANGE THE PARAMETERS
-            submitComment(3, postID);
+            SubmitComment(3, postID);
             txtComment.Text = "";
         }
 
 
-        void submitComment(int userID, int postID)
+        void SubmitComment(int userID, int postID)
         {
             SqlConnection dbConnect = new SqlConnection();
 
@@ -193,11 +196,11 @@ namespace Forum.PostPage
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // CHANGE THE USERID AND POSTID
-            reportPost(2, postID);
+            ReportPost(2, postID);
             // Update post status. CHANGE POSTID
         }
 
-        void reportPost(int userID, int postID)
+        void ReportPost(int userID, int postID)
         {
             SqlConnection dbConnect = new SqlConnection();
 

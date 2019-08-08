@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommentBox.ascx.cs" Inherits="Forum.UserControl.CommentBox" %>
+﻿<%@ Control Language="C#"  AutoEventWireup="true" CodeBehind="CommentBox.ascx.cs" Inherits="Forum.UserControl.CommentBox" %>
 
 <li class="comment_box">
     <asp:HiddenField ID="fcommentId" runat="server" />

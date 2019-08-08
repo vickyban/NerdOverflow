@@ -76,6 +76,15 @@ namespace Forum.PostPage {
         protected global::Forum.UserControl.CommentSection CommentSection;
         
         /// <summary>
+        /// btnPost1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPost1;
+        
+        /// <summary>
         /// txtReason control.
         /// </summary>
         /// <remarks>
