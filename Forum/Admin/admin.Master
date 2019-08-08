@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Forum.admin" %>
-
 <!DOCTYPE html>
 
 <html>
@@ -28,11 +27,8 @@
         </div>
     </form>
 
-    
 
-
-
- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 
@@ -49,7 +45,9 @@
   <script src="../js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="../js/chart-area-demo.js"></script>
-  <script src="../js/chart-pie-demo.js"></script>
+  <script src="../js/pie-chart.js"></script>
+  <script src="../js/line-chart.js"></script>
+
+
 </body>
 </html>

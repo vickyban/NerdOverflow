@@ -92,6 +92,8 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\programming.png" />
     <Content Include="js\alertBox.js" />
+    <Content Include="js\line-chart.js" />
+    <Content Include="js\pie-chart.js" />
     <Content Include="PostPage\EditPost.aspx" />
     <Content Include="PostsPage\PostListPage.aspx" />
     <Content Include="StaticPages\HomePage.aspx" />
@@ -768,8 +770,6 @@
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\chart-area-demo.js" />
-    <Content Include="js\chart-pie-demo.js" />
     <Content Include="js\Chart.min.js" />
     <Content Include="js\jquery.easing.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -819,7 +819,6 @@
     <Content Include="UserPage\ReferenceUsages.aspx" />
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
-    <Content Include="Styles\buttonStyle.css" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="Web.config" />
     <Content Include="CommentExample.aspx" />

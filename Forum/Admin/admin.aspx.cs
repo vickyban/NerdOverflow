@@ -37,7 +37,22 @@ namespace Forum
             string queryCabioMaths = "SELECT COUNT(*) AS Categorymaths FROM Post WHERE(category = 'maths');  ";
             string queryCabioGeo = "SELECT COUNT(*) AS Categorygeo FROM Post WHERE(category = 'geo');  ";
             string queryCabioPhysic = "SELECT COUNT(*) AS Categoryphysic FROM Post WHERE(category = 'physic');  ";
-            string queryCabioProgramming = "SELECT COUNT(*) AS Categoryprogramming FROM Post WHERE(category = 'programming');  ";
+            string queryCabioProgramming = "SELECT COUNT(*) AS CateOther FROM Post WHERE(category = 'other');  ";
+            //Count posts from Jan to Dec
+            string queryMonth1 = "SELECT COUNT(*) AS CountJan FROM Post WHERE DATENAME(month,created_at) = 'January'; ";
+            string queryMonth2 = "SELECT COUNT(*) AS CountFeb FROM Post WHERE DATENAME(month,created_at) = 'February'; ";
+            string queryMonth3 = "SELECT COUNT(*) AS CountMar FROM Post WHERE DATENAME(month,created_at) = 'March'; ";
+            string queryMonth4 = "SELECT COUNT(*) AS CountApr FROM Post WHERE DATENAME(month,created_at) = 'April'; ";
+            string queryMonth5 = "SELECT COUNT(*) AS CountMay FROM Post WHERE DATENAME(month,created_at) = 'May'; ";
+            string queryMonth6 = "SELECT COUNT(*) AS CountJun FROM Post WHERE DATENAME(month,created_at) = 'June'; ";
+            string queryMonth7 = "SELECT COUNT(*) AS CountJul FROM Post WHERE DATENAME(month,created_at) = 'July'; ";
+            string queryMonth8 = "SELECT COUNT(*) AS CountAug FROM Post WHERE DATENAME(month,created_at) = 'August'; ";
+            string queryMonth9 = "SELECT COUNT(*) AS CountSep FROM Post WHERE DATENAME(month,created_at) = 'September'; ";
+            string queryMonth10 = "SELECT COUNT(*) AS CountOct FROM Post WHERE DATENAME(month,created_at) = 'October'; ";
+            string queryMonth11 = "SELECT COUNT(*) AS CountNov FROM Post WHERE DATENAME(month,created_at) = 'November'; ";
+            string queryMonth12 = "SELECT COUNT(*) AS CountDec FROM Post WHERE DATENAME(month,created_at) = 'December'; ";
+
+
 
             DbConnect.Open();
 
@@ -103,46 +118,131 @@ namespace Forum
             reader8.Read();
             string totalPhysic = reader8["Categoryphysic"].ToString();
             reader8.Close();
-            //Count total Programming post
+            //Count total other post
             comPost = new SqlCommand(queryCabioProgramming, DbConnect);
             SqlDataReader reader9 = comPost.ExecuteReader();
             reader9.Read();
-            string totalprogramming = reader9["Categoryprogramming"].ToString();
+            string totalOther = reader9["CateOther"].ToString();
             reader9.Close();
 
+
+
+            //Count total post in Jan
+            comPost = new SqlCommand(queryMonth1, DbConnect);
+            SqlDataReader reader10 = comPost.ExecuteReader();
+            reader10.Read();
+            string totalJan = reader10["CountJan"].ToString();
+            reader10.Close();
+
+            //Count total post in Feb
+            comPost = new SqlCommand(queryMonth2, DbConnect);
+            SqlDataReader reader11 = comPost.ExecuteReader();
+            reader11.Read();
+            string totalFeb = reader11["CountFeb"].ToString();
+            reader11.Close();
+
+            //Count total post in Mar
+            comPost = new SqlCommand(queryMonth3, DbConnect);
+            SqlDataReader reader12 = comPost.ExecuteReader();
+            reader12.Read();
+            string totalMar = reader12["CountMar"].ToString();
+            reader12.Close();
+
+            //Count total post in April
+            comPost = new SqlCommand(queryMonth4, DbConnect);
+            SqlDataReader reader13 = comPost.ExecuteReader();
+            reader13.Read();
+            string totalApr = reader13["CountApr"].ToString();
+            reader13.Close();
+
+            //Count total post in May
+            comPost = new SqlCommand(queryMonth5, DbConnect);
+            SqlDataReader reader14 = comPost.ExecuteReader();
+            reader14.Read();
+            string totalMay = reader14["CountMay"].ToString();
+            reader14.Close();
+
+            //Count total post in Jun
+            comPost = new SqlCommand(queryMonth6, DbConnect);
+            SqlDataReader reader15 = comPost.ExecuteReader();
+            reader15.Read();
+            string totalJun = reader15["CountJun"].ToString();
+            reader15.Close();
+
+            //Count total post in Jul
+            comPost = new SqlCommand(queryMonth7, DbConnect);
+            SqlDataReader reader16 = comPost.ExecuteReader();
+            reader16.Read();
+            string totalJul = reader16["CountJul"].ToString();
+            reader16.Close();
+
+            //Count total post in Aug
+            comPost = new SqlCommand(queryMonth8, DbConnect);
+            SqlDataReader reader17 = comPost.ExecuteReader();
+            reader17.Read();
+            string totalAug = reader17["CountAug"].ToString();
+            reader17.Close();
+
+            //Count total post in Sep
+            comPost = new SqlCommand(queryMonth9, DbConnect);
+            SqlDataReader reader18 = comPost.ExecuteReader();
+            reader18.Read();
+            string totalSep = reader18["CountSep"].ToString();
+            reader18.Close();
+
+            //Count total post in Oct
+            comPost = new SqlCommand(queryMonth10, DbConnect);
+            SqlDataReader reader19 = comPost.ExecuteReader();
+            reader19.Read();
+            string totalOct = reader19["CountOct"].ToString();
+            reader19.Close();
+
+            //Count total post in Nov
+            comPost = new SqlCommand(queryMonth11, DbConnect);
+            SqlDataReader reader20 = comPost.ExecuteReader();
+            reader20.Read();
+            string totalNov = reader20["CountNov"].ToString();
+            reader20.Close();
+
+            //Count total post in Dec
+            comPost = new SqlCommand(queryMonth12, DbConnect);
+            SqlDataReader reader21 = comPost.ExecuteReader();
+            reader21.Read();
+            string totalDec = reader21["CountDec"].ToString();
+            reader21.Close();
 
             DbConnect.Close();
 
 
             GridView1.DataBind();
             GridView2.DataBind();
+            GridView3.DataBind();
 
             txtStartDate.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
 
-            //Bio implement to admin page
-            decimal bioResult = Math.Round((Convert.ToDecimal(totalbio) / totalPost) * 100, 0);
-            bio.Style.Add("width", bioResult + "%");
-            lblBio.Text = bioResult + "%";
-            //Chem implement to admin page
-            decimal chemResult = Math.Round((Convert.ToDecimal(totalChem) / totalPost) * 100, 0);
-            chem.Style.Add("width", chemResult + "%");
-            lblChem.Text = chemResult + "%";
-            //Maths implement to admin page
-            decimal mathsResult = Math.Round((Convert.ToDecimal(totalMaths) / totalPost) * 100, 0);
-            maths.Style.Add("width", mathsResult + "%");
-            lblMaths.Text = mathsResult + "%";
-            //Geo implement to admin page
-            decimal geoResult = Math.Round((Convert.ToDecimal(totalGeo) / totalPost) * 100, 0);
-            geo.Style.Add("width", geoResult + "%");
-            lblGeo.Text = geoResult + "%";
-            //Physic implement to admin page
-            decimal physicResult = Math.Round((Convert.ToDecimal(totalPhysic) / totalPost) * 100, 0);
-            physic.Style.Add("width", physicResult + "%");
-            lblPhysic.Text = physicResult + "%";
-            //Programming implement to admin page
-            decimal programmingResult = Math.Round((Convert.ToDecimal(totalprogramming) / totalPost) * 100, 0);
-            programming.Style.Add("width", programmingResult + "%");
-            lblProgramming.Text = programmingResult + "%";
+            //Hidden field data
+            hidBio.Value = totalbio;
+            hidChem.Value = totalChem;
+            hidGeo.Value = totalGeo;
+            hidMath.Value = totalMaths;
+            hidPhysic.Value = totalPhysic;
+            hidOther.Value = totalOther;
+
+            hidJan.Value = totalJan;
+            hidFeb.Value = totalFeb;
+            hidMar.Value = totalMar;
+            hidApr.Value = totalApr;
+            hidMay.Value = totalMar;
+            hidJun.Value = totalJun;
+            hidJul.Value = totalJul;
+            hidAug.Value = totalAug;
+            hidSep.Value = totalSep;
+            hidOct.Value = totalOct;
+            hidNov.Value = totalNov;
+            hidDec.Value = totalDec;
+
+
+
         }
 
         protected void btnViewUser_Click(object sender, EventArgs e)
@@ -294,6 +394,7 @@ namespace Forum
         {
             txtEndDate.Text = Calendar2.SelectedDate.ToString("MM/dd/yyyy") + DateTime.Now.ToString(" HH:mm:ss");
             Calendar2.Visible = false;
+
         }
 
         
@@ -304,6 +405,10 @@ namespace Forum
           
             if (txtEndDate.Text == "") {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Please select the date!')", true);
+            }
+            else if(Convert.ToDateTime(txtEndDate.Text) < DateTime.Now)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Please select the date after current datetime!')", true);
             }
             else {
                 ban.Fill(ds1.Ban);
@@ -317,8 +422,11 @@ namespace Forum
                 ban.Update(ds1.Ban);
                 post.Fill(ds1.Post);
                 DataRow[] dr = ds1.Post.Select("user_id=" + UserID);
-                dr[0]["status"] = "ban";
-                post.Update(ds1.Post);
+                for (int i = 0; i < dr.Length; i++)
+                {
+                    dr[i]["status"] = "ban";
+                    post.Update(ds1.Post);
+                }
                 GridView1.DataBind();
                 GridView2.DataBind();
                 GridView3.DataBind();
@@ -330,6 +438,7 @@ namespace Forum
 
         protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            GridViewRow row = GridView3.Rows[Convert.ToInt32(e.CommandArgument)];
             if (e.CommandName == "Unbanned")
             {
                 SqlConnection PostConnection = new SqlConnection();
@@ -338,7 +447,6 @@ namespace Forum
 
                 SqlCommand cmd = PostConnection.CreateCommand();
 
-                GridViewRow row = GridView3.Rows[Convert.ToInt32(e.CommandArgument)];
                 UserID = Convert.ToInt32(row.Cells[1].Text);
 
 
@@ -373,6 +481,36 @@ namespace Forum
 
             }
         }
-          
+
+        /// <summary>
+        /// Unselectable if is the prvious datetime
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Calendar2_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date <= DateTime.Now)
+            {
+
+                e.Cell.BackColor = System.Drawing.Color.Gray;
+
+                e.Day.IsSelectable = false;
+
+            }
+        }
+
+        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date <= DateTime.Now)
+            {
+
+                e.Cell.BackColor = System.Drawing.Color.Gray;
+
+                e.Day.IsSelectable = false;
+
+            }
+        }
+
+
     }
 }
