@@ -31,7 +31,7 @@ namespace Forum.PostPage
             List<Comment> comments = CommentRepo.GetComments(postId);
             CommentSection.Comments = comments;
 
-            btnPost1.Text = "August 8 2019      \n" +  + " Poyo                                                  " +  "This exam is crazy!";
+            btnPost1.Text = "August 8 2019      \n" + " Poyo                                                  " +  "This exam is crazy!";
 
         }
        
