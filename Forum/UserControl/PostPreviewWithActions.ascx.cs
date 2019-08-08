@@ -30,6 +30,7 @@ namespace Forum.UserControl
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            var s = Session["userId"];
             Render();
         }
 
