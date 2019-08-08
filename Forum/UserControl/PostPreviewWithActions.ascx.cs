@@ -9,9 +9,16 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserControl
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// Post preview user control
+    /// </summary>
     public partial class PostPreviewWithActions : System.Web.UI.UserControl
     {
         public delegate void Delegate(string message, bool err);
+        /// <summary>
+        /// method to content page want this post preview control to trigger after done some changes to the post 
+        /// </summary>
         public Delegate Callback { get; set; }
         public Post Post { get; set; }
         public bool IsAuthour
@@ -27,6 +34,9 @@ namespace Forum.UserControl
             Render();
         }
 
+        /// <summary>
+        /// Render controls in the post preview user control with Post detail
+        /// </summary>
         private void Render()
         {
             if (Post == null) return;
@@ -51,7 +61,6 @@ namespace Forum.UserControl
             {
                 PostRepo.DeletePost(id);
                 Callback("Successfully Deleted", false);
-                //Response.Redirect($"/users/{Page.RouteData.Values["Id"].ToString()}/posts/");
             }
         }
 

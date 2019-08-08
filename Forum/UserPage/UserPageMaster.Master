@@ -51,9 +51,8 @@
                 </div>
             </div>
         </div>
-
-        <uc1:Footer runat="server" id="Footer" />
     </form>
+           <uc1:Footer runat="server" id="Footer" />
 
 </body>
 </html>

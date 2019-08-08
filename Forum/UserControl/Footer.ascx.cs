@@ -7,7 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserControl
 {
-	public partial class Footer : System.Web.UI.UserControl
+
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// footer user control
+    /// </summary>
+    public partial class Footer : System.Web.UI.UserControl
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
