@@ -31,6 +31,7 @@ namespace Forum.PostPage
             CommentSection.Comments = comments;
 
         }
+       
 
         void showPost()
         {

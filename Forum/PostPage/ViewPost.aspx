@@ -1,4 +1,4 @@
-﻿<%@ Page Title="View Post" MaintainScrollPositionOnPostBack="true" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="ViewPost.aspx.cs" Inherits="Forum.PostPage.ViewPost" ValidateRequest="false" %>
+﻿<%@ Page Title="View Post" Language="C#" MasterPageFile="~/PostPage/PostPage.Master" AutoEventWireup="true" CodeBehind="ViewPost.aspx.cs" Inherits="Forum.PostPage.ViewPost" ValidateRequest="false" %>
 
 <%@ Register Src="~/UserControl/CommentSection.ascx" TagPrefix="uc1" TagName="CommentSection" %>
 
@@ -32,11 +32,9 @@
                 </div>
                 <br />
                 <br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtComment">
-                </asp:RequiredFieldValidator>
                 <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" class="form-control commentContent"></asp:TextBox>
                 <div class="float-right">
-                <asp:Button ID="btnComment" runat="server" Text="Comment" class="btn btn-outline-primary btn-sm btnComment" OnClick="btnComment_Click" />
+                <asp:Button ID="btnComment" runat="server" Text="Comment" class="btn btn-outline-primary btn-sm btnComment" OnClick="btnComment_Click" Enabled="false" CssClass="btn btn-outline-primary btn-sm btnComment" />
                 </div>
                 <br />
                 <br />
@@ -51,7 +49,7 @@
                 Recent Posts
             </div>
         </div>
-
+        
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -74,20 +72,35 @@
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">cancel</button>
                     </div>
                 </div>
-
+                
             </div>
         </div>
+         <p id="test"></p>
     </div>
-
+   
     <script>
-        CKEDITOR.replace('<%= txtComment.ClientID %>');
+        var editor = CKEDITOR.replace('<%= txtComment.ClientID %>');
         CKEDITOR.config.height = 100;
+    
+
+        // The "change" event is fired whenever a change is made in the editor.
+        editor.on('change', function (evt) {
+            if (evt.editor.getData().length == 0) {
+                document.getElementById('<%= btnComment.ClientID %>').disabled = true;
+            } else {
+                document.getElementById('<%= btnComment.ClientID %>').disabled = false;
+            }
+        });
 
         $(document).ready(function () {
             SNButton.init('<%= btnSubmit.ClientID %>', {
                 fields: ['<%= txtReason.ClientID %>']
             })
         }); 
+
+
+       
+
 
     </script>
 </asp:Content>
