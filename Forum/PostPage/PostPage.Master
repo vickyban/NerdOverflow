@@ -104,8 +104,6 @@
     <uc1:Header runat="server" ID="Header" />
     <form id="form1" runat="server">
 
-        <!-- END OF CONTAINER DIV -->
-
         <!--CONTAINER DIV -->
         <div class="container">
             <div class="wrapper">
