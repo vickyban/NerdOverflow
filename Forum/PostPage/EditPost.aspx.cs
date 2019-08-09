@@ -41,7 +41,7 @@ namespace Forum.PostPage
                 ClientScript.RegisterStartupScript(this.GetType(), "Info", "noUpdate()", true);
             }
             // If any of the fields are changed, this checks if the FileUpload and checkbox both have values because this is an error.
-            // If not, then the program will proceed to update the post and 
+            // If not, then the program will proceed to update the post and uncheck the checkbox.
             else if (txtTitle.Text != post.Title || ddCategory.SelectedValue != post.Category
                || txtContent.Text != post.Content || chkDelete.Checked != false || FileUpload1.HasFile)
             {
@@ -72,7 +72,6 @@ namespace Forum.PostPage
                 string query;
 
                 // IF the post has an image
-
                 if (FileUpload1.HasFile)
                 {
                     query = "UPDATE Post " +
@@ -96,6 +95,7 @@ namespace Forum.PostPage
                         cmd.Parameters.Add(image);
                     }
                 }
+                // Checks if the user wants to delete the current photo their post has.
                 else if(chkDelete.Checked == true)
                 {
                     query = "UPDATE Post " +

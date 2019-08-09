@@ -215,6 +215,10 @@ namespace Forum.Repositories
             return userPost;
         }
 
+        /// <summary>
+        /// returns all the post we have in our database in a List. This is used to display advertisements.
+        /// </summary>
+        /// <returns></returns>
         public static List<Post> GetPosts()
         {
             SqlConnection dbConnect = new SqlConnection(connectionString);

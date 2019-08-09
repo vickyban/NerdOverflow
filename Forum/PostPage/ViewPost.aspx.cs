@@ -12,6 +12,7 @@ namespace Forum.PostPage
 {
     public partial class ViewPost : System.Web.UI.Page
     {
+        // Instances of a Post and User Class, and postID and userID.
         Post userPost = new Post();
         private List<Post> posts;
         User user = new User();
@@ -21,11 +22,12 @@ namespace Forum.PostPage
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            // Convert.ToInt32(Session["userID"]; For Session
-            // viewPost takes a parameter is POSTID
+
+            // Assigning the ID of the post to postId variable.
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
 
+            // Setting the comment section disabled if the user is not logged in.
             if (Session["UserId"] != null)
             {
                 userID = Convert.ToInt32(Session["UserId"]);
@@ -35,6 +37,7 @@ namespace Forum.PostPage
                 txtComment.Enabled = false;
             }
 
+            //Gets the  specific post the user have clicked
             userPost = Repositories.PostRepo.GetPost(postId);
             if(userPost.PostId == 0)
             {
@@ -154,12 +157,11 @@ namespace Forum.PostPage
         // COMMENT TO DATABASE
         protected void btnComment_Click(object sender, EventArgs e)
         {
-            // CHANGE THE PARAMETERS
             SubmitComment(userID, postID);
             txtComment.Text = "";   
         }
 
-
+        //Submits the comment using the userID and PostID to know who made the comment and to which post.
         void SubmitComment(int userID, int postID)
         {
             SqlConnection dbConnect = new SqlConnection();
@@ -227,10 +229,9 @@ namespace Forum.PostPage
         // REPORTED POST TO DATABASE
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            // If the user is not logged in and they try to flag a post, this will not be added to the databaes and will give them an error alert. 
             if (Session["UserId"] != null)
             {
-                // CHANGE THE USERID AND POSTID
                 ReportPost(userID, postID);
             }
             else
@@ -305,6 +306,7 @@ namespace Forum.PostPage
             }
         }
 
+        // Buttons used for advertisements
         protected void btnPost1_Click(object sender, EventArgs e)
         {
             Response.Redirect($"/posts/{posts[0].PostId}/");

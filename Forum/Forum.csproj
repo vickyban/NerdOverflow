@@ -108,7 +108,6 @@
     <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
     <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
     <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
-    <Content Include="FakeSession.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\apple.png" />
     <Content Include="Images\axis.png" />
@@ -924,7 +923,6 @@
     <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
-    <Content Include="Test.aspx" />
     <Content Include="UserControl\BookmarkControl.ascx" />
     <Content Include="UserControl\CommentBox.ascx" />
     <Content Include="UserControl\CommentSection.ascx" />
@@ -1009,7 +1007,6 @@
     <Content Include="vendor\select2\select2.min.css" />
     <Content Include="vendor\select2\select2.min.js" />
     <Content Include="Web.config" />
-    <Content Include="CommentExample.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\admin.aspx.cs">
@@ -1030,13 +1027,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FakeSession.aspx.cs">
-      <DependentUpon>FakeSession.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FakeSession.aspx.designer.cs">
-      <DependentUpon>FakeSession.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1131,13 +1121,6 @@
     <Compile Include="StaticPages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserControl\BookmarkControl.ascx.cs">
       <DependentUpon>BookmarkControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1221,13 +1204,6 @@
     </Compile>
     <Compile Include="UserPage\UserPageMaster.Master.designer.cs">
       <DependentUpon>UserPageMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="CommentExample.aspx.cs">
-      <DependentUpon>CommentExample.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CommentExample.aspx.designer.cs">
-      <DependentUpon>CommentExample.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
