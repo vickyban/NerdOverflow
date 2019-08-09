@@ -36,7 +36,7 @@ namespace Forum.PostPage
 
             userPost = Repositories.PostRepo.GetPost(postId);
             user = Repositories.UserRepo.GetUser(userPost.UserId);
-            
+            lbTitle.Text = userPost.Title;
             ShowPost();
 
             // POSTID
