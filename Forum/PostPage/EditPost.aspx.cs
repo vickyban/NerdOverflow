@@ -21,14 +21,14 @@ namespace Forum.PostPage
             post = Repositories.PostRepo.GetPost(postId);
 
             // GET ALL VALUES OF THE POST. CHANGE THE POSTID
-            if (!Page.IsPostBack) { 
+            //if (!Page.IsPostBack) { 
             txtTitle.Text = post.Title;
             ddCategory.SelectedValue = post.Category;
             txtContent.Text = post.Content;
-            } else
-            {
+            //} else
+            //{
               //  Response.Redirect(Request.RawUrl);
-            }
+            //}
         }
 
  

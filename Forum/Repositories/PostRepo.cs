@@ -187,6 +187,7 @@ namespace Forum.Repositories
                 if (rd.HasRows)
                 {
                     rd.Read();
+                    userPost.PostId = postID;
                     userPost.UserId = Convert.ToInt32(rd[1]);
                     userPost.Title = rd[2].ToString();
                     userPost.Category = rd[3].ToString();
