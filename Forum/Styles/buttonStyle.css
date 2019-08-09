@@ -1,0 +1,26 @@
+﻿.navButton {
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+    background-color: #4e73df;
+    border-radius: 12px;
+}
+
+    .navButton:hover {
+        color: #000000;
+        background-color: #FFFFFF;
+    }
+
+@media all and (max-width:30em) {
+     .navButton {
+        display: block;
+        margin: 0.4em auto;
+  
+    }
+}
