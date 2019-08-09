@@ -134,12 +134,15 @@
                     <tr>
                         <td>
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <!-- Timer for advertisement switch -->
                             <asp:Timer ID="Timer1" runat="server" Interval="4000"></asp:Timer>
+                             <!-- UpdatePanel to avoid the entire page from loading the advertisements -->
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="advertisements">
                                 <Triggers>
                                     <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
                                 </Triggers>
 
+                                 <!-- Adrotator pointer where the advertisement elements are located -->
                                 <ContentTemplate>
                                     <asp:AdRotator ID="AdRotator1" runat="server" Target="_blank" AdvertisementFile="~/PostPage/ads.xml"/>
                                 </ContentTemplate>
@@ -152,7 +155,7 @@
 
             </div>
 
-            <!-- Modal -->
+            <!-- Modal to popup when the user clicks the report this post button -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
 
@@ -181,6 +184,7 @@
 
 
     <script>
+        // instance of the textEditor
         var editor = CKEDITOR.replace('<%= txtComment.ClientID %>');
         CKEDITOR.config.height = 100;
 
@@ -194,6 +198,7 @@
             }
         });
 
+        // Submit button for report post validation
         $(document).ready(function () {
             SNButton.init('<%= btnSubmit.ClientID %>', {
                 fields: ['<%= txtReason.ClientID %>']

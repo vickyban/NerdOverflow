@@ -11,7 +11,7 @@ namespace Forum
 {
 
 
-    public partial class FakeSession
+    public partial class NotFoundPage
     {
 
         /// <summary>

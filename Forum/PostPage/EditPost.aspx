@@ -47,8 +47,10 @@
 
     <!-- JAVASCRIPT AREA -->
     <script>
+        // This code will change the format of the TextBox and add a toolbar. It will give the user a better way of formatting their posts.
         CKEDITOR.replace('<%= txtContent.ClientID %>');
 
+        // These are instances of the fileuploader, the button to style it, and the name of the file the user uploads.
         const realFileBtn = document.getElementById('<%= FileUpload1.ClientID %>');
         const customBtn = document.getElementById("btnUpload");
         const customTxt = document.getElementById("custom-text");
@@ -58,7 +60,7 @@
             realFileBtn.click();
         });
 
-        // File upload eventListener
+        // File upload eventListener. To change the default text value of the FileUpload button.
         realFileBtn.addEventListener("change", function () {
             if (realFileBtn.value) {
                 customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
@@ -67,6 +69,7 @@
             }
         });
 
+        // To validate the submit button.
         $(document).ready(function () {
             SNButton.init('<%= btnSubmit.ClientID %>', {
                 fields: ['<%= txtTitle.ClientID %>', '<%= ddCategory.ClientID %>']

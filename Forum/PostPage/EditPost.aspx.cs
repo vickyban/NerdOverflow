@@ -13,33 +13,35 @@ namespace Forum.PostPage
 {
     public partial class EditPost : System.Web.UI.Page
     {
+        // Instance of a Post class
         Post post = new Post();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Assigning the ID of the post to postId variable.
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
+
+            // Retrieving the data from the database that matches the postID.
             post = Repositories.PostRepo.GetPost(postId);
 
-            // GET ALL VALUES OF THE POST. CHANGE THE POSTID
-            //if (!Page.IsPostBack) { 
+            // Assigning the values we got from the code above to the textboxes.
             txtTitle.Text = post.Title;
             ddCategory.SelectedValue = post.Category;
             txtContent.Text = post.Content;
-            //} else
-            //{
-              //  Response.Redirect(Request.RawUrl);
-            //}
+ 
         }
 
- 
-
+        // Submit button event
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            // If all the fields are not filled, this means the user did not update anything and an alert will pop up. 
             if (txtTitle.Text == post.Title && ddCategory.SelectedValue == post.Category
                && txtContent.Text == post.Content && chkDelete.Checked == false && !FileUpload1.HasFile)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "Info", "noUpdate()", true);
             }
+            // If any of the fields are changed, this checks if the FileUpload and checkbox both have values because this is an error.
+            // If not, then the program will proceed to update the post and uncheck the checkbox.
             else if (txtTitle.Text != post.Title || ddCategory.SelectedValue != post.Category
                || txtContent.Text != post.Content || chkDelete.Checked != false || FileUpload1.HasFile)
             {
@@ -70,7 +72,6 @@ namespace Forum.PostPage
                 string query;
 
                 // IF the post has an image
-
                 if (FileUpload1.HasFile)
                 {
                     query = "UPDATE Post " +
@@ -94,6 +95,7 @@ namespace Forum.PostPage
                         cmd.Parameters.Add(image);
                     }
                 }
+                // Checks if the user wants to delete the current photo their post has.
                 else if(chkDelete.Checked == true)
                 {
                     query = "UPDATE Post " +
