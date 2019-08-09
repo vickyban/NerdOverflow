@@ -8,8 +8,66 @@ using System.Web;
 
 namespace Forum.Repositories
 {
+    /// <summary>
+    /// Author: Gia Vien Banh 
+    /// Contain CRUD functions to the User table
+    /// </summary>
     public class UserRepo:BaseRepo
     {
+        /// <summary>
+        /// Get user's password by the user's id  
+        /// </summary>
+        /// <param name="userId">user id </param>
+        /// <returns>password as string</returns>
+        public static string GetUserPassword(int userId)
+        {
+            string query = "Select password FROM [User] WHERE user_id = " + userId;
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = query;
+            string encryptPass = null;
+            try
+            {
+                con.Open();
+                encryptPass = cmd.ExecuteScalar().ToString();
+            }catch(Exception ex) { }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+            return encryptPass;
+        }
+        /// <summary>
+        /// Update user's password 
+        /// </summary>
+        /// <param name="userId">user id</param>
+        /// <param name="password">new password</param>
+        public static void UpdatePassword(int userId, string password)
+        {
+            string query = "UPDATE [USER] SET password = @Password WHERE user_id = " + userId;
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("Password", password);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+        }
+
+        /// <summary>
+        /// Update user's profile image 
+        /// </summary>
+        /// <param name="userId">user id</param>
+        /// <param name="image">new image</param>
         public static void SaveImage(int userId, byte[] image)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -29,7 +87,11 @@ namespace Forum.Repositories
                 con.Close();
             }
         }
-
+        /// <summary>
+        /// Get user detail
+        /// </summary>
+        /// <param name="userId">user id</param>
+        /// <returns>user detail</returns>
         public static User GetUser(int userId)
         {
             SqlConnection con = new SqlConnection(connectionString);

@@ -8,9 +8,17 @@ using Forum.Helpers;
 
 namespace Forum.Repositories
 {
+    /// <summary>
+    /// Author: Gia Vien Banh, Jhon Jherick Maravilla
+    /// 
+    /// </summary>
     public class CommentRepo : BaseRepo
     {
-
+        /// <summary>
+        /// Get comments for a specific post
+        /// </summary>
+        /// <param name="post_id"></param>
+        /// <returns></returns>
         public static List<Comment> GetComments(int post_id)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -61,6 +69,10 @@ namespace Forum.Repositories
             return root.Children;
         }
 
+        /// <summary>
+        /// Insert new comment 
+        /// </summary>
+        /// <param name="comment"></param>
         public static void InsertComment(Comment comment)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -88,6 +100,11 @@ namespace Forum.Repositories
             }
         }
 
+        /// <summary>
+        /// Get comment counts for a specific post
+        /// </summary>
+        /// <param name="postID"></param>
+        /// <returns></returns>
         public static int commentCount(int postID)
         {
             SqlConnection dbConnect = new SqlConnection();

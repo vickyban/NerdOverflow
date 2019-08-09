@@ -8,6 +8,7 @@
 <html>
 <head runat="server">
     <title></title>
+        <link href="../Styles/header.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="PostMasterStyle.css" rel="stylesheet" />
@@ -102,6 +103,7 @@
 <body>
     <uc1:Header runat="server" ID="Header" />
     <form id="form1" runat="server">
+
         <!--CONTAINER DIV -->
         <div class="container">
             <div class="wrapper">

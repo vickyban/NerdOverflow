@@ -4,7 +4,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="/lib/Comment%20ckEditor/ckeditor/ckeditor.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
     <style>
         .btnPosts {
             height: 120px;

@@ -14,7 +14,8 @@ namespace Forum.PostPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Session.Add("userID", 3);
+
+            //this.Session.Add("userID", 3);
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

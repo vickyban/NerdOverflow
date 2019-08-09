@@ -38,8 +38,6 @@ namespace Forum.PostPage
             List<Comment> comments = CommentRepo.GetComments(postId);
             CommentSection.Comments = comments;
 
-
-
             // Fetching recent posts
             posts = Repositories.PostRepo.GetPosts();
             btnPost1.Text = posts[0].Category + ": " + posts[0].Title;
@@ -47,6 +45,8 @@ namespace Forum.PostPage
             btnPost3.Text = posts[2].Category + ": " + posts[2].Title;
             btnPost4.Text = posts[3].Category + ": " + posts[3].Title;
             btnPost5.Text = posts[4].Category + ": " + posts[4].Title;
+                                          
+
 
         }
 
