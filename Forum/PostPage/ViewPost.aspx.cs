@@ -13,8 +13,11 @@ namespace Forum.PostPage
     public partial class ViewPost : System.Web.UI.Page
     {
         Post userPost = new Post();
+        private List<Post> posts;
+        User user = new User();
         int postID;
 
+        string username;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,18 +26,30 @@ namespace Forum.PostPage
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
 
-      
+            username = Session["userId"].ToString();
+
+
             userPost = Repositories.PostRepo.GetPost(postId);
+            user = Repositories.UserRepo.GetUser(userPost.UserId);
+            
             ShowPost();
 
             // POSTID
             List<Comment> comments = CommentRepo.GetComments(postId);
             CommentSection.Comments = comments;
 
-            btnPost1.Text = "August 8 2019      \n" + " Poyo                                                  " +  "This exam is crazy!";
+            // Fetching recent posts
+            posts = Repositories.PostRepo.GetPosts();
+            btnPost1.Text = posts[0].Category + ": " + posts[0].Title;
+            btnPost2.Text = posts[1].Category + ": " + posts[1].Title;
+            btnPost3.Text = posts[2].Category + ": " + posts[2].Title;
+            btnPost4.Text = posts[3].Category + ": " + posts[3].Title;
+            btnPost5.Text = posts[4].Category + ": " + posts[4].Title;
+                                          
+
 
         }
-       
+
 
         void ShowPost()
         {
@@ -49,11 +64,11 @@ namespace Forum.PostPage
             {
                 if (hours > 1)
                 {
-                    lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + hours + " hours ago";
+                    lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + hours + " hours ago";
                 }
                 else if (hours == 1)
                 {
-                    lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + hours + " hour ago";
+                    lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + hours + " hour ago";
                 }
                 else
                 {
@@ -75,11 +90,11 @@ namespace Forum.PostPage
             {
                 if (days > 1)
                 {
-                    lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + days + " days ago";
+                    lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + " days ago";
                 }
                 else if (days == 1)
                 {
-                    lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + days + " day ago";
+                    lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + " day ago";
                 }
 
             }
@@ -91,7 +106,8 @@ namespace Forum.PostPage
             {
                 postImage.ImageUrl = "data:Image/png;base64," + userPost.Image;
                 postImage.Visible = true;
-            } else
+            }
+            else
             {
                 postImage.Visible = false;
                 postImage.CssClass = "noImage";
@@ -99,7 +115,7 @@ namespace Forum.PostPage
 
             // CONTENT TEXT
             lblContentMessage.Text = userPost.Content.ToString();
-           
+
 
             // Comment - CHANGE THE POSTID
             int commentCount = CommentRepo.commentCount(postID);
@@ -124,7 +140,7 @@ namespace Forum.PostPage
         {
             // CHANGE THE PARAMETERS
             SubmitComment(3, postID);
-            txtComment.Text = "";
+            txtComment.Text = "";   
         }
 
 
@@ -212,10 +228,10 @@ namespace Forum.PostPage
             try
             {
                 string query = "Insert into Reported values (@UserID, @PostID, @Reason, @Date1);";
-               
+
                 // CHANGE POST_ID
                 string query2 = "UPDATE Post " +
-                                "SET status = 'review' , updated_at = '"  + DateTime.Now +"'" +
+                                "SET status = 'review' , updated_at = '" + DateTime.Now + "'" +
                                 "WHERE post_id = " + postID;
 
                 SqlParameter user = new SqlParameter();
@@ -263,6 +279,31 @@ namespace Forum.PostPage
                 cmd.Dispose();
                 dbConnect.Close();
             }
+        }
+
+        protected void btnPost1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/posts/{posts[0].PostId}/");
+        }
+
+        protected void btnPost2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/posts/{posts[1].PostId}/");
+        }
+
+        protected void btnPost3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/posts/{posts[2].PostId}/");
+        }
+
+        protected void btnPost4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/posts/{posts[3].PostId}/");
+        }
+
+        protected void btnPost5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/posts/{posts[4].PostId}/");
         }
     }
 }
