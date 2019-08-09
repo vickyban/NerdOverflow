@@ -327,6 +327,21 @@ namespace Forum
                 }
                 reader.Close();
 
+            }
+            if (e.CommandName == "DeletePost")
+            {
+                GridViewRow row = GridView1.Rows[Convert.ToInt32(e.CommandArgument)];
+                updateID = Convert.ToInt32(row.Cells[0].Text);
+                UserID = Convert.ToInt32(row.Cells[1].Text);
+
+                post.Fill(ds1.Post);
+
+                DataRow[] dr = ds1.Post.Select("post_id= " + updateID);
+                dr[0]["status"] = "private";
+
+                post.Update(ds1.Post);
+
+                GridView1.DataBind();
 
 
             }
@@ -334,6 +349,7 @@ namespace Forum
 
         protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+
 
         }
 
@@ -512,7 +528,6 @@ namespace Forum
 
             }
         }
-
 
     }
 

@@ -342,9 +342,7 @@
                             <asp:BoundField DataField="created_at" HeaderText="Created at" SortExpression="created_at" />
                             <asp:BoundField DataField="updated_at" HeaderText="Updated at" SortExpression="updated_at" />
                             <asp:ButtonField HeaderText="Content" Text="Details" CommandName="postDetails" />
-                            <asp:CommandField ButtonType="Image" ControlStyle-Height="30px" DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True">
-                            <ControlStyle Height="30px" />
-                            </asp:CommandField>
+                            <asp:ButtonField ButtonType="Image" CommandName="DeletePost" ImageUrl="~/Images/delete.png" ControlStyle-Height="30px" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -357,7 +355,7 @@
                         <SortedDescendingCellStyle BackColor="#E9EBEF" />
                         <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourcePostinfo" runat="server" ConnectionString="<%$ ConnectionStrings:ForumConnectionString %>" DeleteCommand="DELETE FROM [Post] WHERE [post_id] = @post_id" InsertCommand="INSERT INTO [Post] ([user_id], [title], [content], [category], [status], [created_at], [updated_at]) VALUES (@user_id, @title, @content, @category, @status, @created_at, @updated_at)" SelectCommand="SELECT * FROM [Post]" UpdateCommand="UPDATE [Post] SET [user_id] = @user_id, [title] = @title, [content] = @content, [category] = @category, [status] = @status, [created_at] = @created_at, [updated_at] = @updated_at WHERE [post_id] = @post_id">
+                    <asp:SqlDataSource ID="SqlDataSourcePostinfo" runat="server" ConnectionString="<%$ ConnectionStrings:ForumConnectionString %>" DeleteCommand="DELETE FROM [Post] WHERE [post_id] = @post_id" InsertCommand="INSERT INTO [Post] ([user_id], [title], [content], [category], [status], [created_at], [updated_at]) VALUES (@user_id, @title, @content, @category, @status, @created_at, @updated_at)" SelectCommand="SELECT * FROM [Post] WHERE (status = 'published' OR status = 'ban'  OR status = 'review' )" UpdateCommand="UPDATE [Post] SET [user_id] = @user_id, [title] = @title, [content] = @content, [category] = @category, [status] = @status, [created_at] = @created_at, [updated_at] = @updated_at WHERE [post_id] = @post_id">
                         <DeleteParameters>
                             <asp:Parameter Name="post_id" Type="Int32" />
                         </DeleteParameters>
