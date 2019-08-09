@@ -20,7 +20,7 @@ namespace Forum.UserPage
         {
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int userId);
             this.Master.PostPageBtn.CssClass = "user_right_navlink active";
-            Posts = getPosts(new List<string> { "'reivew'", "'published'" }, "DESC");
+            Posts = getPosts(new List<string> { "'review'", "'published'" }, "DESC");
             Render();
         }
 
@@ -67,7 +67,7 @@ namespace Forum.UserPage
         /// <param name="err"></param>
         public void Refresh(string message, bool err)
         {
-            Posts = getPosts(new List<string> { "'reivew'", "'published'" }, "DESC");
+            Posts = getPosts(new List<string> { "'review'", "'published'" }, "DESC");
             Render();
             string e = err ? "true" : "false";
             string script = $"<script>displayAlert('{message}',{e});</script>";
