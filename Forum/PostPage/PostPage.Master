@@ -55,6 +55,15 @@
             })
         }
 
+        function errorReport() {
+            Swal.fire({
+                type: 'error',
+                title: 'Failed!',
+                text: "Only logged in users can report a post",
+                footer: 'Pleaes sign in your account to gain full access',
+            })
+        }
+
         function postCreated() {
         const Toast = Swal.mixin({
             toast: true,

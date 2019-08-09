@@ -26,8 +26,13 @@ namespace Forum.PostPage
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
 
-           userID = Convert.ToInt32(Session["UserId"]);
-
+            if (Session["UserId"] != null)
+            {
+                userID = Convert.ToInt32(Session["UserId"]);
+            } else
+            {
+                txtComment.Enabled = false;
+            }
 
             userPost = Repositories.PostRepo.GetPost(postId);
             user = Repositories.UserRepo.GetUser(userPost.UserId);
@@ -211,9 +216,17 @@ namespace Forum.PostPage
         // REPORTED POST TO DATABASE
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // CHANGE THE USERID AND POSTID
-            ReportPost(userID, postID);
-            // Update post status. CHANGE POSTID
+
+            if (Session["UserId"] != null)
+            {
+                // CHANGE THE USERID AND POSTID
+                ReportPost(userID, postID);
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Error", "errorReport()", true);
+            }
+          
         }
 
         void ReportPost(int userID, int postID)
@@ -288,7 +301,7 @@ namespace Forum.PostPage
 
         protected void btnPost2_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"posts/{posts[1].PostId}/");
+            Response.Redirect($"/posts/{posts[1].PostId}/");
         }
 
         protected void btnPost3_Click(object sender, EventArgs e)
