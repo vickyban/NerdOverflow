@@ -71,7 +71,7 @@
                 <a class="lnk" href="/signin/">Sign In</a>
         <%}else{ %>
         <% if (Session["IsAdmin"] != null && Convert.ToBoolean(Session["IsAdmin"])) { %>
-        <a ID="linkAdmin" class="lnk smallFont" style="color: #f1faee;"><i class="fas fa-user-cog"></i> ADMIN</a>
+        <a ID="linkAdmin" class="lnk smallFont" style="color: #f1faee;" href="/adminControl/"><i class="fas fa-user-cog"></i> ADMIN</a>
         <%} %>
         <a class="lnk smallFont" href="/posts/new" style="color: #f1faee;"><i class="far fa-edit"></i> NEW</a>
         <div class="profile">

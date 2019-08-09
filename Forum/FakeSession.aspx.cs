@@ -11,7 +11,7 @@ namespace Forum
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["userId"] = "2";
+            Session["UserId"] = "2";
             Session["Username"] = "Poyocat";
         }
     }

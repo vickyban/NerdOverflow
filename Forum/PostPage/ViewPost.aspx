@@ -56,6 +56,8 @@
             <div class="col-7">
                 <asp:Label ID="lblDate" runat="server" Text="Label" class="date"></asp:Label>
                 <br />
+                <h2><asp:Label ID="lbTitle" runat="server" Text=""></asp:Label></h2>
+
                 <br />
 
                 <asp:Image ID="postImage" runat="server" class="image rounded " />
