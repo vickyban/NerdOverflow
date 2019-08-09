@@ -7,6 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/// <summary>
+/// Author: Xuanchen Liu
+/// </summary>
 namespace Forum
 {
     public partial class admin1 : System.Web.UI.Page

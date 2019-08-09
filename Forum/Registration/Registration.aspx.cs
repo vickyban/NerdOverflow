@@ -6,7 +6,9 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// Author: Haoyue Wang
+/// </summary>
 namespace Forum.Registration
 {
     public partial class Registration1 : System.Web.UI.Page
@@ -89,7 +91,8 @@ namespace Forum.Registration
                         {
                             adminparam.Value = 1;
                         }
-                        else
+                        else if (txtAdmin.Text.Equals("Zoe123") != txtAdmin.Text.Equals("Jason456") !=
+                            txtAdmin.Text.Equals("Vicky789") != txtAdmin.Text.Equals("John567"))
                         {
                             Page.ClientScript.RegisterStartupScript(this.GetType(), "myjs", "alert('Invalid Admin ID');", true);
                         }

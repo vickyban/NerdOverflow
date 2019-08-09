@@ -6,7 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// Author: Haoyue Wang
+/// </summary>
 namespace Forum.Login
 {
     public partial class login1 : System.Web.UI.Page
