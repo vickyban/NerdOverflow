@@ -10,6 +10,10 @@ using System.Web.UI.WebControls;
 
 namespace Forum.PostsPage
 {
+    /// <summary>
+    /// Author: Gia Vien Banh
+    /// page to display list of posts 
+    /// </summary>
     public partial class PostListPage : System.Web.UI.Page
     {
         public List<Post> Posts { get; set; }
@@ -34,7 +38,9 @@ namespace Forum.PostsPage
             }
 
         }
-
+        /// <summary>
+        /// Render postPreview user controller for each post to display in the placeholder
+        /// </summary>
         private void Render()
         {
             PlaceHolder1.Controls.Clear();
