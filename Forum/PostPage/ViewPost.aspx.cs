@@ -16,7 +16,8 @@ namespace Forum.PostPage
         private List<Post> posts;
         User user = new User();
         int postID;
-        
+
+        string username;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +25,8 @@ namespace Forum.PostPage
             // viewPost takes a parameter is POSTID
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
+
+            username = Session["userId"].ToString();
 
 
             userPost = Repositories.PostRepo.GetPost(postId);
