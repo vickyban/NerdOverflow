@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/Images/BK.png</ImageUrl>
+    <NavigateUrl>https://burgerking.ca/</NavigateUrl>
+    <Height> 600 </Height>
+    <Width> 300</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/FB.png</ImageUrl>
+    <NavigateUrl>https://www.facebook.com/</NavigateUrl>
+    <Height>600 </Height>
+    <Width> 300</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/MCDO.png</ImageUrl>
+    <NavigateUrl>https://www.mcdonalds.com/ca/en-ca.html/</NavigateUrl>
+    <Height>600 </Height>
+    <Width> 300</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/NIKE.jpg</ImageUrl>
+    <NavigateUrl>https://www.nike.com/ca/</NavigateUrl>
+    <Height>600 </Height>
+    <Width> 300</Width>
+  </Ad>
+</Advertisements>

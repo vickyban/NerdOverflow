@@ -31,11 +31,18 @@
             border-collapse: separate;
             border-left: 10px solid #e3e4e6;
         }
-        
-        .pPost{
-            margin-left: -150px;
-            font-weight:500;
-            
+
+        .pPost {
+            font-weight: 400;
+        }
+
+        .advertisements {
+            width: 300px;
+            margin-left: 10px;
+        }
+
+        .lBreak {
+            margin-left: 80px;
         }
     </style>
 </asp:Content>
@@ -82,7 +89,9 @@
 
             <!-- Recent Post Section -->
             <div class="col-3 recentPost">
-               <div class="pPost"> <p> Recent Posts </p></div>   
+                <div class="pPost">
+                    <p>Recent Posts </p>
+                </div>
                 <table class="postTable">
                     <tr>
                         <td>
@@ -110,6 +119,32 @@
                         </td>
                     </tr>
                 </table>
+                <br />
+                <hr class="lBreak" />
+                <br />
+                <div class="pPost">
+                    <p> Advertisements </p>
+                </div>
+                <!-- ADROTATOR -->
+                <table>
+                    <tr>
+                        <td>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:Timer ID="Timer1" runat="server" Interval="4000"></asp:Timer>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="advertisements">
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                                </Triggers>
+
+                                <ContentTemplate>
+                                    <asp:AdRotator ID="AdRotator1" runat="server" Target="_blank" AdvertisementFile="~/PostPage/ads.xml"/>
+                                </ContentTemplate>
+
+                            </asp:UpdatePanel>
+                        </td>
+                    </tr>
+                </table>
+
 
             </div>
 
@@ -150,16 +185,16 @@
         editor.on('change', function (evt) {
             if (evt.editor.getData().length == 0) {
                 document.getElementById('<%= btnComment.ClientID %>').disabled = true;
-                } else {
-                    document.getElementById('<%= btnComment.ClientID %>').disabled = false;
-                }
-            });
+            } else {
+                document.getElementById('<%= btnComment.ClientID %>').disabled = false;
+            }
+        });
 
         $(document).ready(function () {
             SNButton.init('<%= btnSubmit.ClientID %>', {
-                    fields: ['<%= txtReason.ClientID %>']
-                })
-            });
+                fields: ['<%= txtReason.ClientID %>']
+            })
+        });
 
 
 
