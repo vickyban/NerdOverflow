@@ -1,9 +1,6 @@
 ﻿//pie
 
-window.onload = function () {
-
-
-
+console.log($("#hidBio").val())
     var Categorybio = $("#hidBio").val();
     var Categorychem = $("#hidChem").val();
     var Categorymath = $("#hidMath").val();
@@ -26,5 +23,3 @@ window.onload = function () {
             responsive: true
         }
     });
-
-}

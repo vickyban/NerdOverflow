@@ -1,7 +1,5 @@
 ﻿//line
 
-window.onload = function () {
-
 
     var jan = $("#hidJan").val();
     var feb = $("#hidFeb").val();
@@ -38,4 +36,3 @@ window.onload = function () {
             responsive: true
         }
     });
-}
