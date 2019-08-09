@@ -1,17 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="admin.aspx.cs" Inherits="Forum.admin1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            margin-left: 40px;
+        }
+        .auto-style3 {
+            width: 857px;
+            height: 242px;
+            margin-right: 101;
+        }
+        .auto-style6 {
+            width: 466px;
+        }
+        .auto-style8 {
+            width: 184px;
+            height: 38px;
+        }
+        .auto-style9 {
+            height: 38px;
+        }
+        .auto-style10 {
+            width: 184px;
+        }
+        .auto-style11 {
+            width: 236px;
+        }
+        .auto-style12 {
+            width: 236px;
+            height: 38px;
+        }
+    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-  <!-- Page Wrapper -->
+    <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#4e73df">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.aspx">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-shield"></i>
         </div>
@@ -23,50 +57,12 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="admin.aspx">
           <i class="glyphicon glyphicon-exclamation-sign"></i>
           <span>Dashboard</span></a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">sth</a>
-            <a class="collapse-item" href="cards.html">sth</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">sth</a>
-            <a class="collapse-item" href="utilities-border.html">sth</a>
-            <a class="collapse-item" href="utilities-animation.html">sth</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
-        </div>
-      </li>
+    
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -76,38 +72,21 @@
         Addons
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+        <a class="nav-link">
+          <span> <i class="fas fa-users fa-2x"></i><asp:Button ID="btnViewUser" runat="server" Text="View All Account" class="navButton" OnClick="btnViewUser_Click"/></span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+        <a class="nav-link">
+          <span>  <i class="fas fa-comments fa-2x"></i><asp:Button ID="btnViewPost" runat="server" Text="View All Post" class="navButton" OnClick="btnViewPost_Click"/></span></a>
+      </li>
+
+    <li class="nav-item">
+        <a class="nav-link">
+          <span>  <i class="fas fa-ban fa-2x"></i><asp:Button ID="btnBanUser" runat="server" Text="User Banned" class="navButton" OnClick="btnBanUser_Click"/></span></a>
       </li>
 
       <!-- Divider -->
@@ -125,195 +104,36 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color:snow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
+          <ul class="navbar-nav ml-auto"
+                <a  data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" style="font-size:30px;cursor: pointer;"></i>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Jason Liu</span>
-                <img class="img-profile rounded-circle" src="https://icon-library.net//images/icon-user/icon-user-6.jpg" width="5%">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
           </ul>
 
         </nav>
         <!-- End of Topbar -->
 
+          
+
+
+<asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+    <asp:View ID="View1" runat="server">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onClick="window.print()"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
 
           <!-- Content Row -->
@@ -326,14 +146,15 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Post checked</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Published Post</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">82%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                              <asp:Label ID="lblPostStatus" runat="server"></asp:Label></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 82%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div id= "progressbar" class="progress-bar bg-info" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" runat="server"></div>
                           </div>
                         </div>
                       </div>
@@ -352,11 +173,12 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">forbidden Post</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">120</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> User Banned</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                          <asp:Label ID="lblBan" runat="server" Text=""></asp:Label></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <i class="fas fa-ban fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -369,7 +191,8 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total User</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">15,000</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                          <asp:Label ID="lblTotalUser1" runat="server"></asp:Label></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -388,7 +211,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Post</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                          <asp:Label ID="Label1" runat="server" Text="1,503"></asp:Label></div>
+                          <asp:Label ID="lblTotalPost" runat="server"></asp:Label></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -399,149 +222,377 @@
             </div>
           </div>
 
-          <!-- Content Row -->
-
-          <div class="row">
-
-            <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Post Overview</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Post Type</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Game
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> School
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Status</h6>
-                </div>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold"> Sth <span class="float-right">20%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold"> Sth <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold"> Sth <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold"> Sth <span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold"> Sth <span class="float-right">100%</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
+     
 
             <div class="col-lg-6 mb-4">
 
-              <!-- Illustrations -->
+              <!-- Pie chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Categories</h6>
                 </div>
                 <div class="card-body">
                   <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="https://i2.wp.com/inquisiostudios.com/wp-content/uploads/2019/03/screens.png?w=1050&ssl=1" alt="">
+                  <canvas id="pieChart"></canvas> 
+                  
                   </div>
-                  <p><a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a></p>
-                  <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
+  
                 </div>
               </div>
 
-              <!-- Approach -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Branch</h6>
-                </div>
-                <div class="card-body">
-                  <p>Empty</p>
-                 
-                </div>
-              </div>
 
             </div>
+
+       <div class="col-lg-6 mb-4">
+              <!-- Line chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Posts every Month</h6>
+                </div>
+                <div class="card-body">
+                  <div class="text-center">
+                  <canvas id="lineChart"></canvas>
+                  
+                  </div>
+  
+                </div>
+              </div>
+</div>
+
+
           </div>
 
         </div>
         <!-- /.container-fluid -->
+        </asp:View>
 
+    <asp:View ID="AccountView" runat="server">
+
+
+        <table class="auto-style1" style="margin-left:20px;">
+            <tr>
+                <td>
+                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="user_id" DataSourceID="SqlDataSourceUserInfo" ForeColor="#333333" GridLines="None" AllowSorting="True" OnRowDataBound="GridView2_RowDataBound" AllowPaging="True" PageSize="12">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="user_id" HeaderText="User Id" InsertVisible="False" ReadOnly="True" SortExpression="user_id" />
+                            <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
+                            <asp:BoundField DataField="password" HeaderText="Password" SortExpression="password" />
+                            <asp:CheckBoxField DataField="isAdmin" HeaderText="Admin" SortExpression="isAdmin" />
+                            <asp:BoundField DataField="created_at" HeaderText="Created_at" SortExpression="created_at" />
+                            <asp:BoundField DataField="updated_at" HeaderText="Updated_at" SortExpression="updated_at" />
+                            <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" ControlStyle-Height="30px" />
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourceUserInfo" runat="server" ConnectionString="<%$ ConnectionStrings:ForumConnectionString %>" SelectCommand="SELECT [user_id], [username], [password], [isAdmin], [created_at], [updated_at] FROM [User]" DeleteCommand="DELETE FROM [User] WHERE [user_id] = @user_id" InsertCommand="INSERT INTO [User] ([username], [password], [isAdmin], [created_at], [updated_at]) VALUES (@username, @password, @isAdmin, @created_at, @updated_at)" UpdateCommand="UPDATE [User] SET [username] = @username, [password] = @password, [isAdmin] = @isAdmin, [created_at] = @created_at, [updated_at] = @updated_at WHERE [user_id] = @user_id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="user_id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="username" Type="String" />
+                            <asp:Parameter Name="password" Type="String" />
+                            <asp:Parameter Name="isAdmin" Type="Boolean" />
+                            <asp:Parameter Name="created_at" Type="DateTime" />
+                            <asp:Parameter Name="updated_at" Type="DateTime" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="username" Type="String" />
+                            <asp:Parameter Name="password" Type="String" />
+                            <asp:Parameter Name="isAdmin" Type="Boolean" />
+                            <asp:Parameter Name="created_at" Type="DateTime" />
+                            <asp:Parameter Name="updated_at" Type="DateTime" />
+                            <asp:Parameter Name="user_id" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                </td>
+            </tr>
+
+        </table>
+
+
+
+    </asp:View>
+    <asp:View ID="PostView" runat="server">
+        <table class="auto-style1" style="margin-left:20px;">
+            <tr>
+                <td class="auto-style2">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="post_id" DataSourceID="SqlDataSourcePostinfo" ForeColor="#333333" GridLines="None" AllowPaging="True" AllowSorting="True" OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand" PageSize="12">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="post_id" HeaderText="Post Id" InsertVisible="False" ReadOnly="True" SortExpression="post_id" />
+                            <asp:BoundField DataField="user_id" HeaderText="User Id" SortExpression="user_id" />
+                            <asp:BoundField DataField="title" HeaderText="Title" SortExpression="title" />
+                            <asp:BoundField DataField="content" HeaderText="Content" SortExpression="content" Visible="False" />
+                            <asp:BoundField DataField="category" HeaderText="Category" SortExpression="category" />
+                            <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
+                            <asp:BoundField DataField="created_at" HeaderText="Created at" SortExpression="created_at" />
+                            <asp:BoundField DataField="updated_at" HeaderText="Updated at" SortExpression="updated_at" />
+                            <asp:ButtonField HeaderText="Content" Text="Details" CommandName="postDetails" />
+                            <asp:CommandField ButtonType="Image" ControlStyle-Height="30px" DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True">
+                            <ControlStyle Height="30px" />
+                            </asp:CommandField>
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourcePostinfo" runat="server" ConnectionString="<%$ ConnectionStrings:ForumConnectionString %>" DeleteCommand="DELETE FROM [Post] WHERE [post_id] = @post_id" InsertCommand="INSERT INTO [Post] ([user_id], [title], [content], [category], [status], [created_at], [updated_at]) VALUES (@user_id, @title, @content, @category, @status, @created_at, @updated_at)" SelectCommand="SELECT * FROM [Post]" UpdateCommand="UPDATE [Post] SET [user_id] = @user_id, [title] = @title, [content] = @content, [category] = @category, [status] = @status, [created_at] = @created_at, [updated_at] = @updated_at WHERE [post_id] = @post_id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="post_id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="user_id" Type="Int32" />
+                            <asp:Parameter Name="title" Type="String" />
+                            <asp:Parameter Name="content" Type="String" />
+                            <asp:Parameter Name="category" Type="String" />
+                            <asp:Parameter Name="status" Type="String" />
+                            <asp:Parameter Name="created_at" Type="DateTime" />
+                            <asp:Parameter Name="updated_at" Type="DateTime" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="user_id" Type="Int32" />
+                            <asp:Parameter Name="title" Type="String" />
+                            <asp:Parameter Name="content" Type="String" />
+                            <asp:Parameter Name="category" Type="String" />
+                            <asp:Parameter Name="status" Type="String" />
+                            <asp:Parameter Name="created_at" Type="DateTime" />
+                            <asp:Parameter Name="updated_at" Type="DateTime" />
+                            <asp:Parameter Name="post_id" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </asp:View>
+    <asp:View ID="PostDetailsView" runat="server">
+        
+
+
+            <table class="auto-style1" style="margin-left:20px;">
+                            <tr>
+                <td class="auto-style10">
+                    <asp:Label ID="Label2" runat="server" Text="Post details" Font-Bold="True" Font-Size="X-Large" ForeColor="Black"></asp:Label></td>
+            </tr>
+                        <tr>
+                            <td class="auto-style8">
+                                <asp:Label ID="Label1" runat="server" Text="User ID" ForeColor="Black" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                            </td>
+                            <td class="auto-style9">
+                                <asp:Label ID="lblUserID" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style10">
+                                <asp:Label ID="Label3" runat="server" Text="Title" ForeColor="Black" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblTitle" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style10">
+                                <asp:Label ID="Label4" runat="server" Text="Category" ForeColor="Black" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblCategory" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style10">
+                                <asp:Label ID="Label5" runat="server" Text="Status" ForeColor="Black" Font-Bold="True" Font-Size="Medium"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+       
+            </table>
+        <br />
+           <table class="auto-style1" style="margin-left:20px;">
+            <tr>
+                <td class="auto-style6">
+                    <textarea ID="details" runat="server" aria-disabled="True" class="auto-style3" disabled="disabled" style="font-family: Arial; font-size: 24px; font-weight: 500; font-style: normal; clip: rect(auto, auto, 5px, auto);"></textarea>    
+                </td>
+            
+            </tr>
+        
+            <tr>
+                <td class="auto-style6">  
+                    <asp:Button ID="btnBack" runat="server" Text="< Back" class="btn btn-outline-dark" OnClick="btnBack_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnBanUser1" runat="server" Text="Ban User" class="btn btn-outline-danger" OnClick="btnBanUser1_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnApprove1" runat="server" Text="Approve" class="btn btn-outline-success" OnClick="btnApprove1_Click"/>
+                </td>
+                
+            </tr>   
+        </table>
+
+    </asp:View>
+    <asp:View ID="banUserView" runat="server">
+        
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style12">
+                    <asp:Label ID="Label7" runat="server" Text="User ID: "></asp:Label>
+
+                </td>
+                <td class="auto-style9">
+                    <asp:Label ID="lblUserIdBan" runat="server" Text=""></asp:Label></td>
+            </tr>
+            <tr>
+                <td class="auto-style11">
+                    <asp:Label ID="Label8" runat="server" Text="Current Status"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lblCurrentStatus" runat="server" Text=""></asp:Label></td>
+            </tr>
+            <tr>
+                <td class="auto-style11">
+                    <asp:Label ID="Label9" runat="server" Text="Ban Start Date: "></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtStartDate" runat="server" Enabled="False" ></asp:TextBox>
+                     &nbsp;&nbsp;&nbsp;<asp:Button ID="btnSelect" runat="server" Text="Select" class="btn btn-primary" OnClick="btnSelect_Click" />
+                    &nbsp;&nbsp;<br />
+                   
+                </td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" OnSelectionChanged="Calendar1_SelectionChanged" Width="350px" Visible="False" OnDayRender="Calendar1_DayRender">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                        <TodayDayStyle BackColor="#CCCCCC" />
+                    </asp:Calendar>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style11">
+                    <asp:Label ID="Label10" runat="server" Text="Ban End Date: "></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtEndDate" runat="server" Enabled="False" ></asp:TextBox>
+                   &nbsp;&nbsp;&nbsp;<asp:Button ID="btnselectEndDate" runat="server" Text="Select" class="btn btn-primary" OnClick="btnselectEndDate_Click" />
+                    &nbsp;&nbsp;<br />
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                        <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px" Visible="False" OnSelectionChanged="Calendar2_SelectionChanged" OnDayRender="Calendar2_DayRender">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                        <TodayDayStyle BackColor="#CCCCCC" />
+                    </asp:Calendar>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Button ID="btnConfirmBan" runat="server" Text="Confirm" class="btn btn-outline-danger" OnClick="btnConfirmBan_Click" />
+
+                </td>
+            </tr>
+        </table>
+        
+    </asp:View>
+
+
+    <asp:View ID="NavBanView" runat="server">
+        
+        <table class="auto-style1" style="margin-left:20px">
+            <asp:Label ID="Label6" runat="server" Text="User Banned" Font-Size="XX-Large"></asp:Label>
+            <tr>
+                <td>&nbsp;
+                    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ban_id" DataSourceID="SqlDataSourceBan" ForeColor="#333333" GridLines="None" AllowSorting="True" OnRowCommand="GridView3_RowCommand" AllowPaging="True" PageSize="12">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="ban_id" HeaderText="Ban Id" InsertVisible="False" ReadOnly="True" SortExpression="ban_id" />
+                            <asp:BoundField DataField="user_id" HeaderText="User Id" SortExpression="user_id" />
+                            <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
+                            <asp:BoundField DataField="start_date" HeaderText="Start Date" SortExpression="start_date" />
+                            <asp:BoundField DataField="end_date" HeaderText="End Date" SortExpression="end_date" />
+                            <asp:BoundField DataField="created_at" HeaderText="Created at" SortExpression="created_at" />
+                            <asp:ButtonField ButtonType="Image" Text="" ControlStyle-Height="30px" HeaderText="Unban" ImageUrl="~/Images/unban.png" ControlStyle-Width="30px" CommandName="Unbanned">
+                            <ControlStyle Height="20px" />
+                            </asp:ButtonField>
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourceBan" runat="server" ConnectionString="<%$ ConnectionStrings:ForumConnectionString %>" DeleteCommand="DELETE FROM [Ban] WHERE [ban_id] = @ban_id" InsertCommand="INSERT INTO [Ban] ([user_id], [status], [start_date], [end_date], [created_at]) VALUES (@user_id, @status, @start_date, @end_date, @created_at)" SelectCommand="SELECT * FROM [Ban]" UpdateCommand="UPDATE [Ban] SET [user_id] = @user_id, [status] = @status, [start_date] = @start_date, [end_date] = @end_date, [created_at] = @created_at WHERE [ban_id] = @ban_id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="ban_id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="user_id" Type="Int32" />
+                            <asp:Parameter Name="status" Type="String" />
+                            <asp:Parameter Name="start_date" Type="DateTime" />
+                            <asp:Parameter Name="end_date" Type="DateTime" />
+                            <asp:Parameter Name="created_at" Type="DateTime" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="user_id" Type="Int32" />
+                            <asp:Parameter Name="status" Type="String" />
+                            <asp:Parameter Name="start_date" Type="DateTime" />
+                            <asp:Parameter Name="end_date" Type="DateTime" />
+                            <asp:Parameter Name="created_at" Type="DateTime" />
+                            <asp:Parameter Name="ban_id" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </asp:View>
+
+
+
+</asp:MultiView>
       </div>
       <!-- End of Main Content -->
 
@@ -579,10 +630,27 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="../">Logout</a>
         </div>
       </div>
     </div>
   </div>
-
+    <asp:HiddenField ID="hidBio" runat="server"  ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidChem" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hidMath" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hidGeo" runat="server"  ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidPhysic" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hidOther" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hidJan" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidFeb" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidMar" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidApr" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidMay" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidJun" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidJul" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidAug" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidSep" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidOct" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidNov" runat="server" ClientIDMode="Static"/>
+    <asp:HiddenField ID="hidDec" runat="server" ClientIDMode="Static"/>
 </asp:Content>

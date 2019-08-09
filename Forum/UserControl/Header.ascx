@@ -67,8 +67,8 @@
 
     <div class="account">
         <%if (Session["UserId"] == null){ %>
-                <a class="lnk">Register</a>
-                <a class="lnk">Sign In</a>
+                <a class="lnk" href="/register/">Register</a>
+                <a class="lnk" href="/signin/">Sign In</a>
         <%}else{ %>
         <% if (Session["IsAdmin"] != null && Convert.ToBoolean(Session["IsAdmin"])) { %>
         <a ID="linkAdmin" class="lnk smallFont" style="color: #f1faee;"><i class="fas fa-user-cog"></i> ADMIN</a>

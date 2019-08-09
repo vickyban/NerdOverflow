@@ -13,6 +13,8 @@ namespace Forum
         public static void RegisterRoutes(RouteCollection routeCollection)
         {
             //string id = Page.RouteData.Values["Id"].ToString();
+            routeCollection.MapPageRoute("login", "signin/", "~/Login/login.aspx");
+            routeCollection.MapPageRoute("register", "register/", "~/Registration/Registration.aspx");
             routeCollection.MapPageRoute("RouteForBookmarks", "users/{Id}/bookmarks/", "~/UserPage/BookmarkPage.aspx");
             routeCollection.MapPageRoute("RouteForPostHistory", "users/{Id}/posts/", "~/UserPage/PostHistoryPage.aspx");
             routeCollection.MapPageRoute("RouteForUserProfile", "users/{Id}/", "~/UserPage/ProfilePage.aspx");
