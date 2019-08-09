@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Forum.UserControl
 {
-    public partial class PostPreviewWithActions : System.Web.UI.UserControl
+    public partial class HeaderTest : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

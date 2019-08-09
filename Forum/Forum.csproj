@@ -122,8 +122,6 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\programming.png" />
     <Content Include="js\alertBox.js" />
-    <Content Include="js\line-chart.js" />
-    <Content Include="js\pie-chart.js" />
     <Content Include="Login\login.aspx" />
     <Content Include="PostPage\EditPost.aspx" />
     <Content Include="PostsPage\PostListPage.aspx" />
@@ -903,9 +901,6 @@
     <Content Include="Styles\commentSection.css" />
     <Content Include="Styles\postListStyle.css" />
     <Content Include="Styles\postPreview.css" />
-    <Content Include="PostsPage\PostListPage.aspx" />
-    <Content Include="Styles\commentSection.css" />
-    <Content Include="Styles\postPreview.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\userPage.css" />
     <Content Include="Test.aspx" />
@@ -913,20 +908,17 @@
     <Content Include="UserControl\CommentBox.ascx" />
     <Content Include="UserControl\CommentSection.ascx" />
     <Content Include="UserControl\Footer.ascx" />
-    <Content Include="UserControl\CommentBox.ascx" />
-    <Content Include="UserControl\CommentSection.ascx" />
     <Content Include="UserControl\PostPreviewWithActions.ascx" />
     <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserControl\Header.ascx" />
     <Content Include="UserPage\LogoutPage.aspx" />
     <Content Include="UserPage\PostHistoryPage.aspx" />
-    <Content Include="Images\delete.jpg" />
-    <Content Include="Images\delete.png" />
-    <Content Include="Images\unban.png" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\chart-area-demo.js" />
+    <Content Include="js\chart-pie-demo.js" />
     <Content Include="js\Chart.min.js" />
     <Content Include="js\jquery.easing.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -963,20 +955,8 @@
     <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
-    <Content Include="Styles\fontawesome.min.css" />
-    <Content Include="Images\commentIcon.png" />
-    <Content Include="Images\deleteIcon.png" />
-    <Content Include="Images\editIcon.png" />
-    <Content Include="Styles\style.css" />
-    <Content Include="Styles\userPage.css" />
-    <Content Include="UserControl\BookmarkControl.ascx" />
-    <Content Include="UserControl\PostPreviewWithActions.ascx" />
-    <Content Include="UserPage\BookmarkPage.aspx" />
     <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="UserPage\ReferenceUsages.aspx" />
-    <Content Include="UserControl\Header.ascx" />
-    <Content Include="UserPage\PostHistoryPage.aspx" />
-    <Content Include="UserPage\ProfilePage.aspx" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -1032,11 +1012,6 @@
     <Compile Include="FakeSession.aspx.designer.cs">
       <DependentUpon>FakeSession.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1088,13 +1063,6 @@
     </Compile>
     <Compile Include="PostPage\ViewPost.aspx.designer.cs">
       <DependentUpon>ViewPost.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PostsPage\PostListPage.aspx.cs">
-      <DependentUpon>PostListPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PostsPage\PostListPage.aspx.designer.cs">
-      <DependentUpon>PostListPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostsPage\PostListPage.aspx.cs">
       <DependentUpon>PostListPage.aspx</DependentUpon>
@@ -1164,20 +1132,6 @@
     </Compile>
     <Compile Include="UserControl\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\CommentBox.ascx.cs">
-      <DependentUpon>CommentBox.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControl\CommentBox.ascx.designer.cs">
-      <DependentUpon>CommentBox.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\CommentSection.ascx.cs">
-      <DependentUpon>CommentSection.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControl\CommentSection.ascx.designer.cs">
-      <DependentUpon>CommentSection.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\PostPreviewWithActions.ascx.cs">
       <DependentUpon>PostPreviewWithActions.ascx</DependentUpon>
@@ -1283,18 +1237,6 @@
     <Content Include="lib\CreatePost ckEditor\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="lib\CreatePost ckEditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="lib\CreatePost ckEditor\ckeditor\skins\moono-lisa\readme.md" />
-    <Content Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Content>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Content>
-    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="UserPage\UserPageMaster.Master" />
     <Content Include="PostPage\PostPage.Master" />
@@ -1312,9 +1254,6 @@
     <Content Include="Styles\postListStyle_less.less" />
     <Content Include="Styles\header.less" />
     <Content Include="Styles\home.less" />
-    <Content Include="UserPage\UserPageMaster.Master" />
-    <Content Include="Scripts\ckeditor\ckeditor.pack" />
-    <Content Include="Styles\postListStyle_less.less" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
