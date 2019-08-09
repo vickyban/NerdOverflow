@@ -15,9 +15,14 @@ namespace Forum.PostPage
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //this.Session.Add("userID", 3);
         }
 
+        /// <summary>
+        /// Inserting post contents to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             SqlConnection dbConnect = new SqlConnection();
@@ -31,8 +36,7 @@ namespace Forum.PostPage
             {
                 string query;
 
-                // IF the post has an image
-
+                // If the post has an image. The program uses two different queries depending whether the user uploads a photo or not. 
                 if (FileUpload1.HasFile)
                 {
                     query = "Insert into Post values (@UserID, @Title, @Category, @Content, @Image, @Status,@Date,@Date2);";
