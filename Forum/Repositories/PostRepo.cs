@@ -41,12 +41,12 @@ namespace Forum.Repositories
                 "LEFT OUTER JOIN [Comment] c " +
                 "ON p.post_id = c.post_id " +
                 "WHERE p.status IN ('published','review') " +
-                (keyword != "" ? "AND p.title LIKE '%'+ @Keyword + '%' ": "") + 
-                (filter != "" ? $"AND p.category IN ({filter}) ": "") + 
+                (keyword != "" ? "AND p.title LIKE '%'+ @Keyword + '%' " : "") +
+                (filter != "" ? $"AND p.category IN ({filter}) " : "") +
                 "ORDER BY p.created_at " + orderBy;
-            if(keyword != "") cmd.Parameters.AddWithValue("Keyword", keyword);
+            if (keyword != "") cmd.Parameters.AddWithValue("Keyword", keyword);
             cmd.CommandText = query;
-            return getPosts(cmd,true);
+            return getPosts(cmd, true);
         }
 
         public static List<Post> getPosts(SqlCommand cmd, bool withContent = false)
@@ -76,7 +76,7 @@ namespace Forum.Repositories
                             Username = reader.GetString(6)
                         }
                     };
-                    if (withContent) post.Content = HttpUtility.HtmlDecode((reader.GetString(8))); 
+                    if (withContent) post.Content = HttpUtility.HtmlDecode((reader.GetString(8)));
                     posts.Add(post);
                 }
                 reader.Close();
@@ -92,7 +92,7 @@ namespace Forum.Repositories
             }
             return posts;
         }
-    
+
         public static void DeletePost(int postId)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -110,14 +110,16 @@ namespace Forum.Repositories
                 transaction = con.BeginTransaction();
                 {
                     cmd.Transaction = transaction;
-                    foreach(var query in queries)
+                    foreach (var query in queries)
                     {
                         cmd.CommandText = query;
                         cmd.ExecuteNonQuery();
                     }
                     transaction.Commit();
                 }
-            }catch(Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine("ROLL BACK DELETE POST");
                 transaction.Rollback();
             }
@@ -145,7 +147,7 @@ namespace Forum.Repositories
             try
             {
                 string query = "Select * From Post Where post_id =" + postID;
-                
+
 
                 dbConnect.Open();
 
@@ -158,7 +160,7 @@ namespace Forum.Repositories
                 if (rd.HasRows)
                 {
                     rd.Read();
-                    userPost.UserId = Convert.ToInt32(rd[1]);             
+                    userPost.UserId = Convert.ToInt32(rd[1]);
                     userPost.Title = rd[2].ToString();
                     userPost.Category = rd[3].ToString();
                     userPost.Content = rd[4].ToString();
@@ -167,22 +169,67 @@ namespace Forum.Repositories
                         byte[] image = (byte[])rd[5];
                         userPost.Image = Convert.ToBase64String(image);
                     }
-                    
+
                     userPost.CreatedAt = Convert.ToDateTime(rd[7]);
                 }
 
             }
             catch (SqlException ex)
             {
-                Console.WriteLine(ex.Message.ToString()); 
+                Console.WriteLine(ex.Message.ToString());
             }
             finally
             {
                 cmd.Dispose();
                 dbConnect.Close();
             }
-            
+
             return userPost;
+        }
+
+        public static List<Post> GetPosts()
+        {
+            SqlConnection dbConnect = new SqlConnection(connectionString);
+
+            SqlCommand cmd = dbConnect.CreateCommand();
+
+            List<Post> posts = new List<Post>();
+
+
+            try
+            {
+                string query = "Select * From Post Order By post_id desc";
+
+
+                dbConnect.Open();
+
+                // These two are important when using SqlDataReader
+                cmd.CommandText = query;
+                cmd.Connection = dbConnect;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Post post = new Post();
+                    post.PostId = Convert.ToInt32(reader[0]);
+                    post.Title = reader[2].ToString();
+                    post.Category = reader[3].ToString();
+                    posts.Add(post);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+            finally
+            {
+                cmd.Dispose();
+                dbConnect.Close();
+           }
+
+            return posts;
         }
     }
 }

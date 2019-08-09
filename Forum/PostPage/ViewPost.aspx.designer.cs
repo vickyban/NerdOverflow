@@ -85,6 +85,42 @@ namespace Forum.PostPage {
         protected global::System.Web.UI.WebControls.Button btnPost1;
         
         /// <summary>
+        /// btnPost2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPost2;
+        
+        /// <summary>
+        /// btnPost3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPost3;
+        
+        /// <summary>
+        /// btnPost4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPost4;
+        
+        /// <summary>
+        /// btnPost5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPost5;
+        
+        /// <summary>
         /// txtReason control.
         /// </summary>
         /// <remarks>
