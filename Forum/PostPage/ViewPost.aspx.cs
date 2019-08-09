@@ -36,6 +36,10 @@ namespace Forum.PostPage
             }
 
             userPost = Repositories.PostRepo.GetPost(postId);
+            if(userPost.PostId == 0)
+            {
+                Response.Redirect("/NotFoundPage.aspx");
+            }
             user = Repositories.UserRepo.GetUser(userPost.UserId);
             lbTitle.Text = userPost.Title;
             ShowPost();

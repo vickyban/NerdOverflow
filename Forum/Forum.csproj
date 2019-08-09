@@ -128,6 +128,7 @@
     <Content Include="Images\Sheridan2.jpg" />
     <Content Include="Images\unban.png" />
     <Content Include="js\alertBox.js" />
+    <Content Include="NotFoundPage.aspx" />
     <Content Include="PostPage\ads.xml" />
     <Content Include="js\line-chart.js" />
     <Content Include="js\pie-chart.js" />
@@ -1061,6 +1062,13 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="NotFoundPage.aspx.cs">
+      <DependentUpon>NotFoundPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotFoundPage.aspx.designer.cs">
+      <DependentUpon>NotFoundPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PostPage\CreatePost.aspx.cs">
       <DependentUpon>CreatePost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

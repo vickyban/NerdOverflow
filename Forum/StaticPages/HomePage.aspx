@@ -32,7 +32,7 @@
         <div class="showcase">
             <asp:Image ID="imgShowcase" runat="server" ImageUrl="~/Images/homepage.jpg" />
             <h2>:D We <3 to Help Students</h2>
-            <p>THe NerdOverflow forum is a well-defined, fair and civilized web application for academic discussions in different areas
+            <p>The NerdOverflow forum is a well-defined, fair and civilized web application for academic discussions in different areas
 </p>
         </div>
         <div class="dev_box">
