@@ -56,6 +56,8 @@
             <div class="col-7">
                 <asp:Label ID="lblDate" runat="server" Text="Label" class="date"></asp:Label>
                 <br />
+                <h2><asp:Label ID="lbTitle" runat="server" Text=""></asp:Label></h2>
+
                 <br />
 
                 <asp:Image ID="postImage" runat="server" class="image rounded " />
@@ -102,22 +104,22 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost2" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost2" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost2_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost3" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost3" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost3_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost4" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost4" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost4_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost5" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost5" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost5_Click" />
                         </td>
                     </tr>
                 </table>

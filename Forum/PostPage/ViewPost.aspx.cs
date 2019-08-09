@@ -26,12 +26,14 @@ namespace Forum.PostPage
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
 
-            username = Session["userId"].ToString();
+            //username = Session["UserId"].ToString();
 
 
             userPost = Repositories.PostRepo.GetPost(postId);
             user = Repositories.UserRepo.GetUser(userPost.UserId);
-            
+
+            lbTitle.Text = userPost.Title;
+
             ShowPost();
 
             // POSTID
@@ -283,6 +285,7 @@ namespace Forum.PostPage
 
         protected void btnPost1_Click(object sender, EventArgs e)
         {
+            string v = $"/posts/{posts[0].PostId}/";
             Response.Redirect($"/posts/{posts[0].PostId}/");
         }
 
