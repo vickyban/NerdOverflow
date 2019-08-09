@@ -95,7 +95,8 @@
 <script type="text/javascript">
 
     $("#dlistSortBy").change(e => {
-        $("#sortValue").val($("#dlistSortBy").val)
+        console.log($("#dlistSortBy").val())
+        $("#sortValue").val($("#dlistSortBy").val())
     })
 
     $("#filter_toggle").on("click", e => {
