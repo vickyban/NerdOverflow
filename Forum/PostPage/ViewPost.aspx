@@ -102,22 +102,22 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost2" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost2" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost2_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost3" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost3" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost3_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost4" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost4" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost4_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnPost5" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost1_Click" />
+                            <asp:Button ID="btnPost5" runat="server" Text="" CssClass="btnPosts" OnClick="btnPost5_Click" />
                         </td>
                     </tr>
                 </table>

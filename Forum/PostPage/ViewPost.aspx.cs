@@ -17,7 +17,7 @@ namespace Forum.PostPage
         User user = new User();
         int postID;
 
-        string username;
+        int userID;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,7 +26,7 @@ namespace Forum.PostPage
             int.TryParse(Page.RouteData.Values["Id"].ToString(), out int postId);
             postID = postId;
 
-            username = Session["userId"].ToString();
+           userID = Convert.ToInt32(Session["UserId"]);
 
 
             userPost = Repositories.PostRepo.GetPost(postId);
@@ -139,7 +139,7 @@ namespace Forum.PostPage
         protected void btnComment_Click(object sender, EventArgs e)
         {
             // CHANGE THE PARAMETERS
-            SubmitComment(3, postID);
+            SubmitComment(userID, postID);
             txtComment.Text = "";   
         }
 
@@ -212,7 +212,7 @@ namespace Forum.PostPage
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // CHANGE THE USERID AND POSTID
-            ReportPost(2, postID);
+            ReportPost(userID, postID);
             // Update post status. CHANGE POSTID
         }
 
@@ -288,7 +288,7 @@ namespace Forum.PostPage
 
         protected void btnPost2_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"/posts/{posts[1].PostId}/");
+            Response.Redirect($"posts/{posts[1].PostId}/");
         }
 
         protected void btnPost3_Click(object sender, EventArgs e)
