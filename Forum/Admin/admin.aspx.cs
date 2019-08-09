@@ -30,12 +30,12 @@ namespace Forum
             string queryApprovedPost = "SELECT COUNT(*) AS AprovedPost FROM Post WHERE(status = 'published'); ";
             string queryBannedUser = "SELECT COUNT(*) AS UserBan FROM [Ban];";
             //Category
-            string queryCabioBio = "SELECT COUNT(*) AS Categorybio FROM Post WHERE(category = 'bio');  ";
-            string queryCabioChem = "SELECT COUNT(*) AS Categorychem FROM Post WHERE(category = 'chem');  ";
-            string queryCabioMaths = "SELECT COUNT(*) AS Categorymaths FROM Post WHERE(category = 'maths');  ";
-            string queryCabioGeo = "SELECT COUNT(*) AS Categorygeo FROM Post WHERE(category = 'geo');  ";
-            string queryCabioPhysic = "SELECT COUNT(*) AS Categoryphysic FROM Post WHERE(category = 'physic');  ";
-            string queryCabioProgramming = "SELECT COUNT(*) AS CateOther FROM Post WHERE(category = 'other');  ";
+            string queryCabioBio = "SELECT COUNT(*) AS Categorybio FROM Post WHERE(category = 'Bio');  ";
+            string queryCabioChem = "SELECT COUNT(*) AS Categorychem FROM Post WHERE(category = 'Chem');  ";
+            string queryCabioMaths = "SELECT COUNT(*) AS Categorymaths FROM Post WHERE(category = 'Maths');  ";
+            string queryCabioGeo = "SELECT COUNT(*) AS Categorygeo FROM Post WHERE(category = 'Geo');  ";
+            string queryCabioPhysic = "SELECT COUNT(*) AS Categoryphysic FROM Post WHERE(category = 'Physic');  ";
+            string queryCabioProgramming = "SELECT COUNT(*) AS CateOther FROM Post WHERE(category = 'Other');  ";
             //Count posts from Jan to Dec
             string queryMonth1 = "SELECT COUNT(*) AS CountJan FROM Post WHERE DATENAME(month,created_at) = 'January'; ";
             string queryMonth2 = "SELECT COUNT(*) AS CountFeb FROM Post WHERE DATENAME(month,created_at) = 'February'; ";
@@ -73,9 +73,12 @@ namespace Forum
             comPost = new SqlCommand(queryApprovedPost, DbConnect);
             SqlDataReader reader2 = comPost.ExecuteReader();
             reader2.Read();
-            decimal resault = Math.Round((Convert.ToDecimal(reader2["AprovedPost"]) / totalPost) * 100, 0);
-            lblPostStatus.Text = resault.ToString() + "%";
-            progressbar.Style.Add("width", resault.ToString() + "%");
+            if (totalPost > 0)
+            {
+                decimal resault = Math.Round((Convert.ToDecimal(reader2["AprovedPost"]) / totalPost) * 100, 0);
+                lblPostStatus.Text = resault.ToString() + "%";
+                progressbar.Style.Add("width", resault.ToString() + "%");
+            }
             reader2.Close();
 
 

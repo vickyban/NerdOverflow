@@ -29,7 +29,8 @@ namespace Forum.PostPage
             if (Session["UserId"] != null)
             {
                 userID = Convert.ToInt32(Session["UserId"]);
-            } else
+            }
+            else
             {
                 txtComment.Enabled = false;
             }
@@ -45,12 +46,18 @@ namespace Forum.PostPage
 
             // Fetching recent posts
             posts = Repositories.PostRepo.GetPosts();
-            btnPost1.Text = posts[0].Category + ": " + posts[0].Title;
-            btnPost2.Text = posts[1].Category + ": " + posts[1].Title;
-            btnPost3.Text = posts[2].Category + ": " + posts[2].Title;
-            btnPost4.Text = posts[3].Category + ": " + posts[3].Title;
-            btnPost5.Text = posts[4].Category + ": " + posts[4].Title;
-                                          
+            var btns = new List<Button>
+            {
+                btnPost1, btnPost2, btnPost3, btnPost4, btnPost5
+            };
+            for (int i = 0; i < posts.Count && i < 5; i++) {
+                btns[i].Text = posts[i].Category + ": " + posts[i].Title;
+            //btnPost1.Text = posts[0].Category + ": " + posts[0].Title;
+            //btnPost2.Text = posts[1].Category + ": " + posts[1].Title;
+            //btnPost3.Text = posts[2].Category + ": " + posts[2].Title;
+            //btnPost4.Text = posts[3].Category + ": " + posts[3].Title;
+            //btnPost5.Text = posts[4].Category + ": " + posts[4].Title;
+            }                   
 
 
         }
@@ -79,15 +86,15 @@ namespace Forum.PostPage
                 {
                     if (minutes > 1)
                     {
-                        lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + minutes + " minutes ago";
+                        lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + minutes + " minutes ago";
                     }
                     else if (minutes == 1)
                     {
-                        lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + minutes + " minute ago";
+                        lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + minutes + " minute ago";
                     }
                     else
                     {
-                        lblDate.Text = userPost.Category + " • Posted by " + "USERNAME " + " just now";
+                        lblDate.Text = userPost.Category + " • Posted by " + user.Username + " " + " just now";
                     }
                 }
             }

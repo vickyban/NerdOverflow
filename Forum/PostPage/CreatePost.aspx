@@ -17,12 +17,12 @@
             <label for="ddCategory">Category: </label>
             <asp:DropDownList ID="ddCategory" runat="server" class="form-control">
                 <asp:ListItem></asp:ListItem>
-                <asp:ListItem>Math</asp:ListItem>
-                <asp:ListItem>Science</asp:ListItem>
+                <asp:ListItem>Maths</asp:ListItem>
+                <asp:ListItem>Chem</asp:ListItem>
                 <asp:ListItem>English</asp:ListItem>
-                <asp:ListItem>Health</asp:ListItem>
+                <asp:ListItem>Geo</asp:ListItem>
                 <asp:ListItem>Arts</asp:ListItem>
-                <asp:ListItem>Music</asp:ListItem>
+                <asp:ListItem>Programming</asp:ListItem>
                 <asp:ListItem>Other</asp:ListItem>
             </asp:DropDownList>
         </div>

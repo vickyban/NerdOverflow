@@ -27,7 +27,7 @@
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <asp:TextBox ID="txtPassword" runat="server" type="text" class="form-control" name="password" placeholder="Password" required="required"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" type="text" class="form-control" name="password" placeholder="Password" required="required" TextMode="Password"></asp:TextBox>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
 					<i class="fa fa-lock"></i>
 					<i class="fa fa-check"></i>
 				</span>
-                <asp:TextBox ID="txtConfirm" runat="server" type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required"></asp:TextBox>
+                <asp:TextBox ID="txtConfirm" runat="server" type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required" TextMode="Password"></asp:TextBox>
             </div>
         </div>  
 
