@@ -5,13 +5,13 @@ The NerdOverflow forum is a well-defined, fair and civilized web application for
 Users who do not have an account can browse and see posts from our application. However, for them to create one, they must sign in or create an account. Users with an account can create, edit, delete and bookmark a post. These will help them organize the information they want to share and keep. Users who have an account can do all the forum’s features including the use of comment box to exchange thoughts about the post and report the post if they find it hostile or insulting.
 
 ## Database Design
-![](./image/nerfoverflow18.PNG)
+![](./image/nerdoverflow8.PNG)
 
 ## Project wireframe
-![](./image/nerfoverflow1.PNG)
-![](./image/nerfoverflow2.PNG)
-![](./image/nerfoverflow3.PNG)
-![](./image/nerfoverflow4.PNG)
-![](./image/nerfoverflow5.PNG)
-![](./image/nerfoverflow6.PNG)
-![](./image/nerfoverflow7.PNG)
+![](./image/nerdoverflow1.PNG)
+![](./image/nerdoverflow2.PNG)
+![](./image/nerdoverflow3.PNG)
+![](./image/nerdoverflow4.PNG)
+![](./image/nerdoverflow5.PNG)
+![](./image/nerdoverflow6.PNG)
+![](./image/nerdoverflow7.PNG)
